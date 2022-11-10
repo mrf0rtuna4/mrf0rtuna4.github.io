@@ -1,12 +1,36 @@
+html {
+    font-size: 10px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
+    font-family: 'Rubik Bubbles', cursive;
+  }
+
 body {
     background-color: rgb(44, 39, 39);
 }
 h1 {
-    color: lightgreen;
+    color: rgb(47, 244, 47);
+    font-size: 60px;
+    text-align: center;
 }
+
 p {
     color: orange;
 }
 a {
     color: red;
 }
+#header{ 
+    width: 1500px;  
+    height: 100px;  
+    background-color: rgb(92, 92, 92);
+    margin-bottom: 20px;  
+    background-image: aссets\images
+    } 
+
+h3{
+width: 30px; 
+color: royalblue; 
+font-style: '';
+margin-left: 120px;
+margin-bottom: 50px;
+text-align: center;
+} 
