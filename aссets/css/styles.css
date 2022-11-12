@@ -15,9 +15,13 @@ h1 {
 p {
     color: orange;
 }
-a {
+a.git {
     color: red;
     text-align: right;
+    margin-top: 20px;
+}
+a.dc {
+    color:blue;
 }
 #header{ 
     width: 0px;  
