@@ -1,5 +1,5 @@
 html {
-    font-size: 10px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
+    font-size: 10px; /* думаю норм  */
     font-family: 'Rubik Bubbles', cursive;
   }
 
@@ -19,10 +19,11 @@ a {
     color: red;
 }
 #header{ 
-    width: 1500px;  
+    width: 1200px;  
     height: 100px;  
     background-color: rgb(92, 92, 92);
     margin-bottom: 20px;  
+    margin-left: 100px;
     background-image: aссets\images
     } 
 
