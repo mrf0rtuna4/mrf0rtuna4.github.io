@@ -17,6 +17,7 @@ p {
 }
 a {
     color: red;
+    text-align: right;
 }
 #header{ 
     width: 0px;  
