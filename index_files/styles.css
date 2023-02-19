@@ -1,0 +1,70 @@
+html {
+    font-size: 10px; /* думаю норм  */
+    font-family: 'Rubik Bubbles', cursive;
+  }
+body {
+    background-color: rgb(44, 39, 39);
+}
+h1 {
+    color: rgb(47, 244, 47);
+    font-size: 60px;
+    text-align: center;
+}
+p.back {
+    text-align: center;
+    position: absolute;
+    margin-top: 30px;
+    left: 150px;
+    font-size: 30px;
+    color: rgb(43, 226, 186);
+}
+p {
+    text-align: center;
+    font-size: 30px;
+    color: orange;
+}
+a.git {
+    position: absolute;
+    left: 87px;
+    margin-top: 50px;
+    color: red;
+    text-align: right;
+    margin-top: 397px;
+}
+header {
+    background-color: rgb(92, 80, 92);
+    width: 1437px;
+    height: 100px;
+    right: 10px;
+}
+h3{
+width: 30px; 
+color: royalblue; 
+font-style: '';
+margin-left: 120px;
+margin-bottom: 50px;
+text-align: center;
+} 
+iframe{
+    margin-left: 900px;
+}
+img.hrl {
+    width: 38px;
+    height: auto;
+    position: absolute;
+    left: 83px;
+    top: 85px;
+}
+img.git {
+    position: absolute;
+    width: 57px;
+    height: auto;
+    top: 29px;
+    left: 1134px;
+}
+img.ds {
+    position: absolute;
+    width: 75px;
+    top: 24px;
+    left: 1218px;
+}
