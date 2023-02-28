@@ -1,5 +1,5 @@
 html {
-    font-size: 10px; /* думаю норм  */
+    font-size: 10px; /* Как это развидеть  */
     font-family: 'Rubik Bubbles', cursive;
   }
 body {
@@ -19,6 +19,11 @@ p.back {
     color: rgb(43, 226, 186);
 }
 p {
+    text-align: center;
+    font-size: 30px;
+    color: orange;
+}
+p.pos {
     text-align: center;
     font-size: 30px;
     color: orange;
@@ -59,14 +64,20 @@ img.git {
     position: absolute;
     width: 57px;
     height: auto;
-    top: 29px;
-    left: 1134px;
+    top: 30px;
+    left: 1192px;
 }
 img.ds {
     position: absolute;
     width: 75px;
     top: 24px;
-    left: 1218px;
+    left: 1267px;
+}
+img.tg {
+    position: absolute;
+    width: 86px;
+    top: 35px;
+    left: 1337px;
 }
 p.ref{
     /* text-align: center; */
@@ -109,3 +120,24 @@ div.header2{
     text-align: center;
     margin-top: 12px;
 }
+/* @media screen and (max-width: 1200px) {
+    header {
+        width: 289%;
+    }
+    body {
+        font-size:1.5em;
+    }
+    h1 {
+        position: fixed;
+        text-align: center;
+        right: auto;
+        left: 21%;
+    }
+    p.pos {
+        position: fixed;
+        right: auto;
+        left: 15%;
+        text-align: center;
+        margin-top: 10%;
+    }
+} */
