@@ -1,5 +1,6 @@
 packadge.json
-.token
+*.token
 *.log
 old.*
 test.*
+test*

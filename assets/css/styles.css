@@ -167,4 +167,33 @@ div.header2{
   .menu-item:hover {
     color: #ffd700;
   }
+  .repositories {
+    display: flex;
+    flex-wrap: wrap;
+  }
   
+ /* .repos {
+    width: 30%;
+    margin: 1%;
+    padding: 1em;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .repos h2 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .repos p {
+    font-size: 1em;
+    margin: 0.5em 0;
+  }
+  */
+.a {
+    position: absolute;
+    right: auto;
+    left: 170px;
+    margin-top: 190px;
+}
