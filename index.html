@@ -2,54 +2,104 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta property="og:site_name" content="Information for Mr_Fortuna" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, user-scalable=yes" />
-    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap"
-      rel="stylesheet"
-    />
+    <meta property="og:site_name" content="Mr_Fortuna" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+    <link rel="icon" href="mrf.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet"/>
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0.2;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .about-me {
+        animation: fadeIn 1s ease;
+        border: 2px solid #E9E9E9;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: rgb(32, 25, 25);
+      }
+      .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #333;
+    height: 50px;
+    margin-bottom: -50px;
+}
+.menu-item {
+    background-position: right;
+    /* right: revert; */
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 20px;
+    transition: color 0.2s ease-in-out;
+    margin-right: 10px;
+}
+      .dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .quote {
+        font-style: italic;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        color: #555;
+      }
+    </style>
     <title>Информация про Фортуныча</title>
   </head>
   <body>
     <header>
       <div class="menu">
-        <a class="menu-item" href="index.html">Главная</a>
-        <a class="menu-item" href="referal.html">Спонсорство</a>
-        <a class="menu-item" href="discord.html">Проекты</a>
-        <a
-          class="menu-item"
-          href="https://t.me/heypers_project"
-          target="_blank"
-        >
-          Telegram
-        </a>
-        <a
-          class="menu-item"
-          href="https://github.com/mrf0rtuna4"
-          target="_blank"
-        >
-          GitHub
-        </a>
+        <div class="dropdown">
+          <button class="menu-item">Меню</button>
+          <div class="dropdown-content">
+            <a href="index.html">Главная</a>
+            <a href="referal.html">Спонсорство</a>
+            <a href="discord.html">Проекты</a>
+            <a href="https://t.me/heypers_project" target="_blank">Telegram</a>
+            <a href="https://github.com/mrf0rtuna4" target="_blank">GitHub</a>
+          </div>
+        </div>
       </div>
       <img src="assets/images/mrf.png" width="100px" height="100px" />
-    <!-- <a href="http://heypers-lab.ml/"><img class="hrl" src="assets/images/hpj.png" alt=""></a> -->
+      <!-- <a href="http://heypers-lab.ml/"><img class="hrl" src="assets/images/hpj.png" alt=""></a> -->
     </header>
     <h1>Mr_Fortuna</h1>
-    <p class="pos">
-      Пока вы спите, мы двигаемся вперед
+    <p class="quote">
+      "И пока все волнуются о мнении других - мы двигаемся вперед."
     </p>
+
+    <div class="about-me">
+      <p class="l">
+        Дарова! Меня зовут Фортуныч, и я занимаюсь разработкой ПО и сценариев. Мой опыт включает разработку веб-приложений, консольных программ и веб-сайтов. Надеюсь, вы найдете мои проекты интересными и полезными!
+      </p>
+    </div>
     <div id="repos"></div>
     <div class="animate__animated animate__fadeInUp card">
         <div class="header">
