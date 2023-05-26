@@ -25,7 +25,7 @@ p {
 }
 p.pos {
     text-align: center;
-    font-size: 30px;
+    font-size: 26px;
     color: orange;
 }
 a.git {
@@ -191,9 +191,51 @@ div.header2{
     margin: 0.5em 0;
   }
   */
+.about-me {
+    border-radius: 100%;
+    border: #333;
+}
 .a {
     position: absolute;
     right: auto;
-    left: 170px;
-    margin-top: 190px;
+    left: 160px;
+    margin-top: 235px;
 }
+.d {
+    color: #333;
+    font-display: a;
+}
+.l {
+    font-style: oblique;
+    font-size: none;
+}
+@media (max-width: 600px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 1200px) {
+    body {
+      font-size: 18px;
+    }
+    header {
+        font-size: 18px;
+    }
+  }
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+  .navbar {
+    background-color: #212529; 
+  }
+  
+  .navbar-brand {
+    color: goldenrod;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff; 
+  }
