@@ -60,3 +60,73 @@ body {
   text-decoration: none;
   margin: 0 10px;
 }
+
+/* Стили для карточки */
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #2a2828;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* Стили для заголовка карточки */
+.card .header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #657c82;
+    color: #ff000f;
+}
+
+/* Стили для картинки в заголовке */
+.card .header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Стили для текста в заголовке */
+.card .header p {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Стили для контента карточки */
+.card .content {
+    padding: 10px;
+}
+
+/* Анимация для карточки */
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для заголовка */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Анимированные карточки */
+.card.animated {
+    animation: slide-up 0.5s ease-out forwards;
+}
+
+/* Анимированный заголовок */
+.card.animated .header {
+    animation: fade-in 0.5s ease-out forwards;
+}
