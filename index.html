@@ -8,23 +8,9 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
     <link rel="icon" href="mrf.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/test.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/index.css" type="text/css"/>
     <title>Mr_f0rtuna4</title>
-    <script>
-        function toggleContent(id) {
-            var content = document.getElementById(id);
-            content.style.display = (content.style.display === "none") ? "block" : "none";
-            localStorage.setItem(id, content.style.display);
-        }
-        window.addEventListener('load', function() {
-            var aboutContent = document.getElementById('about-content');
-            var projectsContent = document.getElementById('projects-content');
-            var aboutState = localStorage.getItem('about-content');
-            var projectsState = localStorage.getItem('projects-content');
-            aboutContent.style.display = aboutState || 'none';
-            projectsContent.style.display = projectsState || 'none';
-        });
-    </script>
+    
 </head>
 
 <body>
@@ -42,36 +28,78 @@
     </div>
 
     <div class="about">
-        <h2>О мне</h2>
+        <h2>Обо мне</h2>
         <div class="expandable-content" id="about-content">
-            <p>Я - Фортуныч. Делаю то что захотелось известен на просторах дискорда.</p>
+            <p>Привет! Я - Фортуныч. Занимаюсь тем, что захочется, известен на просторах дискорда. Занятие - 3D моделирование и программирование на свой вкус.</p>
             <iframe width="300" height="300" src="https://widget.qiwi.com/widgets/middle-widget-300x300?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPzN5kNUvnbXu78xwmNZJ4Jj7ebow1mbb8dXtZ9P8xgsjWTT6BP3NaSb6n1rSam9sp8bhE7vV7zvc3ran38nCyo69AjKSoYUSpcEp43qFuH" allowtransparency="true" scrolling="no" frameborder="0"></iframe>
         </div>
-        <div class="expandable-button" onclick="toggleContent('about-content')">Подробнее</div>
     </div>
 
     <div class="projects">
         <h2>Проекты</h2>
         <div class="expandable-content" id="projects-content">
             <p>Ведущий проект: Heypers Project. Можете просмотреть что еще есть.</p>
-          <div class="animate__animated animate__fadeInUp card">
-              <div class="header">
-                  <img src="assets/images/hpj.png" alt="">
-                  <p class="t">Heypers Project</p>
-              </div>
-              <div class="contact-info">
-                  <p>Email: <a href="mailto:heypers.team@gmail.com">Oткрыть</a></p>
-                  <p>Discord: <a href="https://discord.gg/NFRtqcu7fq">Heypers Project</a></p>
-                  <p>Telegram: <a href="https://t.me/heypers_project">Heypers Project</a></p>
-              </div>
-          </div>
-        </div>
-        <div class="expandable-button" onclick="toggleContent('projects-content')">Подробнее</div>
+            <div class="projects-wrapper">
+                <div class="animate__animated animate__fadeInUp card">
+                    <div class="header">
+                        <img src="assets/images/hpj.png" alt="">
+                        <p class="t">Heypers Project</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>Email: <a href="mailto:heypers.team@gmail.com">Oткрыть</a></p>
+                        <p>Discord: <a href="https://discord.gg/NFRtqcu7fq">Heypers Project</a></p>
+                        <p>Telegram: <a href="https://t.me/heypers_project">Heypers Project</a></p>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card">
+                    <div class="header">
+                        <img src="https://cdn.discordapp.com/icons/1044681666532225066/713982fb2f155d78e28165cb1a134823.png?size=1024" alt="">
+                        <p class="t">Heypers Developer's</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>Discord: <a href="https://discord.gg/bnUf6nHAhe">Вступить</a></p>
+                        <p>Telegram: <a href="https://t.me/heypers_dev">Heypers Devs</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
+
+   <!-- ну я еще подумаю над добавлением этого
+    <div class="projects">
+        <h2>Модерирую</h2>
+        <div class="expandable-content" id="projects-content">
+            <p>Также я модерирую и/или администрирую некоторые сервера. Просто показываю</p>
+            <div class="projects-wrapper">
+                <div class="animate__animated animate__fadeInUp card">
+                    <div class="header">
+                        <img src="https://cdn.discordapp.com/icons/855448228002398209/556a2390dcbb104211843503301ae9d2.webp?size=2048" alt="">
+                        <p class="t">Noldeee Play Community</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>Discord: <a href="https://discord.gg/z63e5UJ6B6">https://discord.gg/z63e5UJ6B6</a></p>
+                        <p>Telegram: <a href="https://t.me/noldeeplay">noldeeplay</a></p>
+                    </div>
+                </div>
+                <div class="animate__animated animate__fadeInUp card">
+                    <div class="header">
+                        <img src="https://cdn.discordapp.com/icons/1033021191218266122/cd83b17da930ccf72333f86e1832b7a5.webp?size=2048" alt="">
+                        <p class="t">Anomaly Reborn</p>
+                    </div>
+                    <div class="contact-info">
+                        <p>Discord: <a href="https://discord.gg/bnUf6nHAhe">https://discord.gg/bnUf6nHAhe</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div> -->
+
 
     <div class="contact">
         <a href="https://t.me/heypers_project" target="_blank">Telegram</a>
         <a href="http://heypers-lab.ml/" target="_blank">Discord</a>
+        <a href="https://youtube.com/@mrf0rtuna4" target="_blank">YouTube</a>
+        <a href="https://github.com/mrf0rtuna4" target="_blank">GitHub</a>
     </div>
 </body>
 </html>

@@ -1,10 +1,21 @@
 body {
-  background: linear-gradient(to bottom right, #003366, #009933);
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(45deg, #ee7752, #3cd3e7, #4f23d5, #23d561);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
 }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .logo {
   text-align: center;
@@ -60,8 +71,11 @@ body {
   text-decoration: none;
   margin: 0 10px;
 }
-
-/* Стили для карточки */
+.projects-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+/* карт0чки */
 .card {
     position: relative;
     width: 300px;
@@ -70,10 +84,13 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 20px;
+    flex-basis: calc(50% - 10px);
+    margin-right: 10px;
+}
+.card:last-child {
+  margin-right: 0; 
 }
 
-/* Стили для заголовка карточки */
 .card .header {
     display: flex;
     align-items: center;
@@ -81,27 +98,19 @@ body {
     background-color: #657c82;
     color: #ff000f;
 }
-
-/* Стили для картинки в заголовке */
 .card .header img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
-
-/* Стили для текста в заголовке */
 .card .header p {
     font-size: 20px;
     margin: 0;
 }
-
-/* Стили для контента карточки */
 .card .content {
     padding: 10px;
 }
-
-/* Анимация для карточки */
 @keyframes slide-up {
     from {
         transform: translateY(100%);
@@ -110,8 +119,6 @@ body {
         transform: translateY(0);
     }
 }
-
-/* Анимация для заголовка */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -120,13 +127,11 @@ body {
         opacity: 1;
     }
 }
-
-/* Анимированные карточки */
 .card.animated {
     animation: slide-up 0.5s ease-out forwards;
 }
 
-/* Анимированный заголовок */
 .card.animated .header {
     animation: fade-in 0.5s ease-out forwards;
 }
+

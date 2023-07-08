@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
         <style>
-            /* Стили для карточки */
             .card {
                 position: relative;
                 width: 300px;
@@ -23,7 +22,6 @@
                 margin: 20px;
             }
             
-            /* Стили для заголовка карточки */
             .card .header {
                 display: flex;
                 align-items: center;
@@ -32,26 +30,21 @@
                 color: #ff000f;
             }
             
-            /* Стили для картинки в заголовке */
             .card .header img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
                 margin-right: 10px;
             }
-            
-            /* Стили для текста в заголовке */
             .card .header p {
                 font-size: 20px;
                 margin: 0;
             }
             
-            /* Стили для контента карточки */
             .card .content {
                 padding: 10px;
             }
             
-            /* Анимация для карточки */
             @keyframes slide-up {
                 from {
                     transform: translateY(100%);
@@ -60,8 +53,6 @@
                     transform: translateY(0);
                 }
             }
-            
-            /* Анимация для заголовка */
             @keyframes fade-in {
                 from {
                     opacity: 0;
@@ -70,13 +61,10 @@
                     opacity: 1;
                 }
             }
-            
-            /* Анимированные карточки */
+        
             .card.animated {
                 animation: slide-up 0.5s ease-out forwards;
             }
-            
-            /* Анимированный заголовок */
             .card.animated .header {
                 animation: fade-in 0.5s ease-out forwards;
             }
