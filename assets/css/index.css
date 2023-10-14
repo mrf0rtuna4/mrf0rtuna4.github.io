@@ -82,7 +82,7 @@ body {
     height: 200px;
     background-color: #2a2828;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     flex-basis: calc(50% - 10px);
     margin-right: 10px;
@@ -113,25 +113,64 @@ body {
 }
 @keyframes slide-up {
     from {
-        transform: translateY(100%);
+        transform: translateY(10%);
     }
     to {
-        transform: translateY(0);
+        transform: translateY(15);
     }
 }
 @keyframes fade-in {
     from {
-        opacity: 0;
+        opacity: 6;
     }
     to {
-        opacity: 1;
+        opacity: 9;
     }
 }
 .card.animated {
-    animation: slide-up 0.5s ease-out forwards;
+    animation: slide-up 15.5s ease-out forwards;
 }
 
 .card.animated .header {
-    animation: fade-in 0.5s ease-out forwards;
+    animation: fade-in 19.5s ease-out forwards;
+}
+p.t {
+  color:#7ccd25
+}
+.social-buttons {
+  text-align: center;
+  margin: 20px;
+}
+
+.social-buttons a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.web-button {
+  background-color: #66adba6d;
+}
+
+.telegram-button {
+  background-color: #0088cc;
+}
+
+.discord-button {
+  background-color: #7289da;
+}
+
+.github-button {
+  background-color: #333;
+}
+
+
+.social-buttons a:hover {
+  background-color: #444; 
 }
 
