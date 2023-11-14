@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(45deg, #e76b45, #5b79dd, #23d555, #23d5a8, #ccd523, #b12f2f);
+  background: linear-gradient(45deg, #522517, #19264f, #0c4a1e, #0f5947, #43460b, #6a1c1c);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
 }
@@ -8,51 +8,131 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
+  35% {
+    background-position: 50% 50%;
+  }
+
   50% {
     background-position: 100% 50%;
   }
+
+  65% {
+    background-position: 50% 50%;
+  }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
 
-.logo {
+.profile {
   text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+}
+
+.avatar {
+  text-align: left;
   padding: 10px;
 }
 
-.logo img {
+.avatar img {
   width: 100px;
   height: 100px;
   display: inline-block;
   vertical-align: middle;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
 }
 
-.logo h1 {
+.avatar img::after {
+  content: "\1F601";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 24px;
+}
+
+.avatar p {
   display: inline-block;
   margin-left: 20px;
   vertical-align: middle;
+  padding: 4px 0;
+  color: rgb(38, 66, 27);
 }
 
-.quote {
-  text-align: center;
-  padding: 4px 0;
-  color: gray;
+.sub-name {
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2em;
+  letter-spacing: .05em;
+  color: white;
+}
+
+.name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  color: rgb(38, 66, 27);
+}
+
+.psevdonims {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  color: rgb(21, 81, 0);
+}
+
+.age {
+  font-size: 0.9em;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  color: rgb(114, 141, 103);
+}
+
+.languages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.games {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .description {
-  text-align: center;
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
   padding: 10px;
-  color: rgb(255, 234, 0);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 
-.about {
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 20px;
+.avatar img:hover+.description {
+  display: block;
 }
+
+.profile-info {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.profile-info p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 
 .projects {
   padding: 20px;
@@ -71,72 +151,85 @@ body {
   text-decoration: none;
   margin: 0 10px;
 }
+
 .projects-wrapper {
   display: flex;
   justify-content: space-between;
 }
+
 /* карт0чки */
 .card {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background-color: #2a2828;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    flex-basis: calc(50% - 10px);
-    margin-right: 10px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #2a2828;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  flex-basis: calc(50% - 10px);
+  margin-right: 10px;
 }
+
 .card:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 .card .header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #657c82;
-    color: #ff000f;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #657c82;
+  color: #ff000f;
 }
+
 .card .header img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
+
 .card .header p {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
+  margin: 0;
 }
+
 .card .content {
-    padding: 10px;
+  padding: 10px;
 }
+
 @keyframes slide-up {
-    from {
-        transform: translateY(10%);
-    }
-    to {
-        transform: translateY(15);
-    }
+  from {
+    transform: translateY(10%);
+  }
+
+  to {
+    transform: translateY(15);
+  }
 }
+
 @keyframes fade-in {
-    from {
-        opacity: 6;
-    }
-    to {
-        opacity: 9;
-    }
+  from {
+    opacity: 6;
+  }
+
+  to {
+    opacity: 9;
+  }
 }
+
 .card.animated {
-    animation: slide-up 15.5s ease-out forwards;
+  animation: slide-up 15.5s ease-out forwards;
 }
 
 .card.animated .header {
-    animation: fade-in 19.5s ease-out forwards;
+  animation: fade-in 19.5s ease-out forwards;
 }
+
 p.t {
-  color:#7ccd25
+  color: #7ccd25
 }
+
 .social-buttons {
   text-align: center;
   margin: 20px;
@@ -171,6 +264,5 @@ p.t {
 
 
 .social-buttons a:hover {
-  background-color: #444; 
+  background-color: #444;
 }
-
