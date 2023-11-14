@@ -133,6 +133,33 @@ body {
   font-size: 14px;
 }
 
+.lyric-about {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+}
+
+.lyric-about h2 {
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.lyric-about .content {
+  line-height: 30px;
+  max-width: 60%;
+  margin: auto;
+  font-size: 14px;
+  color: #fff;
+}
+
+.lyric-about p {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 24px;
+}
+
 
 .projects {
   padding: 20px;
