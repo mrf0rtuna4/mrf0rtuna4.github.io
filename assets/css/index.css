@@ -1,5 +1,7 @@
 body {
-  background: linear-gradient(45deg, #522517, #19264f, #0c4a1e, #0f5947, #43460b, #6a1c1c);
+  --color1: #522517;
+  --color2: #19264f;
+  background: linear-gradient(45deg, var(--color1), var(--color2));
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
 }
@@ -9,16 +11,8 @@ body {
     background-position: 0% 50%;
   }
 
-  35% {
-    background-position: 50% 50%;
-  }
-
   50% {
     background-position: 100% 50%;
-  }
-
-  65% {
-    background-position: 50% 50%;
   }
 
   100% {
@@ -27,16 +21,25 @@ body {
 }
 
 
-.profile {
-  text-align: center;
+.avatar-container {
   padding: 20px;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .avatar {
-  text-align: left;
-  padding: 10px;
+  flex-basis: 30%;
+  top: 250px;
+  padding: 50px;
 }
 
 .avatar img {
@@ -49,28 +52,31 @@ body {
   position: relative;
 }
 
-.avatar img::after {
-  content: "\1F601";
+.name {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 24px;
-}
-
-.avatar p {
-  display: inline-block;
-  margin-left: 20px;
-  vertical-align: middle;
-  padding: 4px 0;
-  color: rgb(38, 66, 27);
-}
-
-.sub-name {
   font-weight: bold;
+  color: #fff;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  flex-basis: 70%;
+  padding: 10px;
+}
+
+.quote p {
+  font-size: 20px;
   font-style: italic;
-  line-height: 1.2em;
-  letter-spacing: .05em;
-  color: white;
+  color: #202020;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .name {
@@ -81,102 +87,17 @@ body {
   color: rgb(38, 66, 27);
 }
 
-.psevdonims {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9em;
-  line-height: 1.5;
-  letter-spacing: -0.03em;
-  color: rgb(21, 81, 0);
-}
-
-.age {
-  font-size: 0.9em;
-  line-height: 1.5;
-  letter-spacing: -0.03em;
-  color: rgb(114, 141, 103);
-}
-
-.languages {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.games {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.description {
-  display: none;
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 150px;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-}
-
-.avatar img:hover+.description {
-  display: block;
-}
-
-.profile-info {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.profile-info p {
-  margin-bottom: 10px;
-  font-size: 14px;
-}
-
-.lyric-about {
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 20px;
-}
-
-.lyric-about h2 {
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  color: #fff;
-}
-
-.lyric-about .content {
-  line-height: 30px;
-  max-width: 60%;
-  margin: auto;
-  font-size: 14px;
-  color: #fff;
-}
-
-.lyric-about p {
-  font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
-  font-size: 24px;
-}
-
-
 .projects {
   padding: 20px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 20px;
-}
-
-.contact {
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.contact a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .projects-wrapper {
@@ -186,15 +107,14 @@ body {
 
 /* карт0чки */
 .card {
-  position: relative;
-  width: 300px;
-  height: 200px;
   background-color: #2a2828;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  flex-basis: calc(50% - 10px);
-  margin-right: 10px;
+  flex-basis:  calc(50% - 20px);
+  max-width: calc(100% - 20px);
+  margin: 10px;
+  transition: all .3s ease-in-out;
 }
 
 .card:last-child {
@@ -223,34 +143,6 @@ body {
 
 .card .content {
   padding: 10px;
-}
-
-@keyframes slide-up {
-  from {
-    transform: translateY(10%);
-  }
-
-  to {
-    transform: translateY(15);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 6;
-  }
-
-  to {
-    opacity: 9;
-  }
-}
-
-.card.animated {
-  animation: slide-up 15.5s ease-out forwards;
-}
-
-.card.animated .header {
-  animation: fade-in 19.5s ease-out forwards;
 }
 
 p.t {
@@ -292,4 +184,18 @@ p.t {
 
 .social-buttons a:hover {
   background-color: #444;
+}
+
+footer {
+  padding: 1rem 0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: #fff;
 }
