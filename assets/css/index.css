@@ -20,6 +20,18 @@ body {
   }
 }
 
+#countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color:rgb(38, 66, 27);
+  margin-top: 3rem;
+}
+
+#countdown span {
+  padding: 0 0.5rem;
+}
+
 
 .avatar-container {
   padding: 20px;

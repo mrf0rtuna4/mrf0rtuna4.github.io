@@ -15,7 +15,35 @@
 </head>
 
 <body>
+    <script>
+        const targetDate = new Date("2024-03-22T00:00:00Z").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `
+            <span>${days}</span> дней,
+            <span>${hours}</span> часов,
+            <span>${minutes}</span> минут(а/ы),
+            <span>${seconds}</span> секунд(ы)
+          `;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "С днем рождения, Mr_Fortuna!";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+
     <div class="avatar-container">
+
         <p><span class="name">Mr_Fortuna</span></p>
         <div class="avatar">
             <img src="assets/images/mrf.png" alt="Logo">
@@ -23,6 +51,7 @@
         <div class="quote">
             <p>"Пока остальные ждут одобрения толпы - мы двигаемся вперед."</p>
         </div>
+        <div id="countdown"></div>
     </div>
 
     <div class="projects">
@@ -36,7 +65,6 @@
                     <div class="social-buttons">
                         <a href="https://heypers.github.io/" class="web-button">Сайт</a>
                         <a href="https://t.me/heypers_project" class="telegram-button">Telegram</a>
-
                         <a href="https://discord.gg/N8MYbANVJ6" class="discord-button">Discord</a>
                         <a href="https://github.com/heypers" class="github-button">GitHub</a>
                     </div>
@@ -50,11 +78,8 @@
                 <div class="contact-info">
                     <div class="social-buttons">
                         <a href="https://bytehive-dev.github.io/" class="web-button">Сайт</a>
-
                         <a href="https://t.me/bytehive" class="telegram-button">Telegram</a>
-
                         <a href="https://discord.gg/SYbjxfehSn" class="discord-button">Discord</a>
-
                         <a href="https://github.com/bytehive-dev" class="github-button">GitHub</a>
                     </div>
                 </div>
