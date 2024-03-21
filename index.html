@@ -19,8 +19,7 @@
         const targetDate = new Date("2024-03-22T00:00:00Z").getTime();
 
         function updateCountdown() {
-            const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }); 
-            const nowTime = now.getTime();
+            const nowTime = new Date().getTime() + (3 * 60 * 60 * 1000) ;
             const distance = targetDate - nowTime;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
