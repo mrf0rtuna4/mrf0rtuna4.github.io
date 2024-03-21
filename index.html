@@ -20,7 +20,7 @@
 
         function updateCountdown() {
             const now = new Date().toLocaleString('en-US', { timeZone: 'Europe/Moscow' }); 
-            const nowTime = new Date(now).getTime();
+            const nowTime = now.getTime();
             const distance = targetDate - nowTime;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
