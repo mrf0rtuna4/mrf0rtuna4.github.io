@@ -15,33 +15,6 @@
 </head>
 
 <body>
-    <script>
-        const targetDate = new Date("2024-03-22T00:00:00Z").getTime();
-
-        function updateCountdown() {
-            const nowTime = new Date().getTime() + (3 * 60 * 60 * 1000) ;
-            const distance = targetDate - nowTime;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = `
-            <span>${days}</span> дней,
-            <span>${hours}</span> часов,
-            <span>${minutes}</span> минут(а/ы),
-            <span>${seconds}</span> секунд(ы)
-          `;
-
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "С днем рождения, Mr_Fortuna!";
-            }
-        }
-
-        setInterval(updateCountdown, 1000);
-    </script>
-
     <div class="avatar-container">
 
         <p><span class="name">Mr_Fortuna</span></p>
