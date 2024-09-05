@@ -3,44 +3,149 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta property="og:site_name" content="Информация про Mr_Fortuna" />
-    <meta name="description"
-        content="Узнайте больше о вашем Фортуныче, какие сервера у него есть и чем он обычно занимается.">
+    <!-- Title -->
+    <title>Mr_Fortuna - Личная информация, проекты и навыки</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Узнайте больше о Mr_Fortuna, его проектах, навыках и серверах.">
+
+    <!-- Ключевые слова для SEO -->
+    <meta name="keywords" content="Mr_Fortuna, проекты, навыки, разработка, GitHub, Discord, Telegram, веб-разработка">
+
+    <!-- Meta Author -->
     <meta name="author" content="Mr_f0rtuna4">
-    <meta name="image" content="https://mrf0rtuna4.github.io/assets/images/current.png">
-    <meta property="og:image" content="https://mrf0rtuna4.github.io/assets/images/current.png">
-    <meta property="og:url" content="https://mrf0rtuna4.github.io/">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Open Graph Meta Tag - Heypers Team (2024)">
+
+    <!-- Social Media Sharing (Open Graph) -->
+    <meta property="og:site_name" content="Информация про Mr_Fortuna" />
+    <meta property="og:title" content="Mr_Fortuna - Личная информация и проекты" />
+    <meta property="og:description"
+        content="Ознакомьтесь с проектами и навыками Mr_Fortuna. Присоединяйтесь к его сообществам на GitHub и Discord." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mrf0rtuna4.github.io/" />
+    <meta property="og:image" content="assets/images/avatar.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Mr_Fortuna - Логотип и аватар" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-    <link rel="icon" href="mrf.ico" type="image/x-icon" />
+
+    <!-- Twitter Sharing -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mr_Fortuna - Личная информация и проекты" />
+    <meta name="twitter:description"
+        content="Ознакомьтесь с проектами и навыками Mr_Fortuna. Присоединяйтесь к его сообществам на GitHub и Discord." />
+    <meta name="twitter:image" content="assets/images/avatar.png" />
+    <meta name="twitter:image:alt" content="Mr_Fortuna - Аватар и логотип" />
+
+    <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/avatar.png" type="image/x-icon" />
+
+    <!-- SEO Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mrf0rtuna4.github.io/" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/index.css" type="text/css" />
-    <title>Инфо о Mr_fortuna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Permissions Policy -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
 </head>
 
-<body>
-    <div class="avatar-container">
-        <p><span class="name">Mr_Fortuna</span></p>
-        <div class="avatar">
-            <img id="avatar" src="assets/images/current.png" alt="Avatar">
-        </div>
-        <div class="quote">
-            <p>"Пока остальные ждут одобрения толпы - мы двигаемся вперед."</p>
-        </div>
-        <div id="countdown"></div>
-    </div>
 
-    <div class="projects">
-        <div class="projects-wrapper">
-            <div class="card">
-                <div class="header">
-                    <img src="assets/images/heypers_logo.jpg" alt="Heypers">
-                    <p class="t">Heypers Project</p>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h1>
+                <div class="animate__animated animate__bounce animate__delay-2s">Mr_Fortuna</div>
+            </h1>
+            <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
+            <p class="quote">"Пока остальные ждут одобрения толпы - мы двигаемся вперед."</p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="skills">
+        <div class="animate__animated animate__bounce">
+            <div class="container">
+                <h2>Навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML/CSS</h3>
+                        <p>Разработка веб-страниц с современными стандартами.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Создание интерактивных элементов и стандартных интерфейсов. Web контроль.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Разработка бэкэнда и автоматизация задач.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-code"></i>
+                        <h3>API</h3>
+                        <p>Интеграция и работа с внешними API.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-discord"></i>
+                        <h3>Discord боты</h3>
+                        <p>Создание ботов для популярных платформ.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-linux"></i>
+                        <h3>Linux сервера</h3>
+                        <p>Настройка и управление серверами на базе Linux.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <h3>Моделирование (Blender/C4D)</h3>
+                        <p>Создание и проработка сцен, low-poly модели.</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-whmcs"></i>
+                        <h3>Фреймворки</h3>
+                        <p>Использование и разработка фреймворков для быстрого создания проектов</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3>Дизайн</h3>
+                        <p>Разработка визуальных элементов и дизайна интерфейсов</p>
+                    </div>
                 </div>
-                <div class="contact-info">
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Проекты</h2>
+            <div class="projects-wrapper">
+                <div class="card">
+                    <img src="assets/images/heypers_logo.jpg" alt="Heypers">
+                    <h3>Heypers Project</h3>
                     <div class="social-buttons">
                         <a href="https://heypers.github.io/" class="web-button">Сайт</a>
                         <a href="https://t.me/heypers_project" class="telegram-button">Telegram</a>
@@ -48,13 +153,9 @@
                         <a href="https://github.com/heypers" class="github-button">GitHub</a>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="header">
-                    <img src="assets/images/kaya.png" alt="Kaya">
-                    <p class="t">KayaDevs</p>
-                </div>
-                <div class="contact-info">
+                <div class="card">
+                    <img src="assets/images/kaya.png" alt="KayaDevs">
+                    <h3>KayaDevs</h3>
                     <div class="social-buttons">
                         <a href="https://kaya.pythonanywhere.com/" class="web-button">Сайт</a>
                         <a href="https://discord.gg/ggg7dmRsvn" class="discord-button">Discord</a>
@@ -63,28 +164,25 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="card">
-                <div class="header">
-                    <img src="assets/images/bytehive.jpg" alt="ByteHive">
-                    <p class="t">ByteHive</p>
-                </div>
-                <div class="contact-info">
-                    <div class="social-buttons">
-                        <a href="https://bytehive-dev.github.io/" class="web-button">Сайт</a>
-                        <a href="https://t.me/bytehive" class="telegram-button">Telegram</a>
-                        <a href="https://discord.gg/SYbjxfehSn" class="discord-button">Discord</a>
-                        <a href="https://github.com/bytehive-dev" class="github-button">GitHub</a>
-                    </div>
-                </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="social-buttons">
+                <a href="https://t.me/mr_fortuna" class="telegram-button">Telegram</a>
+                <a href="https://github.com/mrf0rtuna4" class="github-button">GitHub</a>
+                <a href="https://discord.com/users/702443229924032512" class="discord-button">Discord</a>
             </div>
-        </div> -->
-    </div>
+        </div>
+    </section>
 
     <footer>
-        &copy 2024, made with &#9825; by <a href="#">Mr_Fortuna </a>.<br />
+        &copy 2024, made with &#9825; by Mr_Fortuna.<br />
         Source code available on <a href=" https://github.com/mrf0rtuna4/mrf0rtuna4.github.io/">Github</a>.<br />
     </footer>
-
 </body>
 
 </html>
