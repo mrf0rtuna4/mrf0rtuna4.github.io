@@ -7,7 +7,7 @@ function calculateCountdown(targetDate) {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    return { days, hours, minutes, seconds };
+    return { days, hours, minutes, seconds, distance };
 }
 
 function createConfetti() {
@@ -15,7 +15,7 @@ function createConfetti() {
     confettiContainer.classList.add('confetti-container');
     document.body.appendChild(confettiContainer);
 
-    const confettiCount = 100;
+    const confettiCount = 34;
     for (let i = 0; i < confettiCount; i++) {
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');
@@ -24,10 +24,9 @@ function createConfetti() {
         confetti.style.backgroundColor = getRandomColor();
         confettiContainer.appendChild(confetti);
     }
-
-//    setTimeout(() => {
-//        document.body.removeChild(confettiContainer);
-//    }, 5000);
+    setTimeout(() => {
+        document.body.removeChild(confettiContainer);
+    }, 5000);
 }
 
 function getRandomColor() {
@@ -35,7 +34,20 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// createConfetti();
+
+function getNextTargetDate(month, day) {
+    const now = new Date();
+    const targetDateThisYear = new Date(now.getFullYear(), month - 1, day);
+    const time = new Date(now.getFullYear(), month - 1, day)
+
+    targetDateThisYear.setHours(23, 59, 59, 999);
+
+    if (now.getTime() > targetDateThisYear.getTime()) {
+        return new Date(now.getFullYear() + 1, month - 1, day).getTime();
+    }
+
+    return time.getTime();
+}
 
 
 function updateTimer(elementId, targetDate) {
@@ -45,12 +57,14 @@ function updateTimer(elementId, targetDate) {
         return;
     }
     const interval = setInterval(() => {
-        const { days, hours, minutes, seconds } = calculateCountdown(targetDate);
+        const { days, hours, minutes, seconds, distance } = calculateCountdown(targetDate);
 
-        if (days < 0) {
-            clearInterval(interval);
-            timerElement.innerHTML = "Событие наступило!";
+        if (distance < 0 && distance > -86400000) {
+            timerElement.innerHTML = "Событие наступило! Праздник весь день!";
             createConfetti();
+        } else if (distance <= -86400000) {
+            clearInterval(interval);
+            timerElement.innerHTML = "Событие завершилось!";
         } else {
             timerElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
         }
@@ -58,8 +72,8 @@ function updateTimer(elementId, targetDate) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    const newYearDate = new Date("Jan 1, 2025 00:00:00").getTime();
-    const birthdayDate = new Date("Mar 22, 2025 00:00:00").getTime();
+    const newYearDate = getNextTargetDate(1, 1);
+    const birthdayDate = getNextTargetDate(3, 22);
 
     updateTimer('newYearCountdown', newYearDate);
     updateTimer('birthdayCountdown', birthdayDate);
