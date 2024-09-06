@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updateTimer('newYearCountdown', newYearDate);
     updateTimer('birthdayCountdown', birthdayDate);
+    // updateTimer('helaneyCountdown', '🤨')
 });
 
 function triggerConfetti() {
