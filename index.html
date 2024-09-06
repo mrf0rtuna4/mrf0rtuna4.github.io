@@ -73,7 +73,7 @@
             </ul>
         </nav>
     </header>
-
+    <script src="assets/js/events.js"></script>
     <section id="about">
         <div class="container">
             <h1 class="animate__animated animate__fadeInUp">
@@ -83,6 +83,21 @@
                 <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
             </div>
             <p class="quote">"Пока остальные ждут одобрения толпы - мы двигаемся вперед."</p>
+            <p id="ageInfo">Возраст: <span id="age"></span> лет</p>
+        </div>
+    </section>
+    <div id="confetti-container"></div>
+    <section id="events">
+        <div class="container">
+            <h2>Таймер до событий</h2>
+            <div id="newYearTimer" class="timer">
+                <h3>До Нового Года:</h3>
+                <p id="newYearCountdown">Загрузка...</p>
+            </div>
+            <div id="birthdayTimer" class="timer">
+                <h3>До Дня Рождения:</h3>
+                <p id="birthdayCountdown">Загрузка...</p>
+            </div>
         </div>
     </section>
 
