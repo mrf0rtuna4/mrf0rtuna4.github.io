@@ -300,6 +300,15 @@ h3 {
   background-color: #333;
 }
 
+.reddit-button {
+  background-color: #ff4500;
+}
+
+.youtube-button {
+  background-color: #ff0000;
+}
+
+
 .social-buttons a:hover {
   background-color: #444;
   transform: scale(1.1);
