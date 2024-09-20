@@ -90,6 +90,7 @@
         </nav>
     </header>
     <script src="assets/js/events.js"></script>
+    <script src="assets/js/quotes.js"></script>
     <section id="about">
         <div class="container">
             <h1 class="animate__animated animate__fadeInUp">
@@ -98,10 +99,32 @@
             <div class="animate__animated animate__zoomInLeft">
                 <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
             </div>
-            <p class="quote">"Пока остальные ждут одобрения толпы - мы двигаемся вперед."</p>
-            <p id="ageInfo">Возраст: <span id="age"></span> лет</p>
+
+            <div class="info-island">
+                <p id="ageInfo"><span class="info-label">Возраст:</span> <span id="age"></span> лет</p>
+                <p><span class="info-label">Пол:</span> Мужской</p>
+                <p><span class="info-label">Национальность:</span> Белорус</p>
+                <p><span class="info-label">Языки:</span> Русский, Английский, Белоруский</p>
+                <p><span class="info-label">Образование:</span> Общее Среднее</p>
+            </div>
+            <div class="quotes-island">
+                <p class="quote" id="quote1"></p>
+                <p class="quote" id="quote2"></p>
+                <p class="quote" id="quote3"></p>
+                <p class="quote" id="quote4"></p>
+                <p class="quote" id="quote5"></p>
+                <button id="moreQuotes">Ещё...</button>
+            </div>
         </div>
     </section>
+
+    <div id="quotesPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Все цитаты</h2>
+            <div id="allQuotes"></div>
+        </div>
+    </div>
     <div id="confetti-container"></div>
     <section id="events">
         <div class="container">
@@ -114,10 +137,10 @@
                 <h3>До Дня Рождения:</h3>
                 <p id="birthdayCountdown">Загрузка...</p>
             </div>
-<!--       че смотришь?     <div id="helaneyTimer" class="timer">-->
-<!--           🤨    <h3>До свадьбы с хеланеем:</h3>-->
-<!--                <p id="helaneyCountdown">Загрузка...</p>-->
-<!--            </div>-->
+            <!--       че смотришь?     <div id="helaneyTimer" class="timer">-->
+            <!--           🤨    <h3>До свадьбы с хеланеем:</h3>-->
+            <!--                <p id="helaneyCountdown">Загрузка...</p>-->
+            <!--            </div>-->
         </div>
     </section>
 
