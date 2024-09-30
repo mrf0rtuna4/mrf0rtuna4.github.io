@@ -15,7 +15,7 @@ function createConfetti() {
     confettiContainer.classList.add('confetti-container');
     document.body.appendChild(confettiContainer);
 
-    const confettiCount = 34;
+    const confettiCount = 100;
     for (let i = 0; i < confettiCount; i++) {
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');
@@ -34,6 +34,90 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
+function createSnowflakes() {
+    const snowflakeContainer = document.createElement('div');
+    snowflakeContainer.classList.add('snowflake-container');
+    document.body.appendChild(snowflakeContainer);
+
+    const snowflakeCount = 50;
+    for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        snowflakeContainer.appendChild(snowflake);
+    }
+    setTimeout(() => {
+        document.body.removeChild(snowflakeContainer);
+    }, 5000);
+}
+
+function createHalloweenTheme() {
+    // const halloweenContainer = document.createElement('div');
+    // halloweenContainer.classList.add('halloween-container');
+    // document.body.appendChild(halloweenContainer);
+
+    // const pumpkinCount = 20;
+    // for (let i = 0; i < pumpkinCount; i++) {
+    //     const pumpkin = document.createElement('div');
+    //     pumpkin.classList.add('pumpkin');
+    //     pumpkin.style.left = `${Math.random() * 100}vw`;
+    //     halloweenContainer.appendChild(pumpkin);
+    // }
+
+    // const ghostCount = 20;
+    // for (let i = 0; i < ghostCount; i++) {
+    //     const ghost = document.createElement('div');
+    //     ghost.classList.add('ghost');
+    //     ghost.style.left = `${Math.random() * 100}vw`;
+    //     ghost.style.animationDuration = `${Math.random() * 3 + 2}s`;
+    //     halloweenContainer.appendChild(ghost);
+    // }
+
+    const audio = new Audio('assets/sounds/skeletons.mp3');
+    audio.play();
+
+    // setTimeout(() => {
+    //     document.body.removeChild(halloweenContainer);
+    // }, 5000);
+}
+
+function updateTimer(elementId, targetDate, eventType) {
+    const timerElement = document.getElementById(elementId);
+    if (!timerElement) {
+        console.error(`Элемент с id ${elementId} не найден.`);
+        return;
+    }
+    const interval = setInterval(() => {
+        const { days, hours, minutes, seconds, distance } = calculateCountdown(targetDate);
+
+        if (distance < 0 && distance > -86400000) {
+            timerElement.innerHTML = "Событие наступило! Праздник весь день!";
+            if (eventType === 'newYear') {
+                createSnowflakes();
+            } else if (eventType === 'halloween') {
+                createHalloweenTheme();
+            } else {
+                createConfetti();
+            }
+        } else if (distance <= -86400000) {
+            clearInterval(interval);
+            timerElement.innerHTML = "Событие завершилось!";
+        } else {
+            timerElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
+        }
+    }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const newYearDate = getNextTargetDate(1, 1);
+    const birthdayDate = getNextTargetDate(3, 22);
+    const halloweenDate = getNextTargetDate(9, 30);
+
+    updateTimer('newYearCountdown', newYearDate, 'newYear');
+    updateTimer('birthdayCountdown', birthdayDate, 'birthday');
+    updateTimer('halloweenCountdown', halloweenDate, 'halloween');
+});
 
 function getNextTargetDate(month, day) {
     const now = new Date();
@@ -47,41 +131,6 @@ function getNextTargetDate(month, day) {
     }
 
     return time.getTime();
-}
-
-
-function updateTimer(elementId, targetDate) {
-    const timerElement = document.getElementById(elementId);
-    if (!timerElement) {
-        console.error(`Элемент с id ${elementId} не найден.`);
-        return;
-    }
-    const interval = setInterval(() => {
-        const { days, hours, minutes, seconds, distance } = calculateCountdown(targetDate);
-
-        if (distance < 0 && distance > -86400000) {
-            timerElement.innerHTML = "Событие наступило! Праздник весь день!";
-            createConfetti();
-        } else if (distance <= -86400000) {
-            clearInterval(interval);
-            timerElement.innerHTML = "Событие завершилось!";
-        } else {
-            timerElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
-        }
-    }, 1000);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const newYearDate = getNextTargetDate(1, 1);
-    const birthdayDate = getNextTargetDate(3, 22);
-
-    updateTimer('newYearCountdown', newYearDate);
-    updateTimer('birthdayCountdown', birthdayDate);
-    // updateTimer('helaneyCountdown', '🤨')
-});
-
-function triggerConfetti() {
-    document.body.classList.add('confetti-animation');
 }
 
 function updateAge(birthdate) {
