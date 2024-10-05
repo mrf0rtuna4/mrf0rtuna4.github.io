@@ -74,8 +74,8 @@ function createHalloweenTheme() {
     //     halloweenContainer.appendChild(ghost);
     // }
 
-    const audio = new Audio('assets/sounds/skeletons.mp3');
-    audio.play();
+    // const audio = new Audio('assets/sounds/skeletons.mp3');
+    // audio.play();
 
     // setTimeout(() => {
     //     document.body.removeChild(halloweenContainer);
