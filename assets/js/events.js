@@ -1,3 +1,5 @@
+let musicPlayed = false;
+
 function calculateCountdown(targetDate) {
     const now = new Date().getTime();
     const distance = targetDate - now;
@@ -53,33 +55,49 @@ function createSnowflakes() {
 }
 
 function createHalloweenTheme() {
-    // const halloweenContainer = document.createElement('div');
-    // halloweenContainer.classList.add('halloween-container');
-    // document.body.appendChild(halloweenContainer);
+    const halloweenContainer = document.createElement('div');
+    halloweenContainer.classList.add('halloween-container');
+    document.body.appendChild(halloweenContainer);
 
-    // const pumpkinCount = 20;
-    // for (let i = 0; i < pumpkinCount; i++) {
-    //     const pumpkin = document.createElement('div');
-    //     pumpkin.classList.add('pumpkin');
-    //     pumpkin.style.left = `${Math.random() * 100}vw`;
-    //     halloweenContainer.appendChild(pumpkin);
-    // }
+    const pumpkinCount = 3;
+    for (let i = 0; i < pumpkinCount; i++) {
+        const pumpkin = document.createElement('i');
+        pumpkin.classList.add('fa-solid', 'fa-spider', 'fa-shake');
+        pumpkin.style.left = `${Math.random() * 100}vw`;
+        halloweenContainer.appendChild(pumpkin);
+    }
 
-    // const ghostCount = 20;
-    // for (let i = 0; i < ghostCount; i++) {
-    //     const ghost = document.createElement('div');
-    //     ghost.classList.add('ghost');
-    //     ghost.style.left = `${Math.random() * 100}vw`;
-    //     ghost.style.animationDuration = `${Math.random() * 3 + 2}s`;
-    //     halloweenContainer.appendChild(ghost);
-    // }
+    const ghostCount = 2;
+    for (let i = 0; i < ghostCount; i++) {
+        const ghost = document.createElement('i');
+        ghost.classList.add('fas', 'fa-ghost', 'animate__animated', 'animate__fadeInDown');
+        ghost.style.left = `${Math.random() * 100}vw`;
+        ghost.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        halloweenContainer.appendChild(ghost);
+    }
 
     const audio = new Audio('assets/sounds/skeletons.mp3');
-    audio.play();
+    audio.loop = false;
 
-    // setTimeout(() => {
-    //     document.body.removeChild(halloweenContainer);
-    // }, 5000);
+    const playMusicOnce = (eventTriggered) => {
+        eventTriggered = false
+        if (!eventTriggered) {
+            if (!musicPlayed) {
+                audio.play().catch(err => console.error('Ошибка при воспроизведении:', err));
+                document.removeEventListener('click', playMusicOnce);
+                eventTriggered = true;
+                musicPlayed = true;
+            }
+
+        }
+    };
+
+
+    document.addEventListener('click', playMusicOnce);
+
+    setTimeout(() => {
+        document.body.removeChild(halloweenContainer);
+    }, 5000);
 }
 
 function updateTimer(elementId, targetDate, eventType) {
@@ -88,6 +106,7 @@ function updateTimer(elementId, targetDate, eventType) {
         console.error(`Элемент с id ${elementId} не найден.`);
         return;
     }
+
     const interval = setInterval(() => {
         const { days, hours, minutes, seconds, distance } = calculateCountdown(targetDate);
 
@@ -109,10 +128,10 @@ function updateTimer(elementId, targetDate, eventType) {
     }, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const newYearDate = getNextTargetDate(1, 1);
     const birthdayDate = getNextTargetDate(3, 22);
-    const halloweenDate = getNextTargetDate(9, 30);
+    const halloweenDate = getNextTargetDate(10, 31);
 
     updateTimer('newYearCountdown', newYearDate, 'newYear');
     updateTimer('birthdayCountdown', birthdayDate, 'birthday');
@@ -153,6 +172,6 @@ function updateAge(birthdate) {
     ageElement.textContent = age;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     updateAge("2007-03-22");
 });
