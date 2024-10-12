@@ -74,7 +74,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Permissions Policy -->
-    <meta http-equiv="content-security-policy" content="interest-cohort=()" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+
+    <!-- JS Load -->
+    <script src="assets/js/events.js"></script>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/misc.js"></script>
 </head>
 
 
@@ -89,8 +94,7 @@
             </ul>
         </nav>
     </header>
-    <script src="assets/js/events.js"></script>
-    <script src="assets/js/quotes.js"></script>
+
     <section id="about">
         <div class="container">
             <h1 class="animate__animated animate__fadeInUp">
@@ -122,7 +126,7 @@
         <div class="popup-content">
             <span class="close">&times;</span>
             <h2>Все цитаты</h2>
-            <div id="allQuotes"></div>
+            <div id="allQuotes"><i class="fa-solid fa-spinner fa-spin-pulse"></i></div>
         </div>
     </div>
     <div id="confetti-container"></div>
@@ -133,15 +137,15 @@
             <h2>Таймер до событий</h2>
             <div id="newYearTimer" class="timer">
                 <h3>До Нового Года:</h3>
-                <p id="newYearCountdown">Загрузка...</p>
+                <p id="newYearCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
             <div id="birthdayTimer" class="timer">
                 <h3>До Дня Рождения:</h3>
-                <p id="birthdayCountdown">Загрузка...</p>
+                <p id="birthdayCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
             <div id="halloween" class="timer">
                 <h3>До Хеллоуина:</h3>
-                <p id="halloweenCountdown">Загрузка...</p>
+                <p id="halloweenCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
             <!--       че смотришь?     <div id="helaneyTimer" class="timer">-->
             <!--           🤨    <h3>До свадьбы с хеланеем:</h3>-->
@@ -231,7 +235,7 @@
         <div class="container">
             <h2>Проекты</h2>
             <div class="projects-wrapper">
-                <div class="card">
+                <div class="card animate__animated">
                     <img src="assets/images/heypers_logo.jpg" alt="Heypers">
                     <h3>Heypers Project</h3>
                     <div class="social-buttons">
@@ -243,7 +247,7 @@
                         <a href="https://www.youtube.com/@heypers_project" class="youtube-button"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card animate__animated">
                     <img src="assets/images/kaya.png" alt="KayaDevs">
                     <h3>KayaDevs</h3>
                     <div class="social-buttons">
