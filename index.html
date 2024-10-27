@@ -20,10 +20,10 @@
 <head>
     <meta charset="UTF-8" />
     <!-- Title -->
-    <title>Mr_Fortuna - Личная информация, проекты и навыки</title>
+    <title data-i18n="title">Mr_Fortuna - Личная информация, проекты и навыки</title>
 
     <!-- Meta Description -->
-    <meta name="description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах.">
+    <meta name="description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах." data-i18n="description">
 
     <!-- Meta Image -->
     <meta name="image" content="assets/images/avatar.png">
@@ -80,6 +80,7 @@
     <script src="assets/js/events.js"></script>
     <script src="assets/js/quotes.js"></script>
     <script src="assets/js/misc.js"></script>
+    <script src="assets/js/locale.js"></script>
 </head>
 
 
@@ -87,12 +88,16 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#about">Обо мне</a></li>
-                <li><a href="#skills">Навыки</a></li>
-                <li><a href="#projects">Проекты</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#about" data-i18n="about">Обо мне</a></li>
+                <li><a href="#skills" data-i18n="skills">Навыки</a></li>
+                <li><a href="#projects" data-i18n="projects">Проекты</a></li>
+                <li><a href="#contact" data-i18n="contact">Контакты</a></li>
             </ul>
         </nav>
+        <!-- <div class="language-switch">
+            <button data-lang="en">English</button>
+            <button data-lang="ru">Русский</button>
+        </div> -->
     </header>
 
     <section id="about">
@@ -105,11 +110,11 @@
             </div>
 
             <div class="info-island">
-                <p id="ageInfo"><span class="info-label"><i class="fa-solid fa-address-book"></i> Возраст:</span> <span id="age"></span> лет</p>
-                <p><span class="info-label"><i class="fa-solid fa-person"></i> Пол:</span> Мужской</p>
-                <p><span class="info-label"><i class="fa-solid fa-user-secret"></i> Национальность:</span> Белорус</p>
-                <p><span class="info-label"><i class="fa-solid fa-language"></i> Языки:</span> Русский, Английский, Белоруский</p>
-                <p><span class="info-label"><i class="fa-solid fa-compact-disc"></i> Образование:</span> Общее Среднее</p>
+                <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label" data-i18n="age"> Возраст:</span> <span id="age"></span></p>
+                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span> Мужской</p>
+                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality"> Национальность:</span> Белорус</p>
+                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages"> Языки:</span> Русский, English, Белоруск</p>
+                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label"> Образование:</span> Общее Среднее</p>
             </div>
             <div class="quotes-island">
                 <p class="quote" id="quote1"></p>

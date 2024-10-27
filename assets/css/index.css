@@ -98,6 +98,22 @@ h2 {
   margin-bottom: 20px;
 }
 
+.language-switch {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.language-switch button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.language-switch button:hover {
+  background-color: #e0e0e0;
+}
+
 .avatar {
   width: 150px;
   height: 150px;
