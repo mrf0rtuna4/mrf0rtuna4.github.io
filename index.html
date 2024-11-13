@@ -39,7 +39,7 @@
     <meta property="og:site_name" content="Информация про Mr_Fortuna" />
     <meta property="og:title" content="Mr_Fortuna - Личная информация и проекты" />
     <meta property="og:description"
-        content="Ознакомьтесь с проектами и навыками Mr_Fortuna. Присоединяйтесь к сообществам на GitHub и Discord." />
+        content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mrf0rtuna4.github.io/" />
     <meta property="og:image" content="assets/images/avatar.png" />
@@ -93,11 +93,14 @@
                 <li><a href="#projects" data-i18n="projects">Проекты</a></li>
                 <li><a href="#contact" data-i18n="contact">Контакты</a></li>
             </ul>
+            <ul>
+                <div class="language-switch">
+                    <button data-lang="en">English</button>
+                    <button data-lang="ru">Русский</button>
+                </div>
+            </ul>
         </nav>
-        <!-- <div class="language-switch">
-            <button data-lang="en">English</button>
-            <button data-lang="ru">Русский</button>
-        </div> -->
+
     </header>
 
     <section id="about">
@@ -111,18 +114,33 @@
 
             <div class="info-island">
                 <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label" data-i18n="age"> Возраст:</span> <span id="age"></span></p>
-                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span> Мужской</p>
-                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality"> Национальность:</span> Белорус</p>
-                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages"> Языки:</span> Русский, English, Белоруский</p>
-                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label"> Образование:</span> Общее Среднее</p>
+                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span> <p data-i18n="male">Мужской</p></p>
+                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality"> Национальность:</span> <p data-i18n="nationalityValue">Белорус</p></p>
+                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages"> Языки:</span> <p data-i18n="languagesList">Русский, English, Белоруский</p></p>
+                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label" data-i18n="education"> Образование:</span> <p data-i18n="educationValue">Общее Среднее</p></p>
             </div>
             <div class="quotes-island">
-                <p class="quote" id="quote1"></p>
+                <!-- <p class="quote" id="quote1"></p>
                 <p class="quote" id="quote2"></p>
                 <p class="quote" id="quote3"></p>
                 <p class="quote" id="quote4"></p>
-                <p class="quote" id="quote5"></p>
-                <button id="moreQuotes">Ещё...</button>
+                <p class="quote" id="quote5"></p> -->
+                <button id="moreQuotes">Цитаты...</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-i18n="contactsSection">Социалки</h2>
+            <div class="social-buttons">
+                <a href="https://t.me/mr_fortuna" class="telegram-button"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://github.com/mrf0rtuna4" class="github-button"><i class="fa-brands fa-github"></i></a>
+                <a href="https://discord.com/users/702443229924032512" class="discord-button"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.reddit.com/user/mr_f0rtuna4/" class="reddit-button"><i class="fa-brands fa-reddit"></i></a>
+                <a href="https://www.youtube.com/@mrf0rtuna4" class="youtube-button"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </section>
@@ -137,25 +155,23 @@
     <div id="confetti-container"></div>
     <div id="halloween-container"></div>
     
+    <div class="divider"></div>
+
     <section id="events">
         <div class="container">
-            <h2>Таймер до событий</h2>
+            <h2 data-i18n="timerTitle">Таймер до событий</h2>
             <div id="newYearTimer" class="timer">
-                <h3>До Нового Года:</h3>
+                <h3 data-i18n="newYearCountdown">До Нового Года:</h3>
                 <p id="newYearCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
             <div id="birthdayTimer" class="timer">
-                <h3>До Дня Рождения:</h3>
+                <h3 data-i18n="birthdayCountdown">До Дня Рождения:</h3>
                 <p id="birthdayCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
             <div id="halloween" class="timer">
-                <h3>До Хеллоуина:</h3>
+                <h3 data-i18n="halloweenCountdown">До Хеллоуина:</h3>
                 <p id="halloweenCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
             </div>
-            <!--       че смотришь?     <div id="helaneyTimer" class="timer">-->
-            <!--           🤨    <h3>До свадьбы с хеланеем:</h3>-->
-            <!--                <p id="helaneyCountdown">Загрузка...</p>-->
-            <!--            </div>-->
         </div>
     </section>
 
@@ -164,69 +180,60 @@
     <section id="skills">
         <div class="animate__animated animate__fadeInUp">
             <div class="container">
-                <h2>Навыки</h2>
+                <h2 data-i18n="skillsSection">Навыки</h2>
                 <div class="skills-grid">
                     <div class="animate__animated animate__zoomInLeft">
                         <div class="skill">
                             <i class="fab fa-html5"></i>
                             <h3>HTML/CSS</h3>
-                            <p>Разработка веб-страниц с современными стандартами.</p>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomInDown animate__delay-1s">
                         <div class="skill">
                             <i class="fab fa-js"></i>
                             <h3>JavaScript</h3>
-                            <p>Создание интерактивных элементов и стандартных интерфейсов. Web контроль.</p>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomInDown animate__delay-1s">
                         <div class="skill">
                             <i class="fab fa-python"></i>
                             <h3>Python</h3>
-                            <p>Разработка бэкэнда и автоматизация задач.</p>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomInDown animate__delay-1s">
                         <div class="skill">
                             <i class="fa-solid fa-code"></i>
                             <h3>API</h3>
-                            <p>Интеграция и работа с внешними API.</p>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomIn animate__delay-1s">
                         <div class="skill">
                             <i class="fab fa-discord"></i>
-                            <h3>Discord боты</h3>
-                            <p>Создание ботов для популярных платформ.</p>
+                            <h3>Discord bots</h3>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomIn animate__delay-1s">
                         <div class="skill">
                             <i class="fab fa-linux"></i>
-                            <h3>Linux сервера</h3>
-                            <p>Настройка и управление серверами на базе Linux.</p>
+                            <h3>Linux servers</h3>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomIn animate__delay-1s">
                         <div class="skill">
                             <i class="fa-solid fa-layer-group"></i>
-                            <h3>Моделирование (Blender/C4D)</h3>
-                            <p>Создание и проработка сцен, low-poly модели.</p>
+                            <h3>3D (Blender/C4D)</h3>
                         </div>
                     </div>
                     <div class="animate__animated animate__zoomInLeft animate__delay-1s">
                         <div class="skill">
                             <i class="fab fa-whmcs"></i>
-                            <h3>Фреймворки</h3>
-                            <p>Использование и разработка фреймворков для быстрого создания проектов</p>
+                            <h3>Frameworks</h3>
                         </div>
                     </div>
                     <div class="animate__animated animate__fadeInBottomLeft animate__delay-1s">
                         <div class="skill">
                             <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <h3>Дизайн</h3>
-                            <p>Разработка визуальных элементов и дизайна интерфейсов</p>
+                            <h3>Design</h3>
                         </div>
                     </div>
                 </div>
@@ -238,7 +245,7 @@
 
     <section id="projects">
         <div class="container">
-            <h2>Проекты</h2>
+            <h2 data-i18n="projectsSection">Проекты</h2>
             <div class="projects-wrapper">
                 <div class="card animate__animated">
                     <img src="assets/images/heypers_logo.jpg" alt="Heypers">
@@ -266,19 +273,6 @@
     </section>
 
     <div class="divider"></div>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Социалки</h2>
-            <div class="social-buttons">
-                <a href="https://t.me/mr_fortuna" class="telegram-button"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://github.com/mrf0rtuna4" class="github-button"><i class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/users/702443229924032512" class="discord-button"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://www.reddit.com/user/mr_f0rtuna4/" class="reddit-button"><i class="fa-brands fa-reddit"></i></a>
-                <a href="https://www.youtube.com/@mrf0rtuna4" class="youtube-button"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </section>
 
     <footer>
         &copy 2024, made with &#9825; by Mr_Fortuna.<br />

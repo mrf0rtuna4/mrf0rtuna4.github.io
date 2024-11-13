@@ -36,6 +36,17 @@ body {
   animation: gradientAnimation 10s ease infinite;
 }
 
+body.light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.dark-mode {
+  background-color: #181818;
+  color: #f4f6f8;
+}
+
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 20%;
