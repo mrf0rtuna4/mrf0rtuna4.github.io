@@ -23,7 +23,8 @@
     <title data-i18n="title">Mr_Fortuna - Личная информация, проекты и навыки</title>
 
     <!-- Meta Description -->
-    <meta name="description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах." data-i18n="description">
+    <meta name="description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах."
+        data-i18n="description">
 
     <!-- Meta Image -->
     <meta name="image" content="assets/images/avatar.png">
@@ -38,8 +39,7 @@
     <!-- Social Media Sharing (Open Graph) -->
     <meta property="og:site_name" content="Информация про Mr_Fortuna" />
     <meta property="og:title" content="Mr_Fortuna - Личная информация и проекты" />
-    <meta property="og:description"
-        content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах." />
+    <meta property="og:description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mrf0rtuna4.github.io/" />
     <meta property="og:image" content="assets/images/avatar.png" />
@@ -88,44 +88,59 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#about" data-i18n="about">Обо мне</a></li>
-                <li><a href="#skills" data-i18n="skills">Навыки</a></li>
-                <li><a href="#projects" data-i18n="projects">Проекты</a></li>
-                <li><a href="#contact" data-i18n="contact">Контакты</a></li>
-            </ul>
-            <ul>
-                <div class="language-switch">
-                    <button data-lang="en">English</button>
-                    <button data-lang="ru">Русский</button>
-                </div>
+                <!-- <li class="avatar-container">
+                    <img src="assets/images/avatar.png" alt="Avatar" class="avatar">
+                    <span class="username">Mr_Fortuna</span>
+                </li> -->
+                <li class="language-switch">
+                    <button class="lang-btn">🌐</button>
+                    <ul class="language-dropdown">
+                        <li data-lang="en">English</li>
+                        <li data-lang="ru">Русский</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="theme-switch">
+                        <span></span>
+                    </button>
+                </li>
             </ul>
         </nav>
-
     </header>
+
+
 
     <section id="about">
         <div class="container">
             <h1 class="animate__animated animate__fadeInUp">
                 Mr_Fortuna
             </h1>
+            <!-- <div class="avatar-container">
+                <img src="assets/images/avatar.png" alt="Avatar" class="avatar">
+                <span class="username">Mr_Fortuna</span>
+            </div> -->
             <div class="animate__animated animate__zoomInLeft">
                 <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
             </div>
 
             <div class="info-island">
-                <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label" data-i18n="age"> Возраст:</span> <span id="age"></span></p>
-                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span> <p data-i18n="male">Мужской</p></p>
-                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality"> Национальность:</span> <p data-i18n="nationalityValue">Белорус</p></p>
-                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages"> Языки:</span> <p data-i18n="languagesList">Русский, English, Белоруский</p></p>
-                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label" data-i18n="education"> Образование:</span> <p data-i18n="educationValue">Общее Среднее</p></p>
-            </div>
-            <div class="quotes-island">
-                <!-- <p class="quote" id="quote1"></p>
-                <p class="quote" id="quote2"></p>
-                <p class="quote" id="quote3"></p>
-                <p class="quote" id="quote4"></p>
-                <p class="quote" id="quote5"></p> -->
-                <button id="moreQuotes">Цитаты...</button>
+                <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label"
+                        data-i18n="age"> Возраст:</span> <span id="age"></span></p>
+                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span>
+                <p data-i18n="male">Мужской</p>
+                </p>
+                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality">
+                        Национальность:</span>
+                <p data-i18n="nationalityValue">Белорус</p>
+                </p>
+                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages">
+                        Языки:</span>
+                <p data-i18n="languagesList">Русский, English, Белоруский</p>
+                </p>
+                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label" data-i18n="education">
+                        Образование:</span>
+                <p data-i18n="educationValue">Общее Среднее</p>
+                </p>
             </div>
         </div>
     </section>
@@ -138,9 +153,12 @@
             <div class="social-buttons">
                 <a href="https://t.me/mr_fortuna" class="telegram-button"><i class="fa-brands fa-telegram"></i></a>
                 <a href="https://github.com/mrf0rtuna4" class="github-button"><i class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/users/702443229924032512" class="discord-button"><i class="fa-brands fa-discord"></i></a>
-                <a href="https://www.reddit.com/user/mr_f0rtuna4/" class="reddit-button"><i class="fa-brands fa-reddit"></i></a>
-                <a href="https://www.youtube.com/@mrf0rtuna4" class="youtube-button"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://discord.com/users/702443229924032512" class="discord-button"><i
+                        class="fa-brands fa-discord"></i></a>
+                <a href="https://www.reddit.com/user/mr_f0rtuna4/" class="reddit-button"><i
+                        class="fa-brands fa-reddit"></i></a>
+                <a href="https://www.youtube.com/@mrf0rtuna4" class="youtube-button"><i
+                        class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
     </section>
@@ -154,7 +172,7 @@
     </div>
     <div id="confetti-container"></div>
     <div id="halloween-container"></div>
-    
+
     <div class="divider"></div>
 
     <section id="events">
@@ -252,20 +270,28 @@
                     <h3>Heypers Project</h3>
                     <div class="social-buttons">
                         <a href="https://heypers.github.io/" class="web-button"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://t.me/heypers_project" class="telegram-button"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="https://discord.gg/N8MYbANVJ6" class="discord-button"><i class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/heypers" class="github-button"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.reddit.com/r/heypers/" class="reddit-button"><i class="fa-brands fa-reddit"></i></a>
-                        <a href="https://www.youtube.com/@heypers_project" class="youtube-button"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://t.me/heypers_project" class="telegram-button"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="https://discord.gg/N8MYbANVJ6" class="discord-button"><i
+                                class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/heypers" class="github-button"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.reddit.com/r/heypers/" class="reddit-button"><i
+                                class="fa-brands fa-reddit"></i></a>
+                        <a href="https://www.youtube.com/@heypers_project" class="youtube-button"><i
+                                class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="card animate__animated">
                     <img src="assets/images/kaya.png" alt="KayaDevs">
                     <h3>KayaDevs</h3>
                     <div class="social-buttons">
-                        <a href="https://kaya.pythonanywhere.com/" class="web-button"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://discord.gg/ggg7dmRsvn" class="discord-button"><i class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/kaya-devs" class="github-button"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://kaya.pythonanywhere.com/" class="web-button"><i
+                                class="fa-solid fa-globe"></i></a>
+                        <a href="https://discord.gg/ggg7dmRsvn" class="discord-button"><i
+                                class="fa-brands fa-discord"></i></a>
+                        <a href="https://github.com/kaya-devs" class="github-button"><i
+                                class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -275,6 +301,15 @@
     <div class="divider"></div>
 
     <footer>
+        <nav>
+            <ul>
+                <li><a href="#about" data-i18n="about">Обо мне</a></li>
+                <li><a href="#skills" data-i18n="skills">Навыки</a></li>
+                <li><a href="#projects" data-i18n="projects">Проекты</a></li>
+                <li><a href="#contact" data-i18n="contact">Контакты</a></li>
+            </ul>
+        </nav>
+
         &copy 2024, made with &#9825; by Mr_Fortuna.<br />
         Source code available on <a href=" https://github.com/mrf0rtuna4/mrf0rtuna4.github.io/">Github</a>.<br />
     </footer>

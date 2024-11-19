@@ -69,14 +69,62 @@ body.dark-mode {
   }
 }
 
-
 header {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+header .avatar-container {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+  transform: scale(0.7);
+  opacity: 0;
+  pointer-events: none;
+}
+
+header.scrolled .avatar-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#about .avatar-container {
+  position: static;
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+/* header {
+  transition: all 0.5s ease;
+}
+
+header:not(.scrolled) .avatar {
+  position: static;
+  width: 150px;
+  height: 150px;
+}
+
+header:not(.scrolled) h1 {
+  position: static;
+  font-size: 2em;
+} */
 
 nav ul {
   list-style: none;
@@ -109,20 +157,78 @@ h2 {
   margin-bottom: 20px;
 }
 
-.language-switch {
-  margin: 10px;
+.theme-switch {
+  position: fixed;
+  right: 20px;
+  background-color: #333;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
 }
 
-.language-switch button {
-  padding: 5px 10px;
+.theme-switch span {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+body.light-mode .theme-switch {
+  background-color: #ddd;
+}
+
+body.light-mode .theme-switch span {
+  transform: translateX(25px);
+}
+.language-switch {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-btn {
+  background: none;
   border: none;
+  font-size: 1.5rem;
+  color: #fff;
   cursor: pointer;
 }
 
-.language-switch button:hover {
-  background-color: #e0e0e0;
+.language-dropdown {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #333;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.language-switch:hover .language-dropdown {
+  display: block;
+}
+
+.language-dropdown li {
+  padding: 5px 20px;
+  text-align: left;
+  color: #fff;
+  cursor: pointer;
+}
+
+.language-dropdown li:hover {
+  background-color: #7ccd25;
 }
 
 .avatar {
