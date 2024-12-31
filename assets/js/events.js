@@ -198,12 +198,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const newYearDate = getNextTargetDate(1, 1);
     const birthdayDate = getNextTargetDate(3, 22);
     const halloweenDate = getNextTargetDate(10, 31);
-    const testEventDate = new Date().getTime() + 1 * 60 * 1000;
+    // const testEventDate = new Date().getTime() + 1 * 60 * 1000;
 
     updateTimer('newYearCountdown', newYearDate, 'newYear');
     updateTimer('birthdayCountdown', birthdayDate, 'birthday');
     updateTimer('halloweenCountdown', halloweenDate, 'halloween');
-    updateTimer('testEventCountdown', testEventDate, 'newYear');
+    // updateTimer('testEventCountdown', testEventDate, 'newYear');
 });
 
 function getNextTargetDate(month, day) {
