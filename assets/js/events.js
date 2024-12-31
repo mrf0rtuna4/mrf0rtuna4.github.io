@@ -1,4 +1,54 @@
 let musicPlayed = false;
+let currentMusic = new Audio();
+
+
+function toggleMusicPlayer() {
+        const player = document.getElementById('musicPlayer');
+    const trackInfo = document.getElementById('currentTrack');
+    const toggleButton = document.getElementById('toggleMusic');
+    const musicPlayerElement = document.getElementById('musicPlayer');
+    if (!musicPlayerElement) {
+        console.error("Элемент с id 'musicPlayer' не найден.");
+        return;
+    }
+
+    if (musicPlayerElement.textContent === "Play") {
+        musicPlayerElement.textContent = "Pause";
+        if (track) {
+            currentMusic.src = `assets/sounds/${track}`;
+            currentMusic.loop = true;
+    
+            if (autoplay) {
+                currentMusic.play();
+                isMusicPlaying = true;
+                toggleButton.textContent = '🔈';
+            }
+    
+            toggleButton.onclick = () => {
+                if (isMusicPlaying) {
+                    currentMusic.pause();
+                    toggleButton.textContent = '🔊';
+                } else {
+                    currentMusic.play();
+                    toggleButton.textContent = '🔈';
+                }
+                isMusicPlaying = !isMusicPlaying;
+            };
+        } else {
+            currentMusic.pause();
+            currentMusic.src = '';
+            isMusicPlaying = false;
+        }
+    } else {
+        musicPlayerElement.textContent = "Play";
+        currentMusic.pause();
+        currentMusic.src = '';
+        isMusicPlaying = false;
+    }
+}
+
+toggleMusicPlayer('skeletons.mp3', true);
+
 
 function calculateCountdown(targetDate) {
     const now = new Date().getTime();
@@ -125,6 +175,21 @@ function updateTimer(elementId, targetDate, eventType) {
         } else {
             timerElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
         }
+        
+        if (distance <= 60000) {
+            timerElement.classList.add('critical');
+            const milliseconds = Math.floor((targetDate - new Date().getTime()) % 1000);
+            timerElement.innerHTML = `${seconds}s ${milliseconds}ms`;
+        
+            if (distance <= 1000) {
+                timerElement.classList.add('fullscreen');
+                setTimeout(() => timerElement.classList.remove('fullscreen'), 5000);
+            }
+        } else {
+            timerElement.classList.remove('critical');
+        }
+        
+
     }, 1000);
 }
 

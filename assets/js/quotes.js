@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const randomQuotes = getRandomQuotes(quotes, 5);
-    // randomQuotes.forEach((quote, index) => {
-    //     document.getElementById(`quote${index + 1}`).textContent = quote;
-    // });
+    randomQuotes.forEach((quote, index) => {
+        document.getElementById(`quote${index + 1}`).textContent = quote;
+    });
 
     document.getElementById('moreQuotes').addEventListener('click', function () {
         const allQuotesDiv = document.getElementById('allQuotes');
