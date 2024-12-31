@@ -3,7 +3,7 @@ let currentMusic = new Audio();
 
 
 function toggleMusicPlayer() {
-        const player = document.getElementById('musicPlayer');
+    const player = document.getElementById('musicPlayer');
     const trackInfo = document.getElementById('currentTrack');
     const toggleButton = document.getElementById('toggleMusic');
     const musicPlayerElement = document.getElementById('musicPlayer');
@@ -17,13 +17,13 @@ function toggleMusicPlayer() {
         if (track) {
             currentMusic.src = `assets/sounds/${track}`;
             currentMusic.loop = true;
-    
+
             if (autoplay) {
                 currentMusic.play();
                 isMusicPlaying = true;
                 toggleButton.textContent = '🔈';
             }
-    
+
             toggleButton.onclick = () => {
                 if (isMusicPlaying) {
                     currentMusic.pause();
@@ -46,9 +46,6 @@ function toggleMusicPlayer() {
         isMusicPlaying = false;
     }
 }
-
-toggleMusicPlayer('skeletons.mp3', true);
-
 
 function calculateCountdown(targetDate) {
     const now = new Date().getTime();
@@ -86,22 +83,26 @@ function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function createSnowflakes() {
-    const snowflakeContainer = document.createElement('div');
-    snowflakeContainer.classList.add('snowflake-container');
-    document.body.appendChild(snowflakeContainer);
+function createSnowstorm() {
+    const snowstormContainer = document.createElement('div');
+    snowstormContainer.classList.add('snowstorm-container');
+    document.body.appendChild(snowstormContainer);
 
-    const snowflakeCount = 50;
+    const snowflakeCount = 20;
     for (let i = 0; i < snowflakeCount; i++) {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        snowflakeContainer.appendChild(snowflake);
+        snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`;
+        snowflake.style.animationDelay = `${Math.random() * 2}s`;
+        snowflake.style.opacity = `${Math.random() * 0.7 + 0.3}`;
+        snowflake.style.transform = `scale(${Math.random() * 0.5 + 0.5})`;
+        snowstormContainer.appendChild(snowflake);
     }
+
     setTimeout(() => {
-        document.body.removeChild(snowflakeContainer);
-    }, 5000);
+        document.body.removeChild(snowstormContainer);
+    }, 100000);
 }
 
 function createHalloweenTheme() {
@@ -162,8 +163,10 @@ function updateTimer(elementId, targetDate, eventType) {
 
         if (distance < 0 && distance > -86400000) {
             timerElement.innerHTML = "Событие наступило! Праздник весь день!";
+            clearInterval(interval);
+
             if (eventType === 'newYear') {
-                createSnowflakes();
+                createSnowstorm();
             } else if (eventType === 'halloween') {
                 createHalloweenTheme();
             } else {
@@ -175,12 +178,12 @@ function updateTimer(elementId, targetDate, eventType) {
         } else {
             timerElement.innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
         }
-        
-        if (distance <= 60000) {
+
+        if (distance <= 60000 && distance >= 0) {
             timerElement.classList.add('critical');
             const milliseconds = Math.floor((targetDate - new Date().getTime()) % 1000);
             timerElement.innerHTML = `${seconds}s ${milliseconds}ms`;
-        
+
             if (distance <= 1000) {
                 timerElement.classList.add('fullscreen');
                 setTimeout(() => timerElement.classList.remove('fullscreen'), 5000);
@@ -188,8 +191,6 @@ function updateTimer(elementId, targetDate, eventType) {
         } else {
             timerElement.classList.remove('critical');
         }
-        
-
     }, 1000);
 }
 
@@ -197,10 +198,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const newYearDate = getNextTargetDate(1, 1);
     const birthdayDate = getNextTargetDate(3, 22);
     const halloweenDate = getNextTargetDate(10, 31);
+    const testEventDate = new Date().getTime() + 1 * 60 * 1000;
 
     updateTimer('newYearCountdown', newYearDate, 'newYear');
     updateTimer('birthdayCountdown', birthdayDate, 'birthday');
     updateTimer('halloweenCountdown', halloweenDate, 'halloween');
+    updateTimer('testEventCountdown', testEventDate, 'newYear');
 });
 
 function getNextTargetDate(month, day) {
