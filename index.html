@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2024 mr_fortuna
+  ~ Copyright (c) 2024-2025 mr_fortuna
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -69,18 +69,20 @@
     <link rel="canonical" href="https://mrf0rtuna4.github.io/" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/index.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/skills.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/service.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 
     <!-- Permissions Policy -->
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
 
     <!-- JS Load -->
-    <script src="assets/js/events.js"></script>
-    <script src="assets/js/quotes.js"></script>
-    <script src="assets/js/misc.js"></script>
-    <script src="assets/js/locale.js"></script>
+    <script defer src="assets/js/themes.js"></script>
+    <script defer src="assets/js/toggle.js"></script>
 </head>
 
 
@@ -88,232 +90,82 @@
     <header>
         <nav>
             <ul>
-                <li class="language-switch">
-                    <button class="lang-btn">🌐</button>
-                    <ul class="language-dropdown">
-                        <li data-lang="en">English</li>
-                        <li data-lang="ru">Русский</li>
-                    </ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-button">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <h1>Обо мне</h1>
+            <p>Возраст: 17</p>
+            <p>Пол: Мужской</p>
+            <p>Интересы: Гейминг, ресерчинг.</p>
+            <p>Семейное положение: Нет.</p>
+            <p>Место работы: Фриланс.</p>
+            <p>Образование: Общее, Среднее. </p>
+        </section>
+        <section id="skills" class="section">
+            <h1>Навыки</h1>
+            <div class="skill">
+                <button class="skill-toggle"><i class="fas fa-code"></i> Программирование</button>
+                <div class="skill-content">
+                    <div class="tech"><i class="fab fa-python"></i> <span>Python</span></div>
+                    <div class="tech"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                    <div class="tech"><i class="fas fa-code"></i> <span>C#</span></div>
+                </div>
+            </div>
+            
+            <div class="skill">
+                <button class="skill-toggle"><i class="fas fa-bug"></i> Тестирование</button>
+                <div class="skill-content">
+                    <div class="tech"><i class="fas fa-vial"></i> <span>Selenium</span></div>
+                    <div class="tech"><i class="fas fa-check-circle"></i> <span>Jest</span></div>
+                </div>
+            </div>
+            
+            <div class="skill">
+                <button class="skill-toggle"><i class="fas fa-laptop-code"></i> Разработка</button>
+                <div class="skill-content">
+                    <div class="tech"><i class="fab fa-react"></i> <span>React</span></div>
+                    <div class="tech"><i class="fab fa-node-js"></i> <span>Node.js</span></div>
+                </div>
+            </div>
+        </section>
+        <section id="services" class="section">
+            <h1>Услуги <span class="tooltip">?<span class="tooltiptext">Цены являются ориентировочными и могут изменяться. Пожалуйста, уточняйте актуальные суммы перед заказом.</span></span></h1>
+            <ul class="service-list">
+                <li>
+                    <h2>Создание веб-сайта (Full-stack)</h2>
+                    <p>Примерная стоимость: $500 – $2000 (35,000 – 140,000 руб.)</p>
                 </li>
                 <li>
-                    <button class="theme-switch">
-                        <span></span>
-                    </button>
+                    <h2>Создание SEO среды для сайта</h2>
+                    <p>Примерная стоимость: $300 – $1000 (21,000 – 70,000 руб.)</p>
+                </li>
+                <li>
+                    <h2>Создание бота для Discord</h2>
+                    <p>Примерная стоимость: $50 – $500 (3,500 – 35,000 руб.)</p>
+                </li>
+                <li>
+                    <h2>Настройка автоматизации</h2>
+                    <p>Примерная стоимость: $100 – $1000 (7,000 – 70,000 руб.)</p>
                 </li>
             </ul>
-        </nav>
-    </header>
-
-
-
-    <section id="about">
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInUp">
-                Mr_Fortuna
-            </h1>
-            <div class="animate__animated animate__zoomInLeft">
-                <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
-            </div>
-
-            <div class="info-island">
-                <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label"
-                        data-i18n="age"> Возраст:</span> <span id="age"></span></p>
-                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span>
-                <p data-i18n="male">Мужской</p>
-                </p>
-                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality">
-                        Национальность:</span>
-                <p data-i18n="nationalityValue">Белорус</p>
-                </p>
-                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages">
-                        Языки:</span>
-                <p data-i18n="languagesList">Русский, English, Белоруский</p>
-                </p>
-                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label" data-i18n="education">
-                        Образование:</span>
-                <p data-i18n="educationValue">Общее Среднее</p>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="contact">
-        <div class="container">
-            <h2 data-i18n="contactsSection">Социалки</h2>
-            <div class="social-buttons">
-                <a href="https://t.me/mr_fortuna" class="telegram-button"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://github.com/mrf0rtuna4" class="github-button"><i class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/users/702443229924032512" class="discord-button"><i
-                        class="fa-brands fa-discord"></i></a>
-                <a href="https://www.reddit.com/user/mr_f0rtuna4/" class="reddit-button"><i
-                        class="fa-brands fa-reddit"></i></a>
-                <a href="https://www.youtube.com/@mrf0rtuna4" class="youtube-button"><i
-                        class="fa-brands fa-youtube"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <div id="quotesPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Все цитаты</h2>
-            <div id="allQuotes"><i class="fa-solid fa-spinner fa-spin-pulse"></i></div>
-        </div>
-    </div>
-    <div id="confetti-container"></div>
-    <div id="halloween-container"></div>
-
-    <div class="divider"></div>
-
-    <div id="musicPlayer" class="music-player hidden">
-        <button id="toggleMusic">🔊</button>
-        <span id="currentTrack"></span>
-    </div>
-    
-    <section id="events">
-        <div class="container">
-            <h2 data-i18n="timerTitle">Таймер до событий</h2>
-            <div id="newYearTimer" class="timer">
-                <h3 data-i18n="testEventCountdown">До Нового Года:</h3>
-                <p id="testEventCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
-            </div>
-            <div id="newYearTimer" class="timer">
-                <h3 data-i18n="newYearCountdown">До Нового Года:</h3>
-                <p id="newYearCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
-            </div>
-            <div id="birthdayTimer" class="timer">
-                <h3 data-i18n="birthdayCountdown">До Дня Рождения:</h3>
-                <p id="birthdayCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
-            </div>
-            <div id="halloween" class="timer">
-                <h3 data-i18n="halloweenCountdown">До Хеллоуина:</h3>
-                <p id="halloweenCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="skills">
-        <div class="animate__animated animate__fadeInUp">
-            <div class="container">
-                <h2 data-i18n="skillsSection">Навыки</h2>
-                <div class="skills-grid">
-                    <div class="animate__animated animate__zoomInLeft">
-                        <div class="skill">
-                            <i class="fab fa-html5"></i>
-                            <h3>HTML/CSS</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-js"></i>
-                            <h3>JavaScript</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-python"></i>
-                            <h3>Python</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-code"></i>
-                            <h3>API</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-discord"></i>
-                            <h3>Discord bots</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-linux"></i>
-                            <h3>Linux servers</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <h3>3D (Blender/C4D)</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInLeft animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-whmcs"></i>
-                            <h3>Frameworks</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__fadeInBottomLeft animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <h3>Design</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="projects">
-        <div class="container">
-            <h2 data-i18n="projectsSection">Проекты</h2>
-            <div class="projects-wrapper">
-                <div class="card animate__animated">
-                    <img src="assets/images/heypers_logo.jpg" alt="Heypers">
-                    <h3>Heypers Project</h3>
-                    <div class="social-buttons">
-                        <a href="https://heypers.github.io/" class="web-button"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://t.me/heypers_project" class="telegram-button"><i
-                                class="fa-brands fa-telegram"></i></a>
-                        <a href="https://discord.gg/N8MYbANVJ6" class="discord-button"><i
-                                class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/heypers" class="github-button"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://www.reddit.com/r/heypers/" class="reddit-button"><i
-                                class="fa-brands fa-reddit"></i></a>
-                        <a href="https://www.youtube.com/@heypers_project" class="youtube-button"><i
-                                class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="card animate__animated">
-                    <img src="assets/images/kaya.png" alt="KayaDevs">
-                    <h3>KayaDevs</h3>
-                    <div class="social-buttons">
-                        <a href="https://kaya.pythonanywhere.com/" class="web-button"><i
-                                class="fa-solid fa-globe"></i></a>
-                        <a href="https://discord.gg/ggg7dmRsvn" class="discord-button"><i
-                                class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/kaya-devs" class="github-button"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
+        </section>        
+        <section id="contacts" class="section">
+            <h1>Контакты</h1>
+            <p>Email: contact.mrf0rtuna4@gmail.com</p>
+            <p>Социальные сети: [Значение]</p>
+        </section>
+    </main>
     <footer>
-        <nav>
-            <ul>
-                <li><a href="#about" data-i18n="about">Обо мне</a></li>
-                <li><a href="#skills" data-i18n="skills">Навыки</a></li>
-                <li><a href="#projects" data-i18n="projects">Проекты</a></li>
-                <li><a href="#contact" data-i18n="contact">Контакты</a></li>
-            </ul>
-        </nav>
-
-        &copy 2024, made with &#9825; by Mr_Fortuna.<br />
-        Source code available on <a href=" https://github.com/mrf0rtuna4/mrf0rtuna4.github.io/">Github</a>.<br />
+        <p>&copy; 2024-2025 mr_fortuna. Все права защищены.</p>
     </footer>
 </body>
-
 </html>
