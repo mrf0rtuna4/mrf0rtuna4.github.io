@@ -75,7 +75,7 @@ function createConfetti() {
     }
     setTimeout(() => {
         document.body.removeChild(confettiContainer);
-    }, 5000);
+    }, 100000);
 }
 
 function getRandomColor() {
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTimer('newYearCountdown', newYearDate, 'newYear');
     updateTimer('birthdayCountdown', birthdayDate, 'birthday');
     updateTimer('halloweenCountdown', halloweenDate, 'halloween');
-    // updateTimer('testEventCountdown', testEventDate, 'newYear');
+    // updateTimer('testEventCountdown', testEventDate, 'birthday');
 });
 
 function getNextTargetDate(month, day) {
