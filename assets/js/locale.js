@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const langDropdown = document.querySelector('.language-dropdown');
     const langButtons = document.querySelectorAll('.language-dropdown li');

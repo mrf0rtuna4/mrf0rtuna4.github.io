@@ -3,8 +3,6 @@ let currentMusic = new Audio();
 
 
 function toggleMusicPlayer() {
-    const player = document.getElementById('musicPlayer');
-    const trackInfo = document.getElementById('currentTrack');
     const toggleButton = document.getElementById('toggleMusic');
     const musicPlayerElement = document.getElementById('musicPlayer');
     if (!musicPlayerElement) {
@@ -12,14 +10,17 @@ function toggleMusicPlayer() {
         return;
     }
 
+    let isMusicPlaying;
     if (musicPlayerElement.textContent === "Play") {
         musicPlayerElement.textContent = "Pause";
+        let track;
         if (track) {
             currentMusic.src = `assets/sounds/${track}`;
             currentMusic.loop = true;
 
+            let autoplay;
             if (autoplay) {
-                currentMusic.play();
+                currentMusic.play().then(r => 0);
                 isMusicPlaying = true;
                 toggleButton.textContent = '🔈';
             }
@@ -29,7 +30,7 @@ function toggleMusicPlayer() {
                     currentMusic.pause();
                     toggleButton.textContent = '🔊';
                 } else {
-                    currentMusic.play();
+                    currentMusic.play().then(r => 0);
                     toggleButton.textContent = '🔈';
                 }
                 isMusicPlaying = !isMusicPlaying;
@@ -136,7 +137,6 @@ function createHalloweenTheme() {
             if (!musicPlayed) {
                 audio.play().catch(err => console.error('Ошибка при воспроизведении:', err));
                 document.removeEventListener('click', playMusicOnce);
-                eventTriggered = true;
                 musicPlayed = true;
             }
 
