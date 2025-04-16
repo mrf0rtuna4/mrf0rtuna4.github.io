@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2024 mr_fortuna
+  ~ Copyright (c) 2025 mr_fortuna
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -16,13 +16,10 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8" />
-    <!-- Title -->
-    <title data-i18n="title">Mr_Fortuna - Личная информация, проекты и навыки</title>
-
-    <!-- Meta Description -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Визитка MrFortuna</title>
     <meta name="description" content="Узнайте больше о Mr_Fortuna, а также моих проектах, навыках и серверах."
         data-i18n="description">
 
@@ -68,256 +65,911 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mrf0rtuna4.github.io/" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/index.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <!-- Permissions Policy -->
     <meta http-equiv="content-security-policy" content="interest-cohort=()" />
 
-    <!-- JS Load -->
-    <script src="assets/js/events.js"></script>
-    <script src="assets/js/quotes.js"></script>
-    <script src="assets/js/misc.js"></script>
-    <script src="assets/js/locale.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#4F46E5", secondary: "#10B981" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+            rel="stylesheet"
+    />
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+            display: math;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #4F46E5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.03);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: rotate(10deg);
+            color: #4F46E5;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: rgba(79, 70, 229, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background-color: #4F46E5;
+            border-radius: 3px;
+            transition: width 1.5s ease-out;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        input, textarea {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .custom-checkbox {
+            display: inline-block;
+            position: relative;
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .custom-checkbox.checked {
+            background-color: #4F46E5;
+            border-color: #4F46E5;
+        }
+
+        .custom-checkbox.checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
 </head>
-
-
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li class="language-switch">
-                    <button class="lang-btn">🌐</button>
-                    <ul class="language-dropdown">
-                        <li data-lang="en">English</li>
-                        <li data-lang="ru">Русский</li>
-                    </ul>
-                </li>
-                <li>
-                    <button class="theme-switch">
-                        <span></span>
-                    </button>
-                </li>
-            </ul>
+<header
+        class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 transition-all duration-300"
+>
+    <div
+            class="container mx-auto px-4 py-4 flex justify-between items-center"
+    >
+        <div class="flex items-center">
+            <h1 class="text-2xl font-['Pacifico'] text-white">MrF</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a
+                    href="#home"
+                    class="nav-link text-gray-300 hover:text-white transition-colors"
+            >Главная</a
+            >
+            <a
+                    href="#skills"
+                    class="nav-link text-gray-300 hover:text-white transition-colors"
+            >Навыки</a
+            >
+            <a
+                    href="#portfolio"
+                    class="nav-link text-gray-300 hover:text-white transition-colors"
+            >Портфолио</a
+            >
+            <a
+                    href="#contacts"
+                    class="nav-link text-gray-300 hover:text-white transition-colors"
+            >Контакты</a
+            >
         </nav>
-    </header>
+        <button
+                class="md:hidden w-10 h-10 flex items-center justify-center text-white"
+        >
+            <i class="ri-menu-line ri-lg"></i>
+        </button>
+    </div>
+</header>
 
 
-
-    <section id="about">
-        <div class="container">
-            <h1 class="animate__animated animate__fadeInUp">
-                Mr_Fortuna
-            </h1>
-            <div class="animate__animated animate__zoomInLeft">
-                <img src="assets/images/avatar.png" alt="Mr_Fortuna" class="avatar">
+<section id="home" class="min-h-screen pt-24 flex items-center">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 animate-on-scroll">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                    Mister Fortuna
+                </h1>
+                <h2 class="text-xl md:text-2xl text-primary mb-6">
+                    Full-Stack Разработчик
+                </h2>
+                <p class="text-gray-300 mb-8 max-w-xl">
+                    Более 2 лет опыта в разработке высоконагруженных веб-приложений.
+                    Специализируюсь на создании интуитивно понятных и производительных
+                    решений с использованием современных технологий.
+                </p>
+                <div class="flex space-x-4">
+                    <a
+                            href="#contacts"
+                            class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap"
+                    >Связаться</a
+                    >
+                    <a
+                            href="#portfolio"
+                            class="px-6 py-3 border border-gray-600 text-white font-medium !rounded-button hover:border-primary transition-all whitespace-nowrap"
+                    >Портфолио</a
+                    >
+                </div>
             </div>
-
-            <div class="info-island">
-                <p id="ageInfo"><i class="fa-solid fa-address-book info-label"></i><span class="info-label"
-                        data-i18n="age"> Возраст:</span> <span id="age"></span></p>
-                <p><i class="fa-solid fa-person info-label"></i><span class="info-label" data-i18n="gender">Пол:</span>
-                <p data-i18n="male">Мужской</p>
-
-                <p><i class="fa-solid fa-user-secret info-label"></i><span class="info-label" data-i18n="nationality">
-                        Национальность:</span>
-                <p data-i18n="nationalityValue">Белорус</p>
-
-                <p><i class="fa-solid fa-language info-label"></i><span class="info-label" data-i18n="languages">
-                        Языки:</span>
-                <p data-i18n="languagesList">Русский, English, Белоруский</p>
-
-                <p><i class="fa-solid fa-compact-disc info-label"></i><span class="info-label" data-i18n="education">
-                        Образование:</span>
-                <p data-i18n="educationValue">Общее Среднее</p>
-
+            <div
+                    class="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-on-scroll"
+                    style="animation-delay: 0.3s;"
+            >
+                <div
+                        class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20"
+                >
+                    <img
+                            src="assets/images/avatar.png"
+                            alt="Аватар MrFortuna"
+                            class="w-full h-full object-cover object-top"
+                    />
+                </div>
             </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="contact">
-        <div class="container">
-            <h2 data-i18n="contactsSection">Социалки</h2>
-            <div class="social-buttons">
-                <a href="https://t.me/mr_fortuna"><i class="fa-brands fa-telegram"></i></a>
-                <a href="https://github.com/mrf0rtuna4"><i class="fa-brands fa-github"></i></a>
-                <a href="https://discord.com/users/702443229924032512"><i
-                        class="fa-brands fa-discord"></i></a>
-                <a href="https://www.youtube.com/@mrf0rtuna4"><i
-                        class="fa-brands fa-youtube"></i></a>
-                <a href="https://sketchfab.com/mr_fortuna"><img src="https://static.sketchfab.com/img/press/logos/sketchfab-logo.png" style="
-                    width: 40px;
-                    height: 40px;
-                    " alt="sketchfab logo"></a>
-                <a href="https://crowdin.com/profile/mrf0rtuna4"><img src="https://support.crowdin.com/assets/logos/symbol/svg/crowdin-symbol-cDark.svg" style="
-                    width: 40px;
-                    height: 40px;
-                    " alt="crowdin logo"></a>
-            </div>
-        </div>
-    </section>
-
-    <div id="quotesPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Все цитаты</h2>
-            <div id="allQuotes"><i class="fa-solid fa-spinner fa-spin-pulse"></i></div>
         </div>
     </div>
-    <div id="confetti-container"></div>
-    <div id="halloween-container"></div>
+</section>
 
-    <div class="divider"></div>
+<section id="skills" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
+            Профессиональные навыки
+        </h2>
 
-    <div id="musicPlayer" class="music-player hidden">
-        <button id="toggleMusic">🔊</button>
-        <span id="currentTrack"></span>
+        <div class="flex justify-center mb-12 animate-on-scroll">
+            <div class="inline-flex p-1 bg-gray-800 rounded-full">
+                <button
+                        class="skill-category-btn active px-5 py-2 rounded-full bg-primary text-white whitespace-nowrap"
+                        data-category="all"
+                >
+                    Все навыки
+                </button>
+                <button
+                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
+                        data-category="development"
+                >
+                    Разработка
+                </button>
+                <button
+                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
+                        data-category="design"
+                >
+                    Дизайн
+                </button>
+                <button
+                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
+                        data-category="soft"
+                >
+                    Soft Skills
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="development"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-code-s-slash-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">JavaScript / TypeScript</h3>
+                <p class="text-gray-400 mb-4">
+                    Разработка современных веб-приложений с использованием ES6+,
+                    TypeScript, React, Vue и Angular.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="development"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-server-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Backend разработка</h3>
+                <p class="text-gray-400 mb-4">
+                    Node.js, Express, NestJS, Python/Django, PHP/Laravel, базы данных
+                    SQL и NoSQL.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="development"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-database-2-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Базы данных</h3>
+                <p class="text-gray-400 mb-4">
+                    PostgreSQL, MySQL, MongoDB, Redis, проектирование схем и
+                    оптимизация запросов.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="design"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-layout-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">UI/UX Дизайн</h3>
+                <p class="text-gray-400 mb-4">
+                    Создание интуитивных интерфейсов, прототипирование,
+                    пользовательский опыт и доступность.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 80%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="design"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-palette-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Графический дизайн</h3>
+                <p class="text-gray-400 mb-4">
+                    Figma, Adobe XD, Photoshop, Illustrator, создание визуальных
+                    концепций и брендинг.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 75%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="soft"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-team-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Командная работа</h3>
+                <p class="text-gray-400 mb-4">
+                    Эффективная коммуникация, сотрудничество, управление конфликтами и
+                    менторство.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 95%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="soft"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-time-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Управление проектами</h3>
+                <p class="text-gray-400 mb-4">
+                    Agile/Scrum, Kanban, планирование спринтов, оценка задач и
+                    управление рисками.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 85%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="soft"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-lightbulb-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Решение проблем</h3>
+                <p class="text-gray-400 mb-4">
+                    Критическое мышление, анализ, инновационные подходы и принятие
+                    решений.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 90%"></div>
+                </div>
+            </div>
+
+            <div
+                    class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
+                    data-category="development"
+            >
+                <div
+                        class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4"
+                >
+                    <i class="ri-cloud-line ri-xl text-primary"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">DevOps</h3>
+                <p class="text-gray-400 mb-4">
+                    CI/CD, Docker, Kubernetes, AWS, Azure, мониторинг и автоматизация.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-value" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <section id="events">
-        <div class="container">
-            <h2 data-i18n="timerTitle">Таймер до событий</h2>
-            <!-- <div id="newYearTimer" class="timer">
-                <h3 data-i18n="testEventCountdown">До сыра:</h3>
-                <p id="testEventCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
-            </div> -->
-            <div id="newYearTimer" class="timer">
-                <h3 data-i18n="newYearCountdown">До Нового Года:</h3>
-                <p id="newYearCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
+</section>
+
+<section id="portfolio" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
+            Портфолио проектов
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll"
+            >
+                <div class="h-48 overflow-hidden">
+                    <img
+                            src="https://images-ext-1.discordapp.net/external/g5Rw2gNa2DMd940E8mZ4KSyVBtS6WXlFG3CfkpuLT04/https/opengraph.githubassets.com/5b0f176b4ff6e1c5c1fef13c1259cedf6888e89afe5259ef4e14f122c441e0b7/mrf0rtuna4/Git-Markdown-AutoTranslator?format=webp&width=960&height=480"
+                            alt="Проект 1"
+                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
+                    />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">
+                        Автоматический Переводчик
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Разработка комплексной системы машинного автоматического перевода *.md файлов без потерь.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                >Python</span
+                >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Docker</span
+                        >
+                    </div>
+                    <a
+                            href="https://github.com/mrf0rtuna4/Git-Markdown-AutoTranslator"
+                            class="text-primary hover:text-primary/80 inline-flex items-center"
+                    >
+                        Подробнее
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
             </div>
-            <div id="birthdayTimer" class="timer">
-                <h3 data-i18n="birthdayCountdown">До Дня Рождения:</h3>
-                <p id="birthdayCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
+
+            <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll"
+            >
+                <div class="h-48 overflow-hidden">
+                    <img
+                            src="assets/images/heypers_logo.jpg"
+                            alt="Проект 2"
+                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
+                    />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Heyepers Project</h3>
+                    <p class="text-gray-400 mb-4">
+                        Мультипроект, объединяющий управление, менеджмент, модерацию и разработку.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                >Django</span
+                >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Python</span
+                        >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Java</span
+                        >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Django REST API</span
+                        >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Gradle</span
+                        >
+                    </div>
+                    <a
+                            href="https://heypers.pythonanywhere.com/"
+                            class="text-primary hover:text-primary/80 inline-flex items-center"
+                    >
+                        Подробнее
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
             </div>
-            <div id="halloween" class="timer">
-                <h3 data-i18n="halloweenCountdown">До Хеллоуина:</h3>
-                <p id="halloweenCountdown"><i class="fa-solid fa-spinner fa-spin-pulse"></i></p>
+
+            <div
+                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll"
+            >
+                <div class="h-48 overflow-hidden">
+                    <img
+                            src="assets/images/kaya.png"
+                            alt="Проект 3"
+                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110"
+                    />
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">KayaBot</h3>
+                    <p class="text-gray-400 mb-4">
+                        Чат-бот, персональный помощник в мире удобства и разнообразия в мире Discord.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                >Python</span
+                >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Disnake</span
+                        >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Django</span
+                        >
+                        <span class="px-3 py-1 bg-gray-700 rounded-full text-xs"
+                        >Django REST API</span
+                        >
+                    </div>
+                    <a
+                            href="https://boticord.top/bot/1136630716537516062"
+                            class="text-primary hover:text-primary/80 inline-flex items-center"
+                    >
+                        Подробнее
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
 
-    <div class="divider"></div>
+        <div class="text-center mt-12">
+            <a
+                    href="https://github.com/mrf0rtuna4?tab=repositories"
+                    class="px-6 py-3 border border-gray-600 text-white font-medium !rounded-button hover:border-primary transition-all inline-flex items-center whitespace-nowrap"
+            >
+                Все проекты
+                <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
-    <section id="skills">
-        <div class="animate__animated animate__fadeInUp">
-            <div class="container">
-                <h2 data-i18n="skillsSection">Навыки</h2>
-                <div class="skills-grid">
-                    <div class="animate__animated animate__zoomInLeft">
-                        <div class="skill">
-                            <i class="fab fa-html5"></i>
-                            <h3>HTML/CSS</h3>
+<section id="contacts" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
+            Связаться со мной
+        </h2>
+
+            <div class="animate-on-scroll">
+                <h3 class="text-2xl font-semibold mb-6">Контактная информация</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="contact-card bg-gray-800 p-6 rounded-lg">
+                        <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4"
+                        >
+                            <i class="ri-mail-line ri-xl text-primary"></i>
                         </div>
+                        <h4 class="text-lg font-medium mb-1">Email</h4>
+                        <p class="text-gray-400">contact.mrf0rtuna4@gmail.com</p>
+                        <button class="mt-3 text-primary text-sm flex items-center">
+                            <i class="ri-file-copy-line mr-1"></i> Копировать
+                        </button>
                     </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-js"></i>
-                            <h3>JavaScript</h3>
+
+                    <div class="contact-card bg-gray-800 p-6 rounded-lg">
+                        <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4"
+                        >
+                            <i class="ri-time-line ri-xl text-primary"></i>
                         </div>
+                        <h4 class="text-lg font-medium mb-1">Доступность</h4>
+                        <p class="text-gray-400">Пн-Пт, 10:00 - 19:00</p>
                     </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-python"></i>
-                            <h3>Python</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInDown animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-code"></i>
-                            <h3>API</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-discord"></i>
-                            <h3>Discord bots</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-linux"></i>
-                            <h3>Linux servers</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomIn animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-layer-group"></i>
-                            <h3>3D (Blender/C4D)</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__zoomInLeft animate__delay-1s">
-                        <div class="skill">
-                            <i class="fab fa-whmcs"></i>
-                            <h3>Frameworks</h3>
-                        </div>
-                    </div>
-                    <div class="animate__animated animate__fadeInBottomLeft animate__delay-1s">
-                        <div class="skill">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <h3>Design</h3>
-                        </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-lg font-medium mb-4">Социальные сети</h4>
+                    <div class="flex space-x-4">
+                        <a
+                                href="https://github.com/mrf0rtuna4"
+                                class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full"
+                        >
+                            <i class="ri-github-fill ri-xl"></i>
+                        </a>
+                        <a
+                                href="https://www.linkedin.com/in/mrf0rtuna4/"
+                                class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full"
+                        >
+                            <i class="ri-linkedin-fill ri-xl"></i>
+                        </a>
+                        <a
+                                href="https://t.me/mr_fortuna"
+                                class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full"
+                        >
+                            <i class="ri-telegram-fill ri-xl"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <div class="divider"></div>
+<footer class="bg-gray-950 py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h1 class="text-2xl font-['Pacifico'] text-white mb-3">MrF</h1>
+                <p class="text-gray-400">Создаю инновационные цифровые решения</p>
+            </div>
 
-    <section id="projects">
-        <div class="container">
-            <h2 data-i18n="projectsSection">Проекты</h2>
-            <div class="projects-wrapper">
-                <div class="card animate__animated">
-                    <img src="assets/images/heypers_logo.jpg" alt="Heypers">
-                    <h3>Heypers Project</h3>
-                    <div class="social-buttons">
-                        <a href="https://heypers.github.io/" class="web-button"><i class="fa-solid fa-globe"></i></a>
-                        <a href="https://t.me/heypers_project" class="telegram-button"><i
-                                class="fa-brands fa-telegram"></i></a>
-                        <a href="https://discord.gg/N8MYbANVJ6" class="discord-button"><i
-                                class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/heypers" class="github-button"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://www.youtube.com/@heypers_project" class="youtube-button"><i
-                                class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="card animate__animated">
-                    <img src="assets/images/kaya.png" alt="KayaDevs">
-                    <h3>KayaDevs</h3>
-                    <div class="social-buttons">
-                        <a href="https://kaya.pythonanywhere.com/" class="web-button"><i
-                                class="fa-solid fa-globe"></i></a>
-                        <a href="https://discord.gg/ggg7dmRsvn" class="discord-button"><i
-                                class="fa-brands fa-discord"></i></a>
-                        <a href="https://github.com/kaya-devs" class="github-button"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </div>
+            <div
+                    class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-6 md:mb-0"
+            >
+                <a
+                        href="#home"
+                        class="text-gray-400 hover:text-white transition-colors"
+                >Главная</a
+                >
+                <a
+                        href="#skills"
+                        class="text-gray-400 hover:text-white transition-colors"
+                >Навыки</a
+                >
+                <a
+                        href="#portfolio"
+                        class="text-gray-400 hover:text-white transition-colors"
+                >Портфолио</a
+                >
+                <a
+                        href="#contacts"
+                        class="text-gray-400 hover:text-white transition-colors"
+                >Контакты</a
+                >
+            </div>
+
+            <div>
+                <p class="text-gray-500 text-sm">
+                    © 2025 MrFortuna. Все права защищены.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <div class="divider"></div>
+<button
+        id="btn-top"
+        class="btn-top fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center bg-primary rounded-full shadow-lg"
+>
+    <i class="ri-arrow-up-line ri-xl text-white"></i>
+</button>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#about" data-i18n="about">Обо мне</a></li>
-                <li><a href="#skills" data-i18n="skills">Навыки</a></li>
-                <li><a href="#projects" data-i18n="projects">Проекты</a></li>
-                <li><a href="#contact" data-i18n="contact">Контакты</a></li>
-            </ul>
-        </nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const animateElements = document.querySelectorAll(".animate-on-scroll");
 
-        &copy 2024, made with &#9825; by Mr_Fortuna.<br />
-        Source code available on <a href=" https://github.com/mrf0rtuna4/mrf0rtuna4.github.io/">Github</a>.<br />
-    </footer>
+        function checkScroll() {
+            animateElements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight * 0.9) {
+                    element.classList.add("visible");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        checkScroll();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const btnTop = document.getElementById("btn-top");
+
+        function toggleBtnTop() {
+            if (window.scrollY > 300) {
+                btnTop.classList.add("visible");
+            } else {
+                btnTop.classList.remove("visible");
+            }
+        }
+
+        btnTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
+        });
+
+        window.addEventListener("scroll", toggleBtnTop);
+        toggleBtnTop();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.querySelector(".md\\:hidden");
+        const closeBtn = document.querySelector(".absolute.top-6.right-6");
+        const mobileMenu = document.querySelector(".fixed.inset-0.bg-gray-900\\/95");
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+
+        menuBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("hidden");
+            mobileMenu.classList.add("flex");
+            document.body.style.overflow = "hidden";
+        });
+
+        closeBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("flex");
+            mobileMenu.classList.add("hidden");
+            document.body.style.overflow = "";
+        });
+
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("flex");
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const categoryBtns = document.querySelectorAll(".skill-category-btn");
+        const skillCards = document.querySelectorAll(".skill-card");
+
+        categoryBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+                categoryBtns.forEach((b) => {
+                    b.classList.remove("active", "bg-primary", "text-white");
+                    b.classList.add("text-gray-300", "hover:text-white");
+                });
+
+                this.classList.add("active", "bg-primary", "text-white");
+                this.classList.remove("text-gray-300", "hover:text-white");
+
+                const category = this.dataset.category;
+
+                skillCards.forEach((card) => {
+                    if (category === "all" || card.dataset.category === category) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const checkbox = document.getElementById("privacy-checkbox");
+
+        checkbox.addEventListener("click", function () {
+            this.classList.toggle("checked");
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const copyButtons = document.querySelectorAll(".text-primary.text-sm");
+
+        copyButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                const textToCopy = this.parentElement.querySelector("p").textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="ri-check-line mr-1"></i> Скопировано';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const anchors = document.querySelectorAll('a[href^="#"]');
+
+        anchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector("header").offsetHeight;
+                    const targetPosition =
+                        targetElement.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth",
+                    });
+                }
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const progressBars = document.querySelectorAll(".progress-value");
+
+        function animateProgressBars() {
+            progressBars.forEach((bar) => {
+                const elementTop = bar.parentElement.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (
+                    elementTop < windowHeight * 0.9 &&
+                    !bar.classList.contains("animated")
+                ) {
+                    bar.classList.add("animated");
+                    const width = bar.style.width;
+                    bar.style.width = "0%";
+
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                }
+            });
+        }
+
+        window.addEventListener("scroll", animateProgressBars);
+        animateProgressBars();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+
+        function updateHeaderStyle() {
+            if (window.scrollY > 50) {
+                header.classList.add("py-2", "shadow-md");
+                header.classList.remove("py-4");
+            } else {
+                header.classList.add("py-4");
+                header.classList.remove("py-2", "shadow-md");
+            }
+        }
+
+        window.addEventListener("scroll", updateHeaderStyle);
+        updateHeaderStyle();
+    });
+</script>
 </body>
-
 </html>
