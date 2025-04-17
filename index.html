@@ -98,12 +98,13 @@
         rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <style>
-        
         :where([class^="ri-"])::before {
             content: "\f3c2";
         }
 
-        ::-webkit-scrollbar { width: 0;}
+        ::-webkit-scrollbar {
+            width: 0;
+        }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -241,11 +242,12 @@
     <header class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center">
-                <h1 class="text-2xl font-['Pacifico'] text-white">MrF</h1>
+                <h1 class="text-2xl font-['Pacifico'] text-white">logo</h1>
             </div>
             <nav class="hidden md:flex space-x-8">
                 <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors">Главная</a>
                 <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors">Навыки</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-white transition-colors">Услуги</a>
                 <a href="#portfolio" class="nav-link text-gray-300 hover:text-white transition-colors">Портфолио</a>
                 <a href="#contacts" class="nav-link text-gray-300 hover:text-white transition-colors">Контакты</a>
             </nav>
@@ -254,6 +256,19 @@
             </button>
         </div>
     </header>
+    
+    <div class="fixed inset-0 bg-gray-900/95 z-50 hidden flex-col justify-center items-center">
+        <nav class="flex flex-col space-y-6 text-center">
+            <a href="#home" class="text-xl text-white hover:text-primary transition-colors">Главная</a>
+            <a href="#skills" class="text-xl text-white hover:text-primary transition-colors">Навыки</a>
+            <a href="#services" class="text-xl text-white hover:text-primary transition-colors">Услуги</a>
+            <a href="#portfolio" class="text-xl text-white hover:text-primary transition-colors">Портфолио</a>
+            <a href="#contacts" class="text-xl text-white hover:text-primary transition-colors">Контакты</a>
+        </nav>
+        <button class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white">
+            <i class="ri-close-line ri-lg"></i>
+        </button>
+    </div>
 
 
     <section id="home" class="min-h-screen pt-24 flex items-center">
@@ -497,7 +512,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4500₽
                     </div>
-                    
+
                 </div>
                 <!-- Web-Frontend -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -525,7 +540,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4000₽
                     </div>
-                    
+
                 </div>
                 <!-- Fullstack-Web -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -552,7 +567,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 5800₽
                     </div>
-                    
+
                 </div>
                 <!-- CI/CD -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -579,7 +594,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4900₽
                     </div>
-                    
+
                 </div>
                 <!-- SQL -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -606,7 +621,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4000₽
                     </div>
-                    
+
                 </div>
                 <!-- Автоматизация -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -634,7 +649,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4500₽
                     </div>
-                    
+
                 </div>
                 <!-- Боты -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -660,7 +675,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 3600₽
                     </div>
-                    
+
                 </div>
                 <!-- Настройка серверов -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -688,7 +703,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 3100₽
                     </div>
-                    
+
                 </div>
                 <!-- Фреймворки -->
                 <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
@@ -719,7 +734,7 @@
                     <div class="price-rub font-semibold text-xl mb-6 hidden">
                         от 4900₽
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -900,183 +915,183 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-          const animateElements = document.querySelectorAll(".animate-on-scroll");
-          function checkScroll() {
-            animateElements.forEach((element) => {
-              const elementTop = element.getBoundingClientRect().top;
-              const windowHeight = window.innerHeight;
-              if (elementTop < windowHeight * 0.9) {
-                element.classList.add("visible");
-              }
-            });
-          }
-          window.addEventListener("scroll", checkScroll);
-          checkScroll();
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const btnTop = document.getElementById("btn-top");
-          function toggleBtnTop() {
-            if (window.scrollY > 300) {
-              btnTop.classList.add("visible");
-            } else {
-              btnTop.classList.remove("visible");
-            }
-          }
-          btnTop.addEventListener("click", function () {
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          });
-          window.addEventListener("scroll", toggleBtnTop);
-          toggleBtnTop();
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const menuBtn = document.querySelector(".md\\:hidden");
-          const closeBtn = document.querySelector(".absolute.top-6.right-6");
-          const mobileMenu = document.querySelector(".fixed.inset-0.bg-gray-900\\/95");
-          const mobileLinks = mobileMenu.querySelectorAll("a");
-          menuBtn.addEventListener("click", function () {
-            mobileMenu.classList.remove("hidden");
-            mobileMenu.classList.add("flex");
-            document.body.style.overflow = "hidden";
-          });
-          closeBtn.addEventListener("click", function () {
-            mobileMenu.classList.remove("flex");
-            mobileMenu.classList.add("hidden");
-            document.body.style.overflow = "";
-          });
-          mobileLinks.forEach((link) => {
-            link.addEventListener("click", function () {
-              mobileMenu.classList.remove("flex");
-              mobileMenu.classList.add("hidden");
-              document.body.style.overflow = "";
-            });
-          });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const categoryBtns = document.querySelectorAll(".skill-category-btn");
-          const skillCards = document.querySelectorAll(".skill-card");
-          categoryBtns.forEach((btn) => {
-            btn.addEventListener("click", function () {
-              categoryBtns.forEach((b) => {
-                b.classList.remove("active", "bg-primary", "text-white");
-                b.classList.add("text-gray-300", "hover:text-white");
-              });
-              this.classList.add("active", "bg-primary", "text-white");
-              this.classList.remove("text-gray-300", "hover:text-white");
-              const category = this.dataset.category;
-              skillCards.forEach((card) => {
-                if (category === "all" || card.dataset.category === category) {
-                  card.style.display = "block";
-                } else {
-                  card.style.display = "none";
-                }
-              });
-            });
-          });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const checkbox = document.getElementById("privacy-checkbox");
-          checkbox.addEventListener("click", function () {
-            this.classList.toggle("checked");
-          });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const copyButtons = document.querySelectorAll(".text-primary.text-sm");
-          copyButtons.forEach((button) => {
-            button.addEventListener("click", function () {
-              const textToCopy = this.parentElement.querySelector("p").textContent;
-              navigator.clipboard.writeText(textToCopy).then(() => {
-                const originalText = this.innerHTML;
-                this.innerHTML = '<i class="ri-check-line mr-1"></i> Скопировано';
-                setTimeout(() => {
-                  this.innerHTML = originalText;
-                }, 2000);
-              });
-            });
-          });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const anchors = document.querySelectorAll('a[href^="#"]');
-          anchors.forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-              e.preventDefault();
-              const targetId = this.getAttribute("href");
-              if (targetId === "#") return;
-              const targetElement = document.querySelector(targetId);
-              if (targetElement) {
-                const headerHeight = document.querySelector("header").offsetHeight;
-                const targetPosition =
-                  targetElement.getBoundingClientRect().top +
-                  window.scrollY -
-                  headerHeight;
-                window.scrollTo({
-                  top: targetPosition,
-                  behavior: "smooth",
+            const animateElements = document.querySelectorAll(".animate-on-scroll");
+            function checkScroll() {
+                animateElements.forEach((element) => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (elementTop < windowHeight * 0.9) {
+                        element.classList.add("visible");
+                    }
                 });
-              }
-            });
-          });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const currencyBtns = document.querySelectorAll(".currency-btn");
-          const pricesUsd = document.querySelectorAll(".price-usd");
-          const pricesRub = document.querySelectorAll(".price-rub");
-          currencyBtns.forEach((btn) => {
-            btn.addEventListener("click", function () {
-              currencyBtns.forEach((b) => {
-                b.classList.remove("active", "bg-primary", "text-white");
-                b.classList.add("text-gray-300", "hover:text-white");
-              });
-              this.classList.add("active", "bg-primary", "text-white");
-              this.classList.remove("text-gray-300", "hover:text-white");
-              const currency = this.dataset.currency;
-              if (currency === "usd") {
-                pricesUsd.forEach((price) => price.classList.remove("hidden"));
-                pricesRub.forEach((price) => price.classList.add("hidden"));
-              } else {
-                pricesUsd.forEach((price) => price.classList.add("hidden"));
-                pricesRub.forEach((price) => price.classList.remove("hidden"));
-              }
-            });
-          });
-          const progressBars = document.querySelectorAll(".progress-value");
-          function animateProgressBars() {
-            progressBars.forEach((bar) => {
-              const elementTop = bar.parentElement.getBoundingClientRect().top;
-              const windowHeight = window.innerHeight;
-              if (
-                elementTop < windowHeight * 0.9 &&
-                !bar.classList.contains("animated")
-              ) {
-                bar.classList.add("animated");
-                const width = bar.style.width;
-                bar.style.width = "0%";
-                setTimeout(() => {
-                  bar.style.width = width;
-                }, 100);
-              }
-            });
-          }
-          window.addEventListener("scroll", animateProgressBars);
-          animateProgressBars();
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-          const header = document.querySelector("header");
-          function updateHeaderStyle() {
-            if (window.scrollY > 50) {
-              header.classList.add("py-2", "shadow-md");
-              header.classList.remove("py-4");
-            } else {
-              header.classList.add("py-4");
-              header.classList.remove("py-2", "shadow-md");
             }
-          }
-          window.addEventListener("scroll", updateHeaderStyle);
-          updateHeaderStyle();
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
         });
-      </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnTop = document.getElementById("btn-top");
+            function toggleBtnTop() {
+                if (window.scrollY > 300) {
+                    btnTop.classList.add("visible");
+                } else {
+                    btnTop.classList.remove("visible");
+                }
+            }
+            btnTop.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+            window.addEventListener("scroll", toggleBtnTop);
+            toggleBtnTop();
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.querySelector(".md\\:hidden");
+            const closeBtn = document.querySelector(".absolute.top-6.right-6");
+            const mobileMenu = document.querySelector(".fixed.inset-0.bg-gray-900\\/95");
+            const mobileLinks = mobileMenu.querySelectorAll("a");
+            menuBtn.addEventListener("click", function () {
+                mobileMenu.classList.remove("hidden");
+                mobileMenu.classList.add("flex");
+                document.body.style.overflow = "hidden";
+            });
+            closeBtn.addEventListener("click", function () {
+                mobileMenu.classList.remove("flex");
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+            mobileLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileMenu.classList.remove("flex");
+                    mobileMenu.classList.add("hidden");
+                    document.body.style.overflow = "";
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const categoryBtns = document.querySelectorAll(".skill-category-btn");
+            const skillCards = document.querySelectorAll(".skill-card");
+            categoryBtns.forEach((btn) => {
+                btn.addEventListener("click", function () {
+                    categoryBtns.forEach((b) => {
+                        b.classList.remove("active", "bg-primary", "text-white");
+                        b.classList.add("text-gray-300", "hover:text-white");
+                    });
+                    this.classList.add("active", "bg-primary", "text-white");
+                    this.classList.remove("text-gray-300", "hover:text-white");
+                    const category = this.dataset.category;
+                    skillCards.forEach((card) => {
+                        if (category === "all" || card.dataset.category === category) {
+                            card.style.display = "block";
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkbox = document.getElementById("privacy-checkbox");
+            checkbox.addEventListener("click", function () {
+                this.classList.toggle("checked");
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const copyButtons = document.querySelectorAll(".text-primary.text-sm");
+            copyButtons.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const textToCopy = this.parentElement.querySelector("p").textContent;
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="ri-check-line mr-1"></i> Скопировано';
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                    });
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const anchors = document.querySelectorAll('a[href^="#"]');
+            anchors.forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href");
+                    if (targetId === "#") return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector("header").offsetHeight;
+                        const targetPosition =
+                            targetElement.getBoundingClientRect().top +
+                            window.scrollY -
+                            headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth",
+                        });
+                    }
+                });
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const currencyBtns = document.querySelectorAll(".currency-btn");
+            const pricesUsd = document.querySelectorAll(".price-usd");
+            const pricesRub = document.querySelectorAll(".price-rub");
+            currencyBtns.forEach((btn) => {
+                btn.addEventListener("click", function () {
+                    currencyBtns.forEach((b) => {
+                        b.classList.remove("active", "bg-primary", "text-white");
+                        b.classList.add("text-gray-300", "hover:text-white");
+                    });
+                    this.classList.add("active", "bg-primary", "text-white");
+                    this.classList.remove("text-gray-300", "hover:text-white");
+                    const currency = this.dataset.currency;
+                    if (currency === "usd") {
+                        pricesUsd.forEach((price) => price.classList.remove("hidden"));
+                        pricesRub.forEach((price) => price.classList.add("hidden"));
+                    } else {
+                        pricesUsd.forEach((price) => price.classList.add("hidden"));
+                        pricesRub.forEach((price) => price.classList.remove("hidden"));
+                    }
+                });
+            });
+            const progressBars = document.querySelectorAll(".progress-value");
+            function animateProgressBars() {
+                progressBars.forEach((bar) => {
+                    const elementTop = bar.parentElement.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (
+                        elementTop < windowHeight * 0.9 &&
+                        !bar.classList.contains("animated")
+                    ) {
+                        bar.classList.add("animated");
+                        const width = bar.style.width;
+                        bar.style.width = "0%";
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    }
+                });
+            }
+            window.addEventListener("scroll", animateProgressBars);
+            animateProgressBars();
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector("header");
+            function updateHeaderStyle() {
+                if (window.scrollY > 50) {
+                    header.classList.add("py-2", "shadow-md");
+                    header.classList.remove("py-4");
+                } else {
+                    header.classList.add("py-4");
+                    header.classList.remove("py-2", "shadow-md");
+                }
+            }
+            window.addEventListener("scroll", updateHeaderStyle);
+            updateHeaderStyle();
+        });
+    </script>
 </body>
 
 </html>
