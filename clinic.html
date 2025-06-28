@@ -1,0 +1,323 @@
+<!--
+  ~ Copyright (c) 2025 mr_fortuna
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Клиника имени Фортуны</title>
+    <meta name="description" content="Узнайте больше о Себе пациент.." data-i18n="description">
+
+    <!-- Meta Image -->
+    <meta name="image" content="assets/images/avatar.png">
+
+
+    <!-- Ключевые слова для SEO -->
+    <meta name="keywords" content="Mr_Fortuna, Нейроразработчики, больница, мета, щитпост">
+
+    <!-- Meta Author -->
+    <meta name="author" content="Mr_f0rtuna4">
+
+    <!-- Social Media Sharing (Open Graph) -->
+    <meta property="og:site_name" content="Клиника имени Фортуны" />
+    <meta property="og:title" content="Клиника имени Фортуны - Пора в палату" />
+    <meta property="og:description" content="Узнайте больше о Себе пациент..." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mrf0rtuna4.github.io/" />
+    <meta property="og:image" content="assets/images/avatar.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Mr_Fortuna - Логотип и аватар" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Sharing -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Клиника имени Фортуны - Пора в палату" />
+    <meta name="twitter:description" content="Узнайте больше о Себе пациент..." />
+    <meta name="twitter:image" content="assets/images/avatar.png" />
+    <meta name="twitter:image:alt" content="Mr_Fortuna - Аватар и логотип" />
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/avatar.png" type="image/x-icon" />
+
+    <!-- SEO Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mrf0rtuna4.github.io/" />
+
+    <!-- Permissions Policy -->
+    <meta http-equiv="content-security-policy" content="interest-cohort=()" />
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: "#4F46E5", secondary: "#10B981" },
+                    borderRadius: {
+                        none: "0px",
+                        sm: "4px",
+                        DEFAULT: "8px",
+                        md: "12px",
+                        lg: "16px",
+                        xl: "20px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                        full: "9999px",
+                        button: "8px",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+            display: math;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #4F46E5;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.03);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: rotate(10deg);
+            color: #4F46E5;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background-color: rgba(79, 70, 229, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-value {
+            height: 100%;
+            background-color: #4F46E5;
+            border-radius: 3px;
+            transition: width 1.5s ease-out;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        input,
+        textarea {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+
+        .btn-top {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .custom-checkbox {
+            display: inline-block;
+            position: relative;
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .custom-checkbox.checked {
+            background-color: #4F46E5;
+            border-color: #4F46E5;
+        }
+
+        .custom-checkbox.checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 5px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section
+        class="min-h-screen flex items-center justify-center text-center text-white bg-gradient-to-br from-gray-900 to-gray-800">
+        <div>
+            <h1 class="text-5xl font-bold mb-6">🏥 Больница им. Фортуны</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8 text-gray-300">Цифровой приют для душевно нестабильных айтишников,
+                фриланс-героев и фронтенд-страдальцев.</p>
+            <a href="#wards"
+                class="px-6 py-3 bg-primary rounded-button text-white hover:bg-opacity-90 transition">Посмотреть
+                пациентов</a>
+        </div>
+    </section>
+
+
+    <section id="wards" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-white mb-16">Наши палаты</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">🛌 Палата 101: Фронтендер-перегорающий</h3>
+                    <p class="text-gray-300">Симптомы: пишет три версии одного и того же компонента, меняет фреймворк
+                        каждую неделю. Лечится отключением npm и прописыванием ванильного JS.</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">🎭 Палата 203: Синдром главного героя</h3>
+                    <p class="text-gray-300">Симптомы: верит, что весь проект держится только на нём. Имеет привычку
+                        вставлять "я переписал всё за ночь" в каждое сообщение. Лечится парным программированием и
+                        таск-трекером.</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">🤖 Палата 304: Я сделал сайт через нейросеть</h3>
+                    <p class="text-gray-300">Симптомы: вставляет скрин с сайта на Tilda, пишет “ну и что, у меня тоже
+                        сайт есть”. Лечится встречей с git-логом и пояснением слова “архитектура”.</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">🧥 Палата 405: Интеллектуальный клептоман</h3>
+                    <p class="text-gray-300">Симптомы: скачал чей-то код, удалил лицензию, назвал своим. Лечится через 6
+                        PR в open-source и 2 жалобы от GitHub.</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">📢 Палата 500: Продуктолог с тильдой</h3>
+                    <p class="text-gray-300">Симптомы: называет себя "CEO", сделал лендинг из шаблона, зовёт тебя на
+                        "стартап без оплаты". Лечится подпиской на реальные вакансии.</p>
+                </div>
+                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg text-white">
+                    <h3 class="text-xl font-semibold mb-2">💼 Палата 404: HR без стака</h3>
+                    <p class="text-gray-300">Симптомы: ищет Django-фронтендера с опытом в Figma и React Native. Лечится
+                        книгой "Как отличать backend от backendless".</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Истории пациентов</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <p class="mb-4 italic">“Раньше я говорил, что GPT сделал мне сайт. Теперь я знаю, что div внутри
+                        span — это не хорошо.”</p>
+                    <p class="text-sm text-gray-400">— Артём, бывший пациент 304 палаты</p>
+                </div>
+                <div class="bg-gray-700 rounded-lg p-6">
+                    <p class="mb-4 italic">“После курса детокса по Git я перестал пушить main с force-push. Спасибо
+                        больнице!”</p>
+                    <p class="text-sm text-gray-400">— Аноним, вылечен от синдрома архитектора</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-gray-900 text-white text-center">
+        <h2 class="text-3xl font-bold mb-6">Записаться на приём</h2>
+        <p class="mb-6 text-gray-400">Оставьте ваше имя, ник и симптомы. Мы свяжемся и порекомендуем анти-GPT терапию.
+        </p>
+        <form class="max-w-xl mx-auto space-y-4">
+            <input type="text" placeholder="Ваше имя/ник"
+                class="w-full p-3 rounded bg-gray-800 border border-gray-600 text-white">
+            <textarea placeholder="Опишите ваши симптомы..."
+                class="w-full p-3 rounded bg-gray-800 border border-gray-600 text-white h-32"></textarea>
+            <button type="submit" class="bg-primary px-6 py-3 rounded text-white hover:bg-opacity-90">Отправить</button>
+        </form>
+    </section>
+
+
+</body>
