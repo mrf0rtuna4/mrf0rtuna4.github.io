@@ -7,3 +7,7 @@ test*
 .vscode
 avatar.js
 .idea
+snapshots
+-p
+*.ps1
+*.sh 
