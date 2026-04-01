@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ДОБРО ПОЖАЛОВАТЬ В БЕТОНОГРАД</title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Unbounded:wght@400;700;900&family=Press+Start+2P&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cement: #b0a898;
+    --concrete: #7a7367;
+    --dark: #1a1a1a;
+    --neon: #00ff41;
+    --red: #ff2020;
+    --yellow: #ffe600;
+    --pill-pink: #ff69b4;
+    --pill-blue: #00bfff;
+    --money: #85bb65;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--cement);
+    font-family: 'Unbounded', sans-serif;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💊%3C/text%3E%3C/svg%3E") 16 16, auto;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9998;
+    animation: grain 0.5s steps(2) infinite;
+  }
+
+  @keyframes grain {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2%, -3%); }
+    50% { transform: translate(3%, 1%); }
+    75% { transform: translate(-1%, 4%); }
+    100% { transform: translate(2%, -2%); }
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(0,255,65,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(255,32,32,0.07) 0%, transparent 50%),
+      linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+
+  .concrete-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: 
+      linear-gradient(90deg, rgba(176,168,152,0.03) 1px, transparent 1px),
+      linear-gradient(rgba(176,168,152,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .floating-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatRandom var(--dur, 8s) ease-in-out infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  @keyframes floatRandom {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-20px) rotate(5deg); }
+    66% { transform: translateY(10px) rotate(-3deg); }
+  }
+
+  .site-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    text-align: center;
+    line-height: 0.9;
+    position: relative;
+    z-index: 10;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+  }
+
+  .title-line1 {
+    color: var(--cement);
+    display: block;
+    animation: titleFlicker 4s ease-in-out infinite;
+  }
+
+  .title-line2 {
+    color: var(--neon);
+    display: block;
+    text-shadow: 0 0 20px var(--neon), 0 0 60px rgba(0,255,65,0.3);
+    animation: glitch 3s ease-in-out infinite;
+  }
+
+  @keyframes titleFlicker {
+    0%, 95%, 100% { opacity: 1; }
+    96% { opacity: 0.3; }
+    97% { opacity: 1; }
+    98% { opacity: 0.1; }
+    99% { opacity: 1; }
+  }
+
+  @keyframes glitch {
+    0%, 90%, 100% { text-shadow: 0 0 20px var(--neon), 0 0 60px rgba(0,255,65,0.3); transform: none; }
+    91% { transform: translateX(-3px); text-shadow: 3px 0 var(--red), -3px 0 var(--pill-blue); }
+    92% { transform: translateX(3px); }
+    93% { transform: none; }
+  }
+
+  .subtitle {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(0.5rem, 2vw, 0.9rem);
+    color: var(--yellow);
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+    animation: blink 1.5s step-end infinite;
+  }
+
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .time-badge {
+    background: var(--red);
+    color: white;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    padding: 8px 16px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
+    animation: badgePulse 0.5s ease-in-out infinite alternate;
+    transform: rotate(-2deg);
+  }
+
+  @keyframes badgePulse {
+    from { transform: rotate(-2deg) scale(1); box-shadow: 0 0 0px var(--red); }
+    to { transform: rotate(-2deg) scale(1.04); box-shadow: 0 0 20px var(--red); }
+  }
+
+  /* PILLS SECTION */
+  .section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .section-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: attr(data-sub);
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--concrete);
+    text-transform: none;
+  }
+
+  .pills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    margin: 40px 0;
+  }
+
+  .pill {
+    border-radius: 50px;
+    padding: 12px 20px;
+    text-align: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.1s;
+    animation: pillBob var(--bob, 2s) ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pill::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 50%;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px 50px 0 0;
+  }
+
+  .pill:hover { transform: scale(1.2) rotate(5deg); }
+  .pill:active { transform: scale(0.9); }
+
+  @keyframes pillBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .pill-pink { background: linear-gradient(135deg, #ff69b4, #ff1493); color: white; }
+  .pill-blue { background: linear-gradient(135deg, #00bfff, #0080ff); color: white; }
+  .pill-yellow { background: linear-gradient(135deg, #ffe600, #ff8c00); color: #1a1a1a; }
+  .pill-green { background: linear-gradient(135deg, #00ff41, #00aa22); color: #1a1a1a; }
+  .pill-red { background: linear-gradient(135deg, #ff2020, #990000); color: white; }
+  .pill-white { background: linear-gradient(135deg, #f0f0f0, #cccccc); color: #333; }
+
+  /* CONCRETE SECTION */
+  .concrete-section {
+    background: 
+      repeating-linear-gradient(45deg, rgba(176,168,152,0.05) 0px, rgba(176,168,152,0.05) 2px, transparent 2px, transparent 10px),
+      repeating-linear-gradient(-45deg, rgba(122,115,103,0.05) 0px, rgba(122,115,103,0.05) 2px, transparent 2px, transparent 10px),
+      #111;
+    border: 2px solid var(--concrete);
+    padding: 60px 40px;
+    margin: 60px 20px;
+    position: relative;
+  }
+
+  .concrete-section::before {
+    content: 'БЕТОНОГРАД';
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    background: var(--cement);
+    color: #1a1a1a;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1rem;
+    padding: 4px 16px;
+    letter-spacing: 4px;
+  }
+
+  .loader-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(176,168,152,0.2);
+    padding: 20px;
+    margin: 16px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .loader-card:hover {
+    border-color: var(--neon);
+    background: rgba(0,255,65,0.05);
+  }
+
+  .loader-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transition: left 0.5s;
+  }
+
+  .loader-card:hover::after { left: 100%; }
+
+  .loader-emoji { font-size: 2.5rem; }
+
+  .loader-info h3 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1rem;
+    color: var(--cement);
+    margin-bottom: 4px;
+  }
+
+  .loader-info p {
+    font-size: 0.65rem;
+    color: var(--concrete);
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+  }
+
+  .loader-price {
+    margin-left: auto;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    color: var(--money);
+  }
+
+  /* SAUCE METER */
+  .sauce-meter {
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(255,32,32,0.3);
+    padding: 30px;
+    margin: 40px 20px;
+    text-align: center;
+  }
+
+  .sauce-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    color: var(--red);
+    margin-bottom: 20px;
+    animation: blink 0.8s step-end infinite;
+  }
+
+  .sauce-bar-wrap {
+    background: #111;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .sauce-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4400, #ff8800, #ffcc00, #ff4400);
+    background-size: 200% 100%;
+    animation: sauceFill 2s ease-out forwards, sauceFlow 2s linear 2s infinite;
+    width: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  @keyframes sauceFill {
+    to { width: 88%; }
+  }
+
+  @keyframes sauceFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+  }
+
+  .sauce-label {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--concrete);
+    margin-top: 10px;
+  }
+
+  /* SCRATCH SECTION */
+  .scratch-zone {
+    background: rgba(255,105,180,0.07);
+    border: 2px dashed var(--pill-pink);
+    padding: 40px;
+    margin: 40px 20px;
+    text-align: center;
+    cursor: crosshair;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scratch-text {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: var(--pill-pink);
+    animation: jiggle 0.3s ease-in-out infinite;
+    display: block;
+  }
+
+  @keyframes jiggle {
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
+  }
+
+  .scratch-hint {
+    font-family: 'Caveat', cursive;
+    font-size: 1.2rem;
+    color: var(--concrete);
+    margin-top: 10px;
+    display: block;
+  }
+
+  .scratch-particles {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+
+  /* PORTFOLIO / SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2px;
+    margin: 40px 20px;
+  }
+
+  .service-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 30px;
+    position: relative;
+    transition: all 0.2s;
+    overflow: hidden;
+  }
+
+  .service-card:hover {
+    background: #1a1a1a;
+    border-color: var(--neon);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 16px;
+    animation: iconSpin 10s linear infinite;
+  }
+
+  @keyframes iconSpin {
+    0%, 80%, 100% { transform: rotate(0deg); }
+    85% { transform: rotate(180deg); }
+    90% { transform: rotate(360deg); }
+  }
+
+  .service-card h3 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.1rem;
+    color: var(--cement);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .service-card p {
+    font-size: 0.65rem;
+    color: var(--concrete);
+    line-height: 1.8;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: rgba(0,255,65,0.1);
+    color: var(--neon);
+    font-size: 0.55rem;
+    padding: 2px 8px;
+    border: 1px solid rgba(0,255,65,0.3);
+    margin-top: 12px;
+    font-family: 'Press Start 2P', monospace;
+  }
+
+  /* NUMBERS SECTION */
+  .numbers-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(255,230,0,0.03), transparent);
+  }
+
+  .big-number {
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(5rem, 20vw, 15rem);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--yellow);
+    display: block;
+    animation: numberGlitch 5s ease-in-out infinite;
+    position: relative;
+  }
+
+  @keyframes numberGlitch {
+    0%, 89%, 100% { -webkit-text-stroke-color: var(--yellow); }
+    90% { -webkit-text-stroke-color: var(--red); transform: translateX(-5px); }
+    91% { transform: translateX(5px); -webkit-text-stroke-color: var(--pill-blue); }
+    92% { transform: none; -webkit-text-stroke-color: var(--yellow); }
+  }
+
+  .number-label {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: var(--concrete);
+    display: block;
+    margin-top: -20px;
+  }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    overflow: hidden;
+    background: var(--red);
+    padding: 12px 0;
+    margin: 40px 0;
+  }
+
+  .marquee-inner {
+    display: flex;
+    animation: marquee 15s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-text {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    color: white;
+    padding: 0 40px;
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 40px 20px;
+  }
+
+  .testimonial {
+    background: #0d0d0d;
+    border-left: 3px solid var(--neon);
+    padding: 20px;
+    position: relative;
+  }
+
+  .testimonial-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--cement);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-author {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    color: var(--concrete);
+  }
+
+  .stars {
+    color: var(--yellow);
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,255,65,0.08) 0%, transparent 70%);
+    animation: ctaPulse 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes ctaPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: var(--neon);
+    color: #0a0a0a;
+    font-family: 'Russo One', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 20px 60px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s;
+    text-decoration: none;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    animation: ctaShake 6s ease-in-out infinite;
+  }
+
+  .cta-btn:hover {
+    background: var(--yellow);
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0,255,65,0.5);
+  }
+
+  @keyframes ctaShake {
+    0%, 95%, 100% { transform: rotate(0deg); }
+    96% { transform: rotate(-1deg) scale(1.02); }
+    97% { transform: rotate(1deg) scale(1.02); }
+    98% { transform: rotate(-0.5deg); }
+  }
+
+  .cta-subtext {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--concrete);
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #080808;
+    border-top: 1px solid #222;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2rem;
+    color: var(--cement);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .footer-text {
+    font-size: 0.6rem;
+    color: #444;
+    font-family: 'Press Start 2P', monospace;
+    line-height: 2;
+  }
+
+  .emoji-row {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    letter-spacing: 8px;
+    animation: emojiPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes emojiPulse {
+    0%, 100% { letter-spacing: 8px; }
+    50% { letter-spacing: 16px; }
+  }
+
+  /* MODAL */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .modal.active { display: flex; }
+
+  .modal-content {
+    background: #111;
+    border: 2px solid var(--neon);
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes modalIn {
+    from { transform: scale(0.5) rotate(-10deg); opacity: 0; }
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  .modal-title {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.5rem;
+    color: var(--neon);
+    margin-bottom: 16px;
+  }
+
+  .modal-text {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--cement);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .modal-close {
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.1s;
+  }
+
+  .modal-close:hover { transform: scale(1.1); }
+
+  /* PILLS COUNTER */
+  .pill-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--pill-pink);
+    padding: 10px 16px;
+    z-index: 9997;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.6rem;
+    color: var(--pill-pink);
+    backdrop-filter: blur(10px);
+  }
+
+  /* SCROLL PROGRESS */
+  .scroll-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: var(--neon);
+    z-index: 99998;
+    box-shadow: 0 0 10px var(--neon);
+    transition: width 0.1s;
+  }
+
+  /* CONFETTI CANVAS */
+  #confettiCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 99990;
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    color: var(--concrete);
+    margin: 0;
+    overflow: hidden;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--concrete), transparent);
+    position: relative;
+  }
+
+  .divider::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--neon), transparent);
+    animation: scanline 4s linear infinite;
+  }
+
+  @keyframes scanline {
+    to { left: 130%; }
+  }
+
+  /* GLITCH TEXT UTIL */
+  .glitch-text {
+    position: relative;
+  }
+
+  .glitch-text::before, .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+  }
+
+  .glitch-text::before {
+    color: var(--red);
+    animation: glitchBefore 4s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  }
+
+  .glitch-text::after {
+    color: var(--pill-blue);
+    animation: glitchAfter 4s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  }
+
+  @keyframes glitchBefore {
+    0%, 90%, 100% { transform: none; }
+    92% { transform: translateX(-4px); }
+    94% { transform: translateX(4px); }
+  }
+
+  @keyframes glitchAfter {
+    0%, 90%, 100% { transform: none; }
+    91% { transform: translateX(4px); }
+    93% { transform: translateX(-4px); }
+  }
+
+  /* EASTER EGG KONAMI */
+  .konami-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    z-index: 999999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Press Start 2P', monospace;
+    color: var(--neon);
+    text-align: center;
+    padding: 20px;
+  }
+
+  .konami-overlay.active { display: flex; }
+
+  .konami-title {
+    font-size: clamp(1rem, 5vw, 2rem);
+    animation: blink 0.5s step-end infinite;
+    margin-bottom: 20px;
+  }
+
+  .konami-text {
+    font-size: 0.7rem;
+    color: var(--yellow);
+    line-height: 2;
+    max-width: 400px;
+  }
+
+  @media (max-width: 600px) {
+    .loader-card { flex-direction: column; text-align: center; }
+    .loader-price { margin: 10px auto 0; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+<div class="scroll-bar" id="scrollBar"></div>
+<div class="pill-counter" id="pillCounter">💊 0 таблеточек</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="concrete-bg"></div>
+
+  <!-- Floating emojis -->
+  <span class="floating-emoji" style="top:10%; left:5%; --dur:7s;">💊</span>
+  <span class="floating-emoji" style="top:20%; left:90%; --dur:9s;">🧱</span>
+  <span class="floating-emoji" style="top:70%; left:8%; --dur:6s;">📞</span>
+  <span class="floating-emoji" style="top:80%; left:85%; --dur:11s;">💼</span>
+  <span class="floating-emoji" style="top:40%; left:92%; --dur:8s;">💵</span>
+  <span class="floating-emoji" style="top:55%; left:3%; --dur:10s;">✅</span>
+  <span class="floating-emoji" style="top:15%; left:50%; --dur:13s;">📝</span>
+  <span class="floating-emoji" style="top:88%; left:45%; --dur:7.5s;">💰</span>
+
+  <h1 class="site-title">
+    <span class="title-line1">ДОБРО</span>
+    <span class="title-line1">ПОЖАЛОВАТЬ</span>
+    <span class="title-line2 glitch-text" data-text="БЕТОНОГРАД">БЕТОНОГРАД</span>
+  </h1>
+
+  <p class="subtitle">▶ ЛУЧШИЙ СЕРВИС · ЛУЧШИЙ СОУС · ЛУЧШИЙ БЕТОН ◀</p>
+
+  <div class="time-badge">⚠ УЖЕ ЗАВТРА В 24:64 ⚠</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-text">📞 ПОЗВОНИТЕ НАМ · 💊 ТАБЛЕТОЧКИ СВЕЖИЕ · 🧱 БЕТОН ВЫСШИЙ СОРТ · ✅✅ ПОГРУЗИТЕ · 💵 СОУС НА МЕСТЕ · 📞 ПОЧЕШИТЕ · 💼 ВСЁ СЕРЬЁЗНО · 📝 ГРУЗЧИКИ ГОТОВЫ · </span>
+    <span class="marquee-text">📞 ПОЗВОНИТЕ НАМ · 💊 ТАБЛЕТОЧКИ СВЕЖИЕ · 🧱 БЕТОН ВЫСШИЙ СОРТ · ✅✅ ПОГРУЗИТЕ · 💵 СОУС НА МЕСТЕ · 📞 ПОЧЕШИТЕ · 💼 ВСЁ СЕРЬЁЗНО · 📝 ГРУЗЧИКИ ГОТОВЫ · </span>
+  </div>
+</div>
+
+<!-- PILLS -->
+<div class="section">
+  <h2 class="section-title" data-sub="нажмите — получите таблеточку">💊 ТАБЛЕТОЧКИ</h2>
+  <p style="font-size:0.7rem; color: var(--concrete); margin-bottom:20px;">Каждая таблеточка — это решение. Нажмите чтобы принять. Мы рекомендуем все сразу.</p>
+  <div class="pills-grid" id="pillsGrid">
+    <button class="pill pill-pink" onclick="takePill('Розовенькая 🌸')">Розовенькая</button>
+    <button class="pill pill-blue" onclick="takePill('Голубенькая 💧')" style="--bob:2.3s">Голубенькая</button>
+    <button class="pill pill-yellow" onclick="takePill('Жёлтенькая ⚡')" style="--bob:1.8s">Жёлтенькая</button>
+    <button class="pill pill-green" onclick="takePill('Зелёненькая 🌿')" style="--bob:2.7s">Зелёненькая</button>
+    <button class="pill pill-red" onclick="takePill('КРАСНАЯ 🚨')" style="--bob:1.5s">КРАСНАЯ</button>
+    <button class="pill pill-white" onclick="takePill('Беленькая ☁️')" style="--bob:3s">Беленькая</button>
+    <button class="pill pill-pink" onclick="takePill('Ещё одна 😌')" style="--bob:2.1s">Ещё одна</button>
+    <button class="pill pill-blue" onclick="takePill('Последняя? 🤔')" style="--bob:2.9s">Последняя?</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SAUCE METER -->
+<div class="sauce-meter">
+  <div class="sauce-title">⚠ УРОВЕНЬ СОУСА ⚠</div>
+  <div class="sauce-bar-wrap">
+    <div class="sauce-bar-fill" id="sauceBar">ТУТ</div>
+  </div>
+  <div class="sauce-label">Соус в наличии. Соус готов. Соус ждёт.</div>
+</div>
+
+<!-- CONCRETE SECTION -->
+<div class="concrete-section">
+  <h2 style="font-family: 'Russo One', sans-serif; font-size: 2rem; color: var(--cement); text-transform: uppercase; margin-bottom: 30px;">
+    🏗 ГРУЗЧИКИ НА СВЯЗИ
+  </h2>
+  <p style="font-size: 0.65rem; color: var(--concrete); margin-bottom: 30px; line-height: 2;">
+    ПРОФЕССИОНАЛЬНЫЕ ГРУЗЧИКИ · БЕТОН · ПОГРУЗКА · РАЗГРУЗКА · СПРАШИВАЙТЕ
+  </p>
+
+  <div class="loader-card" onclick="showModal('gruzchik')">
+    <span class="loader-emoji">👷</span>
+    <div class="loader-info">
+      <h3>Грузчик Базовый</h3>
+      <p>Погрузит. Разгрузит. Спросит про соус.</p>
+    </div>
+    <div class="loader-price">💵💵</div>
+  </div>
+
+  <div class="loader-card" onclick="showModal('gruzchik2')">
+    <span class="loader-emoji">👷‍♂️🧱</span>
+    <div class="loader-info">
+      <h3>Грузчик Бетонный</h3>
+      <p>Специализация — бетон и бетоноград. Знает всё.</p>
+    </div>
+    <div class="loader-price">💵💵💵</div>
+  </div>
+
+  <div class="loader-card" onclick="showModal('gruzchik3')">
+    <span class="loader-emoji">🏆👷</span>
+    <div class="loader-info">
+      <h3>Грузчик Премиум</h3>
+      <p>Приходит сам. Уходит тоже сам. Почешет если надо.</p>
+    </div>
+    <div class="loader-price">💵💵💵💵💵</div>
+  </div>
+</div>
+
+<!-- SCRATCH ZONE -->
+<div class="scratch-zone" id="scratchZone" onclick="scratchMe(event)">
+  <span class="scratch-text" id="scratchText">ПОЧЕШИТЕ ЗДЕСЬ</span>
+  <span class="scratch-hint">нажмите сюда · это важно · нет правда важно</span>
+  <canvas class="scratch-particles" id="scratchCanvas"></canvas>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<div class="section">
+  <h2 class="section-title" data-sub="всё что вам нужно и немного больше">📋 НАШИ УСЛУГИ</h2>
+</div>
+<div class="services-grid">
+  <div class="service-card">
+    <span class="service-icon">📞</span>
+    <h3>Звонки</h3>
+    <p>Позвоним. Перезвоним. Позвоним ещё раз. Не возьмёте трубку — позвоним снова.</p>
+    <span class="service-tag">✅ РАБОТАЕТ</span>
+  </div>
+  <div class="service-card">
+    <span class="service-icon">🧱</span>
+    <h3>Бетон</h3>
+    <p>Бетон всех сортов. Бетон для всех нужд. Бетоноград начинается с нас.</p>
+    <span class="service-tag">🏗 БЕТОН</span>
+  </div>
+  <div class="service-card">
+    <span class="service-icon">💊</span>
+    <h3>Таблеточки</h3>
+    <p>Свежие. Вкусные. Разноцветные. Принимать по 8 штук одновременно.</p>
+    <span class="service-tag">💊 АПТЕКА</span>
+  </div>
+  <div class="service-card">
+    <span class="service-icon">🍶</span>
+    <h3>Соус</h3>
+    <p>Соус есть. Соус будет. Соус никуда не денется. Спрашивайте про соус.</p>
+    <span class="service-tag">🔥 ОСТРЫЙ</span>
+  </div>
+  <div class="service-card">
+    <span class="service-icon">✋</span>
+    <h3>Почешем</h3>
+    <p>Профессиональное почёсывание. Любое место. Любое время. Без вопросов.</p>
+    <span class="service-tag">✅✅ ТОПЧИК</span>
+  </div>
+  <div class="service-card">
+    <span class="service-icon">💼</span>
+    <h3>Бизнес</h3>
+    <p>📞 💼 📝 💰 ✅✅ 💵. Всё. Больше не нужно объяснять.</p>
+    <span class="service-tag">💰 ДЕНЬГИ</span>
+  </div>
+</div>
+
+<!-- NUMBER 8 -->
+<div class="numbers-section">
+  <span class="big-number" id="bigNum">8</span>
+  <span class="number-label">просто восемь. без объяснений.</span>
+</div>
+
+<!-- MARQUEE 2 -->
+<div class="marquee-wrap" style="background: #111; border-top: 1px solid #222; border-bottom: 1px solid #222;">
+  <div class="marquee-inner" style="animation-direction: reverse; animation-duration: 20s;">
+    <span class="marquee-text" style="color: var(--neon);">✅ ПОГРУЗИТЕ · 💵 СОУС · 📝 БИЗНЕС · ✅ · 💰 ДЕНЬГИ · ✅✅ · 📞 · 💼 · 📝 · 💰 · ✅✅ · 💵 · </span>
+    <span class="marquee-text" style="color: var(--neon);">✅ ПОГРУЗИТЕ · 💵 СОУС · 📝 БИЗНЕС · ✅ · 💰 ДЕНЬГИ · ✅✅ · 📞 · 💼 · 📝 · 💰 · ✅✅ · 💵 · </span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section">
+  <h2 class="section-title" data-sub="наши клиенты говорят правду">⭐ ОТЗЫВЫ</h2>
+</div>
+<div class="testimonials">
+  <div class="testimonial">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="testimonial-text">"Попросил почесать — почесали. Спросил про соус — дали соус. Таблеточки были свежими. 10/10 погрузили вовремя."</p>
+    <div class="testimonial-author">— ИГОРЬ П., КЛИЕНТ</div>
+  </div>
+  <div class="testimonial">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="testimonial-text">"Бетон пришёл ровно в 24:64. Не понимаю как, но пришёл. Бетоноград реален."</p>
+    <div class="testimonial-author">— АЛЕКСЕЙ Б., СТРОИТЕЛЬ</div>
+  </div>
+  <div class="testimonial">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="testimonial-text">"Принял 8 таблеточек как велено. Позвонили, предупредили, погрузили. Всё хорошо. ✅✅"</p>
+    <div class="testimonial-author">— СВЕТЛАНА М., ТАБЛЕТОЧНИК</div>
+  </div>
+  <div class="testimonial">
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p class="testimonial-text">"📞 💼 📝 💰 ✅✅ 💵. Больше добавить нечего. Всё сделали."</p>
+    <div class="testimonial-author">— ДМИТРИЙ К., БИЗНЕСМЕН</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-bg"></div>
+  <button class="cta-btn" onclick="bigClick()">ПОГРУЗИТЕ МЕНЯ</button>
+  <span class="cta-subtext">* бесплатная таблеточка при звонке до 24:64</span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">🧱 БЕТОНОГРАД™</span>
+  <div class="emoji-row">📞 💼 📝 💰 ✅ ✅ 💵</div>
+  <p class="footer-text">
+    © 2024 БЕТОНОГРАД ООО «СОУС И БЕТОН»<br>
+    ВСЕ ТАБЛЕТОЧКИ СЕРТИФИЦИРОВАНЫ<br>
+    ГРУЗЧИКИ НЕ ВКЛЮЧЕНЫ В СТОИМОСТЬ<br>
+    ПОЧЕШЕМ ПО ДОГОВОРЁННОСТИ<br>
+    УЖЕ ЗАВТРА В 24:64
+  </p>
+  <p style="font-size:0.5rem; color: #222; margin-top: 20px; font-family: 'Press Start 2P', monospace;">
+    ПОДСКАЗКА: ↑↑↓↓←→←→BA
+  </p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <div class="modal-title" id="modalTitle">ВНИМАНИЕ</div>
+    <div class="modal-text" id="modalText">текст</div>
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')">ОК ДА ПОНЯЛ</button>
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('active')" style="background:#333">НЕТ</button>
+  </div>
+</div>
+
+<!-- KONAMI -->
+<div class="konami-overlay" id="konamiOverlay" onclick="this.classList.remove('active')">
+  <div class="konami-title">🏆 СЕКРЕТ РАСКРЫТ 🏆</div>
+  <p class="konami-text">
+    ПОЗДРАВЛЯЕМ<br><br>
+    ВЫ НАШЛИ БЕТОНОГРАД<br><br>
+    ТАБЛЕТОЧКИ: БЕЗЛИМИТ<br>
+    СОУС: СВЕЖИЙ<br>
+    ГРУЗЧИКИ: ЕДУТ<br>
+    ВОСЬМЁРКА: АКТИВИРОВАНА<br><br>
+    📞 💼 📝 💰 ✅✅ 💵<br><br>
+    <span style="color: var(--concrete); font-size: 0.5rem;">(нажмите чтобы закрыть)</span>
+  </p>
+</div>
+
+<script>
+  // ─── SCROLL BAR ───
+  window.addEventListener('scroll', () => {
+    const p = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+    document.getElementById('scrollBar').style.width = p + '%';
+  });
+
+  // ─── PILL COUNTER ───
+  let pillCount = 0;
+  const msgs = [
+    'таблеточек съедено', 'таблеточки приняты', 'таблеточки работают',
+    'СТОП!!!', 'ну и ладно', 'всё под контролем', 'мы не врачи',
+    'врач сказал ок', 'ВОСЕМЬ — НОРМА', 'бетоноград одобряет'
+  ];
+
+  function takePill(name) {
+    pillCount++;
+    const el = document.getElementById('pillCounter');
+    el.textContent = `💊 ${pillCount} ${msgs[Math.min(pillCount-1, msgs.length-1)]}`;
+    el.style.borderColor = pillCount >= 8 ? 'var(--red)' : 'var(--pill-pink)';
+    if (pillCount === 8) {
+      setTimeout(() => showModal('8'), 300);
+    }
+    spawnConfetti(3);
+    showToast(name);
+  }
+
+  // ─── TOAST ───
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.textContent = '✅ ' + msg;
+    t.style.cssText = `
+      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: #111; border: 1px solid var(--neon); color: var(--neon);
+      font-family: 'Press Start 2P', monospace; font-size: 0.6rem;
+      padding: 10px 20px; z-index: 99990; opacity: 0;
+      transition: all 0.3s; pointer-events: none;
+    `;
+    document.body.appendChild(t);
+    requestAnimationFrame(() => {
+      t.style.opacity = '1';
+      t.style.transform = 'translateX(-50%) translateY(0)';
+    });
+    setTimeout(() => {
+      t.style.opacity = '0';
+      setTimeout(() => t.remove(), 300);
+    }, 1500);
+  }
+
+  // ─── MODAL ───
+  const modalData = {
+    gruzchik: {
+      title: '👷 ГРУЗЧИК ЕДЕТ',
+      text: 'Ваш грузчик уже выехал. Он везёт бетон. Он несёт таблеточки. Он знает про соус. Ждите звонка до 24:64.'
+    },
+    gruzchik2: {
+      title: '🧱 БЕТОННЫЙ ГРУЗЧИК',
+      text: 'Этот грузчик сделан из бетона наполовину. Очень надёжный. Очень тяжёлый. Погрузит всё. Выставим счёт.'
+    },
+    gruzchik3: {
+      title: '🏆 ГРУЗЧИК ПРЕМИУМ',
+      text: 'Он уже здесь. Он пришёл пока вы читали это. Проверьте за дверью. Серьёзно.'
+    },
+    '8': {
+      title: '🎉 ВОСЕМЬ ТАБЛЕТОЧЕК!',
+      text: '8 таблеточек принято. Это ровно столько сколько надо. Именно 8. Не 7. Не 9. Восемь. Бетоноград гордится вами. ✅✅'
+    }
+  };
+
+  function showModal(key) {
+    const d = modalData[key];
+    document.getElementById('modalTitle').textContent = d.title;
+    document.getElementById('modalText').textContent = d.text;
+    document.getElementById('modal').classList.add('active');
+  }
+
+  function closeModal(e) {
+    if (e.target.id === 'modal') {
+      document.getElementById('modal').classList.remove('active');
+    }
+  }
+
+  // ─── SCRATCH ───
+  let scratchCount = 0;
+  const scratchTexts = [
+    'ЕЩЁ', 'ХОРОШО', 'ТАМ', 'ВОТ ТАМ', 'ИМЕННО', 'ДА', 'ПРАВЕЕ',
+    'НЕТ ЛЕВЕЕ', 'ВЫШЕ', 'ААААА', 'СПАСИБО', 'ХВАТИТ',
+    'ТЫ НЕ ОСТАНОВИШЬСЯ', 'Я ЗНАЛ', 'ПОЧЕШЕМ?', '💊'
+  ];
+
+  function scratchMe(e) {
+    scratchCount++;
+    document.getElementById('scratchText').textContent = scratchTexts[scratchCount % scratchTexts.length];
+    spawnConfetti(5, e.clientX, e.clientY);
+  }
+
+  // ─── CONFETTI ───
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  let particles = [];
+  const colors = ['#ff69b4','#00bfff','#ffe600','#00ff41','#ff2020','#ffffff'];
+  const emojiList = ['💊','🧱','✅','💵','📞','💼','8'];
+
+  function spawnConfetti(n = 10, x = Math.random() * window.innerWidth, y = 0) {
+    for (let i = 0; i < n; i++) {
+      const isEmoji = Math.random() > 0.7;
+      particles.push({
+        x, y: y || -10,
+        vx: (Math.random() - 0.5) * 8,
+        vy: Math.random() * 4 + 2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        emoji: isEmoji ? emojiList[Math.floor(Math.random() * emojiList.length)] : null,
+        size: Math.random() * 10 + 6,
+        rotation: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 10,
+        gravity: 0.15,
+        life: 1
+      });
+    }
+  }
+
+  function animateConfetti() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles = particles.filter(p => p.life > 0);
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += p.gravity;
+      p.rotation += p.rotSpeed;
+      p.life -= 0.012;
+      ctx.globalAlpha = Math.max(0, p.life);
+      if (p.emoji) {
+        ctx.font = `${p.size * 2}px serif`;
+        ctx.fillText(p.emoji, p.x, p.y);
+      } else {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation * Math.PI / 180);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size/2, -p.size/4, p.size, p.size/2);
+        ctx.restore();
+      }
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animateConfetti);
+  }
+  animateConfetti();
+
+  // ─── BIG CLICK ───
+  function bigClick() {
+    spawnConfetti(30);
+    showToast('ПОГРУЖАЕМ! ✅✅');
+    const btn = event.target;
+    btn.textContent = 'ПОГРУЖЕНО ✅';
+    setTimeout(() => btn.textContent = 'ПОГРУЗИТЕ ЕЩЁ РАЗ', 2000);
+  }
+
+  // ─── NUMBER 8 EASTER EGG ───
+  const bigNumEl = document.getElementById('bigNum');
+  let clickNum = 0;
+  bigNumEl.addEventListener('click', () => {
+    clickNum++;
+    if (clickNum === 8) {
+      spawnConfetti(50);
+      bigNumEl.style.color = 'var(--neon)';
+      bigNumEl.style.webkitTextStroke = 'none';
+      bigNumEl.style.textShadow = '0 0 40px var(--neon)';
+      showToast('ВОСЕМЬ! ВОСЕМЬ! ВОСЕМЬ!');
+    }
+  });
+
+  // ─── KONAMI CODE ───
+  const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let konamiIndex = 0;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        document.getElementById('konamiOverlay').classList.add('active');
+        spawnConfetti(80);
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
+
+  // ─── RANDOM SAUCE ───
+  const sauceBar = document.getElementById('sauceBar');
+  setInterval(() => {
+    const level = 70 + Math.random() * 25;
+    sauceBar.style.setProperty('--w', level + '%');
+  }, 3000);
+
+  // ─── RANDOM FLOATING FACTS ───
+  const facts = [
+    '💊 ТАБЛЕТОЧКИ СОДЕРЖАТ БЕТОН', '🧱 БЕТОН СОДЕРЖИТ ТАБЛЕТОЧКИ',
+    '✅ СОУС ОДОБРЕН', '📞 ЗВОНОК ПРИНЯТ', '8️⃣ ВОСЕМЬ',
+    '💼 БИЗНЕС РАБОТАЕТ', '👷 ГРУЗЧИК ЕДЕТ', '🏗 БЕТОНОГРАД СТРОИТСЯ'
+  ];
+  setInterval(() => {
+    if (Math.random() > 0.6) {
+      const fact = document.createElement('div');
+      fact.textContent = facts[Math.floor(Math.random() * facts.length)];
+      fact.style.cssText = `
+        position: fixed;
+        left: ${Math.random() * 80 + 10}%;
+        top: ${Math.random() * 80 + 10}%;
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        color: rgba(176,168,152,0.4);
+        pointer-events: none;
+        z-index: 1;
+        animation: factFade 3s forwards;
+      `;
+      document.body.appendChild(fact);
+      setTimeout(() => fact.remove(), 3000);
+    }
+  }, 4000);
+
+  const style = document.createElement('style');
+  style.textContent = `@keyframes factFade { 0% { opacity:0; transform: translateY(0); } 20% { opacity:1; } 100% { opacity:0; transform: translateY(-30px); } }`;
+  document.head.appendChild(style);
+</script>
+</body>
+</html>
