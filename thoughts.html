@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Ниче.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #111827, #020617);
+    color: #e5e7eb;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 700px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #9ca3af;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.accent {
+    color: #ef4444;
+}
+
+.line {
+    width: 60px;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 30px auto;
+}
+
+.cta {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    border-color: white;
+    background: rgba(255,255,255,0.05);
+}
+
+.hint {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slider">
+
+    <div class="slide active">
+        <div class="container">
+            <p>
+                И что ты хочешь тут увидеть?.. Ладно. Это страница мыслей. Напоминание о том, что легко потерять.
+            </p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="container">
+            <h1>Человек.</h1>
+            <p class="accent">Ты точно человек?</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="container">
+            <p>
+                Ты открываешь сайты<br>
+                как будто там что-то есть.
+            </p>
+            <div class="line"></div>
+            <p>
+                Но там такие же как ты.<br>
+                Просто с кнопками.
+            </p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="container">
+            <p>
+                <i>"The future is already here — it's just not evenly distributed."</i><br>
+                — William Gibson
+            </p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="container">
+            <p>
+                Хочешь действие?
+            </p>
+            <div class="cta" onclick="alert('выйди на улицу. серьезно.')">
+                выйти на улицу
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="container">
+            <p>Как дела?</p>
+        </div>
+    </div>
+
+    <div class="slide">
+        <p>Ты давно спрашивал это у кого-то<br>не из вежливости?</p>
+    </div>
+
+    <div class="slide">
+        <p>А тебе самому кто-нибудь<br>задавал этот вопрос по-настоящему?</p>
+    </div>
+
+    <div class="slide">
+        <p>И ты бы ответил честно?</p>
+    </div>
+
+    <div class="slide">
+        <p>Или как обычно<br>"нормально"?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты вообще помнишь,<br>когда в последний раз было нормально?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты живёшь<br>или просто не останавливаешься?</p>
+    </div>
+
+    <div class="slide">
+        <p>Когда ты в последний раз<br>ничего не делал и не чувствовал вины?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты выбираешь<br>или просто соглашаешься?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты устал<br>или уже привык?</p>
+    </div>
+
+    <div class="slide">
+        <p>Если всё остановится<br>ты испугаешься или выдохнешь?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты помнишь,<br>кем хотел быть?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты ещё туда идёшь?</p>
+    </div>
+
+    <div class="slide">
+        <p>Или просто делаешь вид,<br>что всё по плану?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты кому это всё доказываешь?</p>
+    </div>
+
+    <div class="slide">
+        <p>Если честно <br>тебе это вообще нужно?</p>
+    </div>
+
+    <div class="slide">
+        <p>Когда ты в последний раз<br>чувствовал себя живым?</p>
+    </div>
+
+    <div class="slide">
+        <p>Ты сейчас здесь<br>или просто отвлекаешься?</p>
+    </div>
+
+    <div class="slide">
+        <p>Если закроешь это <br>что изменится?</p>
+    </div>
+
+    <div class="slide">
+        <p>Прости.</p>
+    </div>
+
+    <div class="slide">
+        <p>Ведь это Я такой - а ты д'Артаньян.</p>
+    </div>
+
+    <div class="slide">
+        <p>Ну или кто-то другой..</p>
+    </div>
+
+    <div class="slide">
+        <p>А ты вообще существуешь?</p>
+    </div>
+
+    <div class="slide" id="secret">
+        <div class="container">
+            <p>
+                Ты нашёл это.<br><br>
+                Значит это пока все.. удачи..
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="hint">клик / стрелки → • D → что-то ещё</div>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let current = 0;
+
+function showSlide(index) {
+    slides[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+}
+
+document.addEventListener('click', () => {
+    showSlide(current + 1);
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') showSlide(current + 1);
+    if (e.key === 'ArrowLeft') showSlide(current - 1);
+
+    if (e.key.toLowerCase() === 'd') {
+        slides[current].classList.remove('active');
+        document.getElementById('secret').classList.add('active');
+    }
+});
+</script>
+
+</body>
+</html>
