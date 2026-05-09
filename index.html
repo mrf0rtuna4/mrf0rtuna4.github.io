@@ -29,7 +29,8 @@
 
 
     <!-- Ключевые слова для SEO -->
-    <meta name="keywords" content="Mr_Fortuna, проекты, навыки, разработка, GitHub, Discord, Telegram, веб-разработка, Full-Stack разработчик, Backend разработчик, Frontend разработчик, DevOps, Python, Django, Node.js, Docker, PostgreSQL, CI/CD, резюме разработчика">
+    <meta name="keywords"
+        content="Mr_Fortuna, проекты, навыки, разработка, GitHub, Discord, Telegram, веб-разработка, Full-Stack разработчик, Backend разработчик, Frontend разработчик, DevOps, Python, Django, Node.js, Docker, PostgreSQL, CI/CD, резюме разработчика">
 
     <!-- Meta Author -->
     <meta name="author" content="Mr_f0rtuna4">
@@ -69,850 +70,628 @@
     <!-- Permissions Policy -->
     <meta http-equiv="content-security-policy" content="interest-cohort=()" />
 
-    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: { primary: "#4F46E5", secondary: "#10B981" },
-                    borderRadius: {
-                        none: "0px",
-                        sm: "4px",
-                        DEFAULT: "8px",
-                        md: "12px",
-                        lg: "16px",
-                        xl: "20px",
-                        "2xl": "24px",
-                        "3xl": "32px",
-                        full: "9999px",
-                        button: "8px",
-                    },
-                },
-            },
-        };
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        ::-webkit-scrollbar {
-            width: 0;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-            scroll-behavior: smooth;
-            display: math;
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #4F46E5;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .skill-card {
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-card {
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: scale(1.03);
-        }
-
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: rotate(10deg);
-            color: #4F46E5;
-        }
-
-        .progress-bar {
-            height: 6px;
-            background-color: rgba(79, 70, 229, 0.2);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .progress-value {
-            height: 100%;
-            background-color: #4F46E5;
-            border-radius: 3px;
-            transition: width 1.5s ease-out;
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        input,
-        textarea {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        input:focus,
-        textarea:focus {
-            border-color: #4F46E5;
-            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
-        }
-
-        .btn-top {
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .btn-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .custom-checkbox {
-            display: inline-block;
-            position: relative;
-            width: 18px;
-            height: 18px;
-            margin-right: 8px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
-
-        .custom-checkbox.checked {
-            background-color: #4F46E5;
-            border-color: #4F46E5;
-        }
-
-        .custom-checkbox.checked::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 5px;
-            width: 5px;
-            height: 9px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
-    <header class="fixed w-full bg-gray-900/90 backdrop-blur-md z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <h1 class="text-2xl font-['Pacifico'] text-white">MrF</h1>
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="nav-link text-gray-300 hover:text-white transition-colors">Главная</a>
-                <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors">Навыки</a>
-                <a href="#services" class="nav-link text-gray-300 hover:text-white transition-colors">Сотрудничество</a>
-                <a href="#portfolio" class="nav-link text-gray-300 hover:text-white transition-colors">Портфолио</a>
-                <a href="#contacts" class="nav-link text-gray-300 hover:text-white transition-colors">Контакты</a>
-            </nav>
-            <button class="md:hidden w-10 h-10 flex items-center justify-center text-white">
-                <i class="ri-menu-line ri-lg"></i>
-            </button>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <div class="noise"></div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="logo-bracket">[</span>MrF<span class="logo-bracket">]</span>
         </div>
-    </header>
-
-    <div class="fixed inset-0 bg-gray-900/95 z-50 hidden flex-col justify-center items-center">
-        <nav class="flex flex-col space-y-6 text-center">
-            <a href="#home" class="text-xl text-white hover:text-primary transition-colors">Главная</a>
-            <a href="#skills" class="text-xl text-white hover:text-primary transition-colors">Навыки</a>
-            <a href="#services" class="text-xl text-white hover:text-primary transition-colors">Сотрудничество</a>
-            <a href="#portfolio" class="text-xl text-white hover:text-primary transition-colors">Портфолио</a>
-            <a href="#contacts" class="text-xl text-white hover:text-primary transition-colors">Контакты</a>
-        </nav>
-        <button class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white">
-            <i class="ri-close-line ri-lg"></i>
-        </button>
-    </div>
-
-
-    <section id="home" class="min-h-screen pt-24 flex items-center" style="text-align: center;">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center" style="flex-direction: column;">
-                <div class="animate-on-scroll">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3">
-                        Mister Fortuna
-                    </h1>
-    
-                    <h2 class="text-xl md:text-2xl text-primary mb-6">
-                        Full-Stack разработчик
-                    </h2>
-    
-                    <ul class="text-gray-200 mb-6 space-y-2">
-                        <li class="flex items-center">
-                            <i class="ri-checkbox-circle-line text-primary mr-2"></i>
-                            Более 3 лет опыта
-                        </li>
-                        <li class="flex items-center">
-                            <i class="ri-checkbox-circle-line text-primary mr-2"></i>
-                            Backend · Frontend · DevOps
-                        </li>
-                        <li class="flex items-center">
-                            <i class="ri-checkbox-circle-line text-primary mr-2"></i>
-                            Веб-приложения, API, автоматизация, боты
-                        </li>
-                    </ul>
-    
-                    <p class="text-gray-300 mb-8 max-w-xl leading-relaxed">
-                        Занимаюсь разработкой производительных и понятных решений
-                        с использованием современных технологий.
-                        Имею практический опыт работы с серверной и клиентской частью,
-                        инфраструктурой и автоматизацией процессов.
-                        Рассматриваю трудоустройство по трудовому договору
-                        (без ИП).
-                    </p>
-    
-                    <div class="block space-x-4">
-                        <a href="#contacts"
-                            class="px-6 py-3 bg-primary text-white font-medium !rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">
-                            Связаться
-                        </a>
-                        <a href="#portfolio"
-                            class="px-6 py-3 border border-gray-600 text-white font-medium !rounded-button hover:border-primary transition-all whitespace-nowrap">
-                            Портфолио
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <ul class="nav-links">
+            <li><a href="#about" data-text="about">about</a></li>
+            <li><a href="#skills" data-text="skills">skills</a></li>
+            <li><a href="#projects" data-text="projects">projects</a></li>
+            <li><a href="#contact" data-text="contact">contact</a></li>
+        </ul>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            <span>available for work</span>
         </div>
-    </section>
-    
+    </nav>
 
-    <section id="skills" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4" style="overflow: hidden">
-            <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
-                Профессиональные навыки
-            </h2>
+    <section class="hero" id="hero">
+        <div class="hero-bg-grid"></div>
 
-            <div class="flex justify-center mb-12 animate-on-scroll" style="overflow: hidden">
-                <div class="inline-flex p-1 bg-gray-800 rounded-full">
-                    <button
-                        class="skill-category-btn active px-5 py-2 rounded-full bg-primary text-white whitespace-nowrap"
-                        data-category="all">
-                        Все
-                    </button>
-                    <button
-                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
-                        data-category="development">
-                        Разработка
-                    </button>
-                    <button
-                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
-                        data-category="design">
-                        Дизайн
-                    </button>
-                    <button
-                        class="skill-category-btn px-5 py-2 rounded-full text-gray-300 hover:text-white whitespace-nowrap"
-                        data-category="soft">
-                        Soft
-                    </button>
-                </div>
+        <div class="hero-content">
+            <div class="hero-tag fade-up">
+                <span class="tag-line"></span>
+                <span>Full-Stack Developer</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
-                    data-category="development">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-code-s-slash-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">JavaScript / TypeScript</h3>
-                    <p class="text-gray-400 mb-4">
-                        Использую в коммерческих и pet-проектах.
-                        Опыт разработки SPA, взаимодействия с API, поддержки и рефакторинга кода.
-                    </p>                    
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 95%"></div>
-                    </div>
-                </div>
+            <h1 class="hero-title fade-up delay-1">
+                <span class="title-line">Building</span>
+                <span class="title-line accent">digital</span>
+                <span class="title-line">products</span>
+            </h1>
 
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
-                    data-category="development">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-server-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Backend разработка</h3>
-                    <p class="text-gray-400 mb-4">
-                        Проектирование серверной логики, REST API, работа с БД,
-                        авторизация, оптимизация запросов и архитектуры.
-                    </p>                    
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 90%"></div>
-                    </div>
-                </div>
+            <p class="hero-sub fade-up delay-2">
+                Пишу backend, Discord-ботов, Minecraft плагины и веб-сервисы.<br />
+                От Django и FastAPI до модов, C++ утилит и автоматизации.
+            </p>
 
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
-                    data-category="development">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-database-2-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Базы данных</h3>
-                    <p class="text-gray-400 mb-4">
-                        PostgreSQL, MySQL, MongoDB, Redis, проектирование схем и
-                        оптимизация запросов.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll" data-category="design">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-layout-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">UI/UX Дизайн</h3>
-                    <p class="text-gray-400 mb-4">
-                        Создание интуитивных интерфейсов, прототипирование,
-                        пользовательский опыт и доступность.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 80%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll" data-category="design">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-palette-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Графический дизайн</h3>
-                    <p class="text-gray-400 mb-4">
-                        Figma, Adobe XD, Photoshop, Illustrator, создание визуальных
-                        концепций и брендинг.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 75%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll" data-category="soft">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-team-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Командная работа</h3>
-                    <p class="text-gray-400 mb-4">
-                        Эффективная коммуникация, сотрудничество, управление конфликтами и
-                        менторство.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 95%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll" data-category="soft">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-time-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Управление проектами</h3>
-                    <p class="text-gray-400 mb-4">
-                        Agile/Scrum, Kanban, планирование спринтов, оценка задач и
-                        управление рисками.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 85%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll" data-category="soft">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-lightbulb-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Решение проблем</h3>
-                    <p class="text-gray-400 mb-4">
-                        Критическое мышление, анализ, инновационные подходы и принятие
-                        решений.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 90%"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll"
-                    data-category="development">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-cloud-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">DevOps</h3>
-                    <p class="text-gray-400 mb-4">
-                        CI/CD, Docker, Kubernetes, AWS, Azure, мониторинг и автоматизация.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="progress-value" style="width: 80%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
-                Профессиональная направленность
-            </h2>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-server-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Backend-разработчик</h3>
-                    <p class="text-gray-400 mb-6">
-                        Участие в разработке и поддержке серверной части проекта,
-                        API и бизнес-логики
-                    </p>
-                    <ul class="text-gray-400 space-y-2">
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>REST / GraphQL API</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Работа с БД</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Безопасность и оптимизация</li>
-                    </ul>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-layout-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Frontend-разработчик</h3>
-                    <p class="text-gray-400 mb-6">
-                        Создание и улучшение пользовательских интерфейсов
-                        в составе команды или под ключ
-                    </p>
-                    <ul class="text-gray-400 space-y-2">
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>SPA / PWA</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Адаптивная верстка</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>UI/UX оптимизация</li>
-                    </ul>
-                </div>
-    
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-code-box-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Fullstack-специалист</h3>
-                    <p class="text-gray-400 mb-6">
-                        Полный цикл разработки продукта — от идеи до запуска и поддержки
-                    </p>
-                    <ul class="text-gray-400 space-y-2">
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Frontend + Backend</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Архитектура и масштабирование</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Dev-поддержка</li>
-                    </ul>
-                </div>
-    
-                <div class="bg-gray-800 rounded-lg p-6 shadow-lg animate-on-scroll hover:shadow-2xl transition-all">
-                    <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-lg mb-4">
-                        <i class="ri-megaphone-line ri-xl text-primary"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">SMM / Контент-менеджер</h3>
-                    <p class="text-gray-400 mb-6">
-                        Продвижение бренда или продукта в социальных сетях
-                    </p>
-                    <ul class="text-gray-400 space-y-2">
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Контент-план</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Постинг и оформление</li>
-                        <li class="flex items-center"><i class="ri-checkbox-circle-line text-primary mr-2"></i>Аналитика и вовлеченность</li>
-                    </ul>
-                </div>    
-            </div>
-        </div>
-    </section>    
-
-    <section id="portfolio" class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
-                Портфолио проектов
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images-ext-1.discordapp.net/external/g5Rw2gNa2DMd940E8mZ4KSyVBtS6WXlFG3CfkpuLT04/https/opengraph.githubassets.com/5b0f176b4ff6e1c5c1fef13c1259cedf6888e89afe5259ef4e14f122c441e0b7/mrf0rtuna4/Git-Markdown-AutoTranslator?format=webp&width=960&height=480"
-                            alt="Проект 1"
-                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">
-                            Автоматический Переводчик
-                        </h3>
-                        <p class="text-gray-400 mb-4">
-                            Разработка комплексной системы машинного автоматического перевода *.md файлов без потерь.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Docker</span>
-                        </div>
-                        <a href="https://github.com/mrf0rtuna4/Git-Markdown-AutoTranslator"
-                            class="text-primary hover:text-primary/80 inline-flex items-center">
-                            Подробнее
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll">
-                    <div class="h-48 overflow-hidden">
-                        <img src="assets/images/heypers_logo.jpg" alt="Проект 2"
-                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Heypers Project</h3>
-                        <p class="text-gray-400 mb-4">
-                            Мультипроект, объединяющий управление, менеджмент, модерацию и разработку.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Django</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Java</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Django REST API</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Gradle</span>
-                        </div>
-                        <a href="https://heypers.pythonanywhere.com/"
-                            class="text-primary hover:text-primary/80 inline-flex items-center">
-                            Подробнее
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg animate-on-scroll">
-                    <div class="h-48 overflow-hidden">
-                        <img src="assets/images/kaya.png" alt="Проект 3"
-                            class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-110" />
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">KayaBot</h3>
-                        <p class="text-gray-400 mb-4">
-                            Чат-бот, персональный помощник в мире удобства и разнообразия в мире Discord.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Python</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Disnake</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Django</span>
-                            <span class="px-3 py-1 bg-gray-700 rounded-full text-xs">Django REST API</span>
-                        </div>
-                        <a href="https://boticord.top/bot/1136630716537516062"
-                            class="text-primary hover:text-primary/80 inline-flex items-center">
-                            Подробнее
-                            <i class="ri-arrow-right-line ml-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="https://github.com/mrf0rtuna4?tab=repositories"
-                    class="px-6 py-3 border border-gray-600 text-white font-medium !rounded-button hover:border-primary transition-all inline-flex items-center whitespace-nowrap">
-                    Все проекты
-                    <i class="ri-arrow-right-line ml-2"></i>
+            <div class="hero-cta fade-up delay-3">
+                <a href="#projects" class="btn btn-primary">
+                    <span>посмотреть проекты</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                 </a>
+
+                <a href="#contact" class="btn btn-ghost">написать мне</a>
+            </div>
+
+            <div class="hero-stats fade-up delay-4">
+                <div class="stat">
+                    <span class="stat-num">30+</span>
+                    <span class="stat-label">репозиториев</span>
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="stat">
+                    <span class="stat-num">4+</span>
+                    <span class="stat-label">лет в коде</span>
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="stat">
+                    <span class="stat-num">∞</span>
+                    <span class="stat-label">странных идей</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual fade-up delay-2">
+            <div class="code-window">
+                <div class="window-bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="window-title">developer.py</span>
+                </div>
+
+                <div class="code-body">
+                    <div class="code-line"><span class="c-var">developer</span> = {</div>
+
+                    <div class="code-line indent"><span class="c-string">"name"</span>: <span
+                            class="c-string">"MrFortuna"</span>,
+                    </div>
+
+                    <div class="code-line indent"><span class="c-string">"main_stack"</span>: [</div>
+
+                    <div class="code-line indent2"><span class="c-string">"Python"</span>, <span
+                            class="c-string">"Django"</span>,
+                    </div>
+
+                    <div class="code-line indent2"><span class="c-string">"FastAPI"</span>, <span
+                            class="c-string">"Java"</span>,
+                    </div>
+
+                    <div class="code-line indent2"><span class="c-string">"C++"</span>, <span
+                            class="c-string">"JavaScript"</span>,</div>
+
+                    <div class="code-line indent2"><span class="c-string">"Minecraft Plugins"</span></div>
+
+                    <div class="code-line indent">],</div>
+
+                    <div class="code-line indent"><span class="c-string">"currently_building"</span>: <span
+                            class="c-string">"Heypers"</span>,</div>
+
+                    <div class="code-line indent"><span class="c-string">"mindset"</span>: <span class="c-string">"делай
+                            просто →
+                            потом нормально"</span>,</div>
+
+                    <div class="code-line indent"><span class="c-string">"coffee"</span>: <span
+                            class="c-bool">true</span></div>
+
+                    <div class="code-line">}</div>
+
+                    <div class="code-line">&nbsp;</div>
+
+                    <div class="code-line"><span class="c-keyword">print</span>(developer)<span
+                            class="cursor-blink">▋</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contacts" class="py-20 bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-16 animate-on-scroll">
-                Связаться со мной
-            </h2>
-
-            <div class="animate-on-scroll">
-                <h3 class="text-2xl font-semibold mb-6">Контактная информация</h3>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="contact-card bg-gray-800 p-6 rounded-lg">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                            <i class="ri-mail-line ri-xl text-primary"></i>
-                        </div>
-                        <h4 class="text-lg font-medium mb-1">Email</h4>
-                        <p class="text-gray-400">contact.mrf0rtuna4@gmail.com</p>
-                        <button class="mt-3 text-primary text-sm flex items-center">
-                            <i class="ri-file-copy-line mr-1"></i> Копировать
-                        </button>
-                    </div>
-
-                    <div class="contact-card bg-gray-800 p-6 rounded-lg">
-                        <div class="w-12 h-12 flex items-center justify-center bg-primary/20 rounded-full mb-4">
-                            <i class="ri-time-line ri-xl text-primary"></i>
-                        </div>
-                        <h4 class="text-lg font-medium mb-1">Доступность</h4>
-                        <p class="text-gray-400">Пн-Пт, 10:00 - 21:00</p>
-                    </div>
-                </div>
-
-                <div class="mt-8">
-                    <h4 class="text-lg font-medium mb-4">Социальные сети</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/mrf0rtuna4"
-                            class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full">
-                            <i class="ri-github-fill ri-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/mrf0rtuna4/"
-                            class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full">
-                            <i class="ri-linkedin-fill ri-xl"></i>
-                        </a>
-                        <a href="https://t.me/mr_fortuna"
-                            class="social-icon w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full">
-                            <i class="ri-telegram-fill ri-xl"></i>
-                        </a>
-                    </div>
-                </div>
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-num">01</span>
+                <h2 class="section-title">about me</h2>
             </div>
-        </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-950 py-12">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <h1 class="text-2xl font-['Pacifico'] text-white mb-3">MrF</h1>
-                    <p class="text-gray-500 text-sm mt-4">
-                        Full-Stack разработчик • Backend • DevOps • Автоматизация
-                    </p>                    
-                </div>
-
-                <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-6 md:mb-0">
-                    <a href="#home" class="text-gray-400 hover:text-white transition-colors">Главная</a>
-                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors">Навыки</a>
-                    <a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Портфолио</a>
-                    <a href="#contacts" class="text-gray-400 hover:text-white transition-colors">Контакты</a>
-                </div>
-
-                <div>
-                    <p class="text-gray-500 text-sm">
-                        © 2026 MrFortuna. Все права защищены.
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        Привет. Я <strong>MrFortuna</strong> - backend/full-stack разработчик,
+                        который любит собирать большие системы из странных, но удобных решений.
                     </p>
+
+                    <p>
+                        Основной стек - Python, Django, FastAPI, Java и C++.
+                        Параллельно пишу Discord-ботов, Minecraft плагины и веб-сервисы.
+                    </p>
+
+                    <p>
+                        Сейчас активно развиваю <strong>Heypers</strong> - большой проект
+                        с Django backend, сервисами, ботами, Minecraft интеграцией,
+                        плагинами и модами.
+                    </p>
+
+                    <p>
+                        Люблю архитектуру без лишней магии:
+                        сначала сделать просто, потом сделать нормально.
+                    </p>
+
+                    <div class="about-links">
+                        <a href="https://github.com/mrf0rtuna4" class="text-link">GitHub ↗</a>
+                        <a href="https://www.heypers.org/" class="text-link">Heypers ↗</a>
+                        <a href="https://t.me/mr_fortuna" class="text-link">Telegram ↗</a>
+                    </div>
                 </div>
+                <div class="about-image-wrap reveal delay-1">
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <img src="assets/images/avatar.png" style="width: 80; height: 80;">
+                            <span>photo (real btw 🤨)</span>
+                        </div>
+                        <div class="image-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-num">02</span>
+                <h2 class="section-title">tech stack</h2>
+            </div>
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python Ecosystem</h3>
+                    <ul class="skill-list">
+                        <li>Django</li>
+                        <li>FastAPI</li>
+                        <li>AsyncIO</li>
+                        <li>Discord Bots</li>
+                        <li>Automation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal delay-1">
+                    <div class="skill-icon">⛏️</div>
+                    <h3>Minecraft Dev</h3>
+                    <ul class="skill-list">
+                        <li>Paper / Spigot</li>
+                        <li>Bukkit API</li>
+                        <li>Minecraft Mods</li>
+                        <li>Gradle</li>
+                        <li>Custom Mechanics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal delay-2">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>Backend & Systems</h3>
+                    <ul class="skill-list">
+                        <li>REST API</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                        <li>Docker</li>
+                        <li>Microservices</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card reveal delay-3">
+                    <div class="skill-icon">💣</div>
+                    <h3>Other Stuff</h3>
+                    <ul class="skill-list">
+                        <li>C++ utilities</li>
+                        <li>JavaScript</li>
+                        <li>GitHub Actions</li>
+                        <li>3D experiments</li>
+                        <li>Weird ideas engineering</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-num">03</span>
+                <h2 class="section-title">projects</h2>
+            </div>
+            <div class="projects-list">
+
+                <article class="project-card reveal" data-index="01">
+                    <div class="project-meta">
+                        <span class="project-num">01</span>
+
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Minecraft</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">Heypers</h3>
+
+                        <p class="project-desc">
+                            Большая экосистема сервисов: Django backend,
+                            Discord-боты, Minecraft плагины и моды,
+                            API, автоматизация и внутренняя инфраструктура.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span>→ multi-service architecture</span>
+                            <span>→ bots + web + minecraft</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://www.heypers.org/" class="project-link">Website ↗</a>
+                        <a href="https://t.me/heypers_project" class="project-link">Telegram ↗</a>
+                        <a href="https://github.com/heypers" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">01</div>
+                </article>
+
+                <article class="project-card reveal delay-1" data-index="02">
+                    <div class="project-meta">
+                        <span class="project-num">02</span>
+
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Discord</span>
+                            <span class="tag">Bot</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">Kaya</h3>
+
+                        <p class="project-desc">
+                            Discord bot Kaya - разнообразные команды управления сервером, логгирование,
+                            настройки, фан, nsfw, модерация и мультиязычность.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span>→ async architecture</span>
+                            <span>→ awesome modules</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://kaya.heypers.org/" class="project-link">Website ↗</a>
+                        <a href="https://kaya.heypers.org/add" class="project-link">Add Bot ↗</a>
+                        <a href="https://github.com/kaya-devs" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">02</div>
+                </article>
+
+                <article class="project-card reveal delay-2" data-index="03">
+                    <div class="project-meta">
+                        <span class="project-num">03</span>
+
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Discord</span>
+                            <span class="tag">Framework</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">aeoncord</h3>
+
+                        <p class="project-desc">
+                            Discord framework с разделением ответственности,
+                            удобной структурой и нормальной архитектурой
+                            вместо хаоса в одном файле на 4000 строк.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/mrf0rtuna4/aeoncord" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">03</div>
+                </article>
+
+                <article class="project-card reveal delay-2" data-index="04">
+                    <div class="project-meta">
+                        <span class="project-num">04</span>
+
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Minecraft</span>
+                            <span class="tag">Gradle</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">RandomLoot</h3>
+
+                        <p class="project-desc">
+                            RandomLoot — это легкий плагин,
+                            который заменяет стандартное выпадение блоков непредсказуемым лутом
+                            и дополнительными эффектами событий.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span>→ custom loot systems</span>
+                            <span>→ plugin architecture</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://modrinth.com/plugin/rndloot" class="project-link">Modrinth ↗</a>
+                        <a href="https://github.com/mrf0rtuna4/RandomLoot" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">04</div>
+                </article>
+
+                <article class="project-card reveal delay-2" data-index="05">
+                    <div class="project-meta">
+                        <span class="project-num">05</span>
+
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Minecraft</span>
+                            <span class="tag">Gradle</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">MorseCraft</h3>
+
+                        <p class="project-desc">
+                            Мод Morsecraft добавляет в Minecraft полностью функциональный телеграфный ключ,
+                            позволяющий отправлять сообщения азбукой Морзе, записывать их на бумажную ленту и
+                            взаимодействовать
+                            с редстоуном.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://modrinth.com/mod/morsecraft" class="project-link">Modrinth ↗</a>
+                        <a href="https://github.com/mrf0rtuna4/morsecraft" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">05</div>
+                </article>
+
+                <article class="project-card reveal delay-3" data-index="06">
+                    <div class="project-meta">
+                        <span class="project-num">06</span>
+
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">JS</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <h3 class="project-title">PythonicNightmares</h3>
+
+                        <p class="project-desc">
+                            PythonicNightmares — это ужасный CLI-инструмент,
+                            который объединяет в себе самые безумные и странные возможности,
+                            доступные только в мире Python. Проект предназначен для развлечения,
+                            демонстрации плохих практик программирования и добавления абсурдных команд,
+                            которые не должны существовать.
+                        </p>
+
+                        <div class="project-highlights">
+                            <span>→ scripts that just work</span>
+                            <span>→ cursed engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/mrf0rtuna4/PythonicNightmares" class="project-link">GitHub ↗</a>
+                    </div>
+
+                    <div class="project-bg-num">06</div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-num">04</span>
+                <h2 class="section-title">contact</h2>
+            </div>
+            <div class="contact-inner reveal">
+                <div class="contact-text">
+                    <h3>
+                        Давай соберём<br />
+                        <span class="accent">что-нибудь умное</span>
+                    </h3>
+
+                    <p>
+                        Открыт для интересных проектов:
+                        backend, automation, Discord systems,
+                        Minecraft stuff и нестандартных сервисов.
+                    </p>
+
+                    <div class="contact-socials">
+
+                        <a href="mailto:contact.mrf0rtuna4@gmail.com" class="social-link">
+                            <span class="social-icon">✉</span>
+                            contact.mrf0rtuna4@gmail.com
+                        </a>
+
+                        <a href="https://github.com/mrf0rtuna4" class="social-link">
+                            <span class="social-icon"><i class="ri-github-fill ri-xl"></i></span>
+                            github.com/mrf0rtuna4
+                        </a>
+
+                        <a href="https://t.me/mr_fortuna" class="social-link">
+                            <span class="social-icon"><i class="ri-telegram-fill ri-xl"></i></span>
+                            @mr_fortuna
+                        </a>
+
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" placeholder="Ваше имя" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="email@example.com" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" placeholder="Расскажите о вашем проекте..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">
+                        <span>отправить сообщение</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="form-success" id="formSuccess">✓ Сообщение отправлено!</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">
+                    <span class="logo-bracket">[</span>MrF<span class="logo-bracket">]</span>
+                </span>
+
+                <span class="footer-copy">
+                    © 2026 MrFortuna. Built with 🧠.
+                </span>
+
+                <span class="footer-time" id="footerTime"></span>
             </div>
         </div>
     </footer>
 
-    <button id="btn-top"
-        class="btn-top fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center bg-primary rounded-full shadow-lg">
-        <i class="ri-arrow-up-line ri-xl text-white"></i>
-    </button>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const animateElements = document.querySelectorAll(".animate-on-scroll");
-            function checkScroll() {
-                animateElements.forEach((element) => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    if (elementTop < windowHeight * 0.9) {
-                        element.classList.add("visible");
-                    }
-                });
-            }
-            window.addEventListener("scroll", checkScroll);
-            checkScroll();
+        const cursor = document.getElementById('cursor');
+        const cursorDot = document.getElementById('cursorDot');
+        let mouseX = 0, mouseY = 0;
+        let curX = 0, curY = 0;
+
+        document.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
         });
-        document.addEventListener("DOMContentLoaded", function () {
-            const btnTop = document.getElementById("btn-top");
-            function toggleBtnTop() {
-                if (window.scrollY > 300) {
-                    btnTop.classList.add("visible");
-                } else {
-                    btnTop.classList.remove("visible");
+
+        function animateCursor() {
+            curX += (mouseX - curX) * 0.12;
+            curY += (mouseY - curY) * 0.12;
+            cursor.style.transform = `translate(${curX}px, ${curY}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.querySelectorAll('a, button, input, textarea, .skill-card, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('revealed');
+                    observer.unobserve(e.target);
                 }
-            }
-            btnTop.addEventListener("click", function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
             });
-            window.addEventListener("scroll", toggleBtnTop);
-            toggleBtnTop();
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
         });
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuBtn = document.querySelector(".md\\:hidden");
-            const closeBtn = document.querySelector(".absolute.top-6.right-6");
-            const mobileMenu = document.querySelector(".fixed.inset-0.bg-gray-900\\/95");
-            const mobileLinks = mobileMenu.querySelectorAll("a");
-            menuBtn.addEventListener("click", function () {
-                mobileMenu.classList.remove("hidden");
-                mobileMenu.classList.add("flex");
-                document.body.style.overflow = "hidden";
-            });
-            closeBtn.addEventListener("click", function () {
-                mobileMenu.classList.remove("flex");
-                mobileMenu.classList.add("hidden");
-                document.body.style.overflow = "";
-            });
-            mobileLinks.forEach((link) => {
-                link.addEventListener("click", function () {
-                    mobileMenu.classList.remove("flex");
-                    mobileMenu.classList.add("hidden");
-                    document.body.style.overflow = "";
-                });
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-up').forEach(el => {
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
             });
         });
-        document.addEventListener("DOMContentLoaded", function () {
-            const categoryBtns = document.querySelectorAll(".skill-category-btn");
-            const skillCards = document.querySelectorAll(".skill-card");
-            categoryBtns.forEach((btn) => {
-                btn.addEventListener("click", function () {
-                    categoryBtns.forEach((b) => {
-                        b.classList.remove("active", "bg-primary", "text-white");
-                        b.classList.add("text-gray-300", "hover:text-white");
-                    });
-                    this.classList.add("active", "bg-primary", "text-white");
-                    this.classList.remove("text-gray-300", "hover:text-white");
-                    const category = this.dataset.category;
-                    skillCards.forEach((card) => {
-                        if (category === "all" || card.dataset.category === category) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                });
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
-        document.addEventListener("DOMContentLoaded", function () {
-            const checkbox = document.getElementById("privacy-checkbox");
-            checkbox.addEventListener("click", function () {
-                this.classList.toggle("checked");
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const copyButtons = document.querySelectorAll(".text-primary.text-sm");
-            copyButtons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    const textToCopy = this.parentElement.querySelector("p").textContent;
-                    navigator.clipboard.writeText(textToCopy).then(() => {
-                        const originalText = this.innerHTML;
-                        this.innerHTML = '<i class="ri-check-line mr-1"></i> Скопировано';
-                        setTimeout(() => {
-                            this.innerHTML = originalText;
-                        }, 2000);
-                    });
-                });
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const anchors = document.querySelectorAll('a[href^="#"]');
-            anchors.forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute("href");
-                    if (targetId === "#") return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const headerHeight = document.querySelector("header").offsetHeight;
-                        const targetPosition =
-                            targetElement.getBoundingClientRect().top +
-                            window.scrollY -
-                            headerHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: "smooth",
-                        });
-                    }
-                });
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const currencyBtns = document.querySelectorAll(".currency-btn");
-            const pricesUsd = document.querySelectorAll(".price-usd");
-            const pricesRub = document.querySelectorAll(".price-rub");
-            currencyBtns.forEach((btn) => {
-                btn.addEventListener("click", function () {
-                    currencyBtns.forEach((b) => {
-                        b.classList.remove("active", "bg-primary", "text-white");
-                        b.classList.add("text-gray-300", "hover:text-white");
-                    });
-                    this.classList.add("active", "bg-primary", "text-white");
-                    this.classList.remove("text-gray-300", "hover:text-white");
-                    const currency = this.dataset.currency;
-                    if (currency === "usd") {
-                        pricesUsd.forEach((price) => price.classList.remove("hidden"));
-                        pricesRub.forEach((price) => price.classList.add("hidden"));
-                    } else {
-                        pricesUsd.forEach((price) => price.classList.add("hidden"));
-                        pricesRub.forEach((price) => price.classList.remove("hidden"));
-                    }
-                });
-            });
-            const progressBars = document.querySelectorAll(".progress-value");
-            function animateProgressBars() {
-                progressBars.forEach((bar) => {
-                    const elementTop = bar.parentElement.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    if (
-                        elementTop < windowHeight * 0.9 &&
-                        !bar.classList.contains("animated")
-                    ) {
-                        bar.classList.add("animated");
-                        const width = bar.style.width;
-                        bar.style.width = "0%";
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
-                    }
-                });
-            }
-            window.addEventListener("scroll", animateProgressBars);
-            animateProgressBars();
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const header = document.querySelector("header");
-            function updateHeaderStyle() {
-                if (window.scrollY > 50) {
-                    header.classList.add("py-2", "shadow-md");
-                    header.classList.remove("py-4");
-                } else {
-                    header.classList.add("py-4");
-                    header.classList.remove("py-2", "shadow-md");
-                }
-            }
-            window.addEventListener("scroll", updateHeaderStyle);
-            updateHeaderStyle();
-        });
+
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('footerTime').textContent =
+                now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' MSK';
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const success = document.getElementById('formSuccess');
+            success.classList.add('visible');
+            e.target.reset();
+            setTimeout(() => success.classList.remove('visible'), 4000);
+        }
     </script>
 </body>
 
