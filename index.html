@@ -1,698 +1,104 @@
-<!--
-  ~ Copyright (c) 2026 mr_fortuna
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~     http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="ru" class="no-js">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MrFortuna - Full-Stack разработчик</title>
-    <meta name="description" content="Узнайте больше o Mr_Fortuna, a также моих проектах, навыках и серверах."
-        data-i18n="description">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>mr_fortuna — сайт-визитка</title>
+    <meta name="description"
+        content="mr_fortuna - сайт-визитка разработчика.">
+    <meta name="keywords" content="mr_fortuna, разработчик, фронтенд, HTML, CSS, SEO, сайт-визитка, минимализм">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f1e8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#06110b">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="mr_fortuna - сайт-визитка разработчика">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mr_fortuna — сайт-визитка разработчика">
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Meta Image -->
-    <meta name="image" content="assets/images/avatar.png">
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "mr_fortuna",
+    "jobTitle": "Developer",
+    "description": "Cайт-визитка разработчика.",
+    "knowsAbout": ["HTML", "CSS", "SEO", "Accessibility", "Frontend Development"]
+  }
+  </script>
 
+    <style>
 
-    <!-- Ключевые слова для SEO -->
-    <meta name="keywords"
-        content="Mr_Fortuna, проекты, навыки, разработка, GitHub, Discord, Telegram, веб-разработка, Full-Stack разработчик, Backend разработчик, Frontend разработчик, DevOps, Python, Django, Node.js, Docker, PostgreSQL, CI/CD, резюме разработчика">
-
-    <!-- Meta Author -->
-    <meta name="author" content="Mr_f0rtuna4">
-
-    <!-- Social Media Sharing (Open Graph) -->
-    <meta property="og:site_name" content="Информация про Mr_Fortuna" />
-    <meta property="og:title" content="Mr_Fortuna - Личная информация и проекты" />
-    <meta property="og:description" content="Узнайте больше o Mr_Fortuna, a также моих проектах, навыках и серверах." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mrf0rtuna4.github.io/" />
-    <meta property="og:image" content="assets/images/avatar.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Mr_Fortuna - Логотип и аватар" />
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Twitter Sharing -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mr_Fortuna - Личная информация и проекты" />
-    <meta name="twitter:description"
-        content="Ознакомьтесь c проектами и навыками Mr_Fortuna. Присоединяйтесь к сообществам на GitHub и Discord." />
-    <meta name="twitter:image" content="assets/images/avatar.png" />
-    <meta name="twitter:image:alt" content="Mr_Fortuna - Аватар и логотип" />
-
-    <!-- Viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/images/avatar.jpg" type="image/x-icon" />
-
-    <!-- SEO Robots -->
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://fortuna.heypers.org/" />
-
-    <!-- Permissions Policy -->
-    <meta http-equiv="content-security-policy" content="interest-cohort=()" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    </style>
 </head>
 
 <body>
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="site">
+        <header class="topbar" aria-label="Верхняя панель">
+            <p class="brand">mr_fortuna</p>
 
-    <div class="noise"></div>
+            <div class="theme-picker" aria-label="Выбор темы">
+                <input type="radio" name="theme" id="theme-auto" checked>
+                <label for="theme-auto">auto</label>
 
-    <nav class="nav" id="nav">
-        <div class="nav-logo">
-            <span class="logo-bracket">[</span>MrF<span class="logo-bracket">]</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#about" data-text="about">about</a></li>
-            <li><a href="#skills" data-text="skills">skills</a></li>
-            <li><a href="#projects" data-text="projects">projects</a></li>
-            <li><a href="#contact" data-text="contact">contact</a></li>
-        </ul>
-        <div class="nav-status">
-            <span class="status-dot"></span>
-            <span>available for work</span>
-        </div>
-    </nav>
+                <input type="radio" name="theme" id="theme-light">
+                <label for="theme-light">light</label>
 
-    <section class="hero" id="hero">
-        <div class="hero-bg-grid"></div>
-
-        <div class="hero-content">
-            <div class="hero-tag fade-up">
-                <span class="tag-line"></span>
-                <span>Full-Stack Developer</span>
+                <input type="radio" name="theme" id="theme-dark">
+                <label for="theme-dark">dark</label>
             </div>
+        </header>
 
-            <h1 class="hero-title fade-up delay-1">
-                <span class="title-line">Building</span>
-                <span class="title-line accent">digital</span>
-                <span class="title-line">products</span>
-            </h1>
+        <main class="page">
+            <section class="card" aria-labelledby="page-title">
 
-            <p class="hero-sub fade-up delay-2">
-                Пишу backend, Discord-ботов, Minecraft плагины и веб-сервисы.<br />
-                От Django и FastAPI до модов, C++ утилит и автоматизации.
-            </p>
+                <h1 id="page-title">
+                    <span class="accent">mr_fortuna</span>
+                </h1>
 
-            <div class="hero-cta fade-up delay-3">
-                <a href="#projects" class="btn btn-primary">
-                    <span>посмотреть проекты</span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </a>
+                <p class="lead">
+                    Разрабатываю быстрые, понятные и аккуратные веб-проекты. Предпочитаю
+                    минимализм, семантичную вёрстку и внимание к деталям.
+                </p>
 
-                <a href="#contact" class="btn btn-ghost">написать мне</a>
-            </div>
-
-            <div class="hero-stats fade-up delay-4">
-                <div class="stat">
-                    <span class="stat-num">30+</span>
-                    <span class="stat-label">репозиториев</span>
-                </div>
-
-                <div class="stat-divider"></div>
-
-                <div class="stat">
-                    <span class="stat-num">4+</span>
-                    <span class="stat-label">лет в коде</span>
-                </div>
-
-                <div class="stat-divider"></div>
-
-                <div class="stat">
-                    <span class="stat-num">∞</span>
-                    <span class="stat-label">странных идей</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="hero-visual fade-up delay-2">
-            <div class="code-window">
-                <div class="window-bar">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="window-title">developer.py</span>
-                </div>
-
-                <div class="code-body">
-                    <div class="code-line"><span class="c-var">developer</span> = {</div>
-
-                    <div class="code-line indent"><span class="c-string">"name"</span>: <span
-                            class="c-string">"MrFortuna"</span>,
+                <dl class="facts">
+                    <div class="fact">
+                        <dt>stack</dt>
+                        <dd>Python · Java · JavaScript · C++</dd>
                     </div>
 
-                    <div class="code-line indent"><span class="c-string">"main_stack"</span>: [</div>
-
-                    <div class="code-line indent2"><span class="c-string">"Python"</span>, <span
-                            class="c-string">"Django"</span>,
+                    <div class="fact">
+                        <dt>focus</dt>
+                        <dd>Fullstack · UX · Performance</dd>
                     </div>
 
-                    <div class="code-line indent2"><span class="c-string">"FastAPI"</span>, <span
-                            class="c-string">"Java"</span>,
+                    <div class="fact">
+                        <dt>location</dt>
+                        <dd>Internet</dd>
                     </div>
-
-                    <div class="code-line indent2"><span class="c-string">"C++"</span>, <span
-                            class="c-string">"JavaScript"</span>,</div>
-
-                    <div class="code-line indent2"><span class="c-string">"Minecraft Plugins"</span></div>
-
-                    <div class="code-line indent">],</div>
-
-                    <div class="code-line indent"><span class="c-string">"currently_building"</span>: <span
-                            class="c-string">"Heypers"</span>,</div>
-
-                    <div class="code-line indent"><span class="c-string">"mindset"</span>: <span class="c-string">"делай
-                            просто →
-                            потом нормально"</span>,</div>
-
-                    <div class="code-line indent"><span class="c-string">"coffee"</span>: <span
-                            class="c-bool">true</span></div>
-
-                    <div class="code-line">}</div>
-
-                    <div class="code-line">&nbsp;</div>
-
-                    <div class="code-line"><span class="c-keyword">print</span>(developer)<span
-                            class="cursor-blink">▋</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">01</span>
-                <h2 class="section-title">about me</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        Привет. Я <strong>MrFortuna</strong> - backend/full-stack разработчик,
-                        который любит собирать большие системы из странных, но удобных решений.
-                    </p>
-
-                    <p>
-                        Основной стек - Python, Django, FastAPI, Java и C++.
-                        Параллельно пишу Discord-ботов, Minecraft плагины и веб-сервисы.
-                    </p>
-
-                    <p>
-                        Сейчас активно развиваю <strong>Heypers</strong> - большой проект
-                        с Django backend, сервисами, ботами, Minecraft интеграцией,
-                        плагинами и модами.
-                    </p>
-
-                    <p>
-                        Люблю архитектуру без лишней магии:
-                        сначала сделать просто, потом сделать нормально.
-                    </p>
-
-                    <div class="about-links">
-                        <a href="https://github.com/mrf0rtuna4" class="text-link">GitHub ↗</a>
-                        <a href="https://www.heypers.org/" class="text-link">Heypers ↗</a>
-                        <a href="https://t.me/mr_fortuna" class="text-link">Telegram ↗</a>
-                    </div>
-                </div>
-                <div class="about-image-wrap reveal delay-1">
-                    <div class="about-image">
-                        <div class="image-placeholder">
-                            <img src="assets/images/avatar.png" style="width: 80; height: 80;">
-                            <span>photo (real btw 🤨)</span>
-                        </div>
-                        <div class="image-frame"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills section" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">02</span>
-                <h2 class="section-title">tech stack</h2>
-            </div>
-            <div class="skills-grid">
-
-                <div class="skill-card reveal">
-                    <div class="skill-icon">🐍</div>
-                    <h3>Python Ecosystem</h3>
-                    <ul class="skill-list">
-                        <li>Django</li>
-                        <li>FastAPI</li>
-                        <li>AsyncIO</li>
-                        <li>Discord Bots</li>
-                        <li>Automation</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card reveal delay-1">
-                    <div class="skill-icon">⛏️</div>
-                    <h3>Minecraft Dev</h3>
-                    <ul class="skill-list">
-                        <li>Paper / Spigot</li>
-                        <li>Bukkit API</li>
-                        <li>Minecraft Mods</li>
-                        <li>Gradle</li>
-                        <li>Custom Mechanics</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card reveal delay-2">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend & Systems</h3>
-                    <ul class="skill-list">
-                        <li>REST API</li>
-                        <li>PostgreSQL</li>
-                        <li>Redis</li>
-                        <li>Docker</li>
-                        <li>Microservices</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card reveal delay-3">
-                    <div class="skill-icon">💣</div>
-                    <h3>Other Stuff</h3>
-                    <ul class="skill-list">
-                        <li>C++ utilities</li>
-                        <li>JavaScript</li>
-                        <li>GitHub Actions</li>
-                        <li>3D experiments</li>
-                        <li>Weird ideas engineering</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="projects section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">03</span>
-                <h2 class="section-title">projects</h2>
-            </div>
-            <div class="projects-list">
-
-                <article class="project-card reveal" data-index="01">
-                    <div class="project-meta">
-                        <span class="project-num">01</span>
-
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">Minecraft</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">Heypers</h3>
-
-                        <p class="project-desc">
-                            Большая экосистема сервисов: Django backend,
-                            Discord-боты, Minecraft плагины и моды,
-                            API, автоматизация и внутренняя инфраструктура.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span>→ multi-service architecture</span>
-                            <span>→ bots + web + minecraft</span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://www.heypers.org/" class="project-link">Website ↗</a>
-                        <a href="https://t.me/heypers_project" class="project-link">Telegram ↗</a>
-                        <a href="https://github.com/heypers" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">01</div>
-                </article>
-
-                <article class="project-card reveal delay-1" data-index="02">
-                    <div class="project-meta">
-                        <span class="project-num">02</span>
-
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord</span>
-                            <span class="tag">Bot</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">Kaya</h3>
-
-                        <p class="project-desc">
-                            Discord bot Kaya - разнообразные команды управления сервером, логгирование,
-                            настройки, фан, nsfw, модерация и мультиязычность.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span>→ async architecture</span>
-                            <span>→ awesome modules</span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://kaya.heypers.org/" class="project-link">Website ↗</a>
-                        <a href="https://kaya.heypers.org/add" class="project-link">Add Bot ↗</a>
-                        <a href="https://github.com/kaya-devs" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">02</div>
-                </article>
-
-                <article class="project-card reveal delay-2" data-index="03">
-                    <div class="project-meta">
-                        <span class="project-num">03</span>
-
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord</span>
-                            <span class="tag">Framework</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">aeoncord</h3>
-
-                        <p class="project-desc">
-                            Discord framework с разделением ответственности,
-                            удобной структурой и нормальной архитектурой
-                            вместо хаоса в одном файле на 4000 строк.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/mrf0rtuna4/aeoncord" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">03</div>
-                </article>
-
-                <article class="project-card reveal delay-2" data-index="04">
-                    <div class="project-meta">
-                        <span class="project-num">04</span>
-
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Minecraft</span>
-                            <span class="tag">Gradle</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">RandomLoot</h3>
-
-                        <p class="project-desc">
-                            RandomLoot — это легкий плагин,
-                            который заменяет стандартное выпадение блоков непредсказуемым лутом
-                            и дополнительными эффектами событий.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span>→ custom loot systems</span>
-                            <span>→ plugin architecture</span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://modrinth.com/plugin/rndloot" class="project-link">Modrinth ↗</a>
-                        <a href="https://github.com/mrf0rtuna4/RandomLoot" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">04</div>
-                </article>
-
-                <article class="project-card reveal delay-2" data-index="05">
-                    <div class="project-meta">
-                        <span class="project-num">05</span>
-
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Minecraft</span>
-                            <span class="tag">Gradle</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">MorseCraft</h3>
-
-                        <p class="project-desc">
-                            Мод Morsecraft добавляет в Minecraft полностью функциональный телеграфный ключ,
-                            позволяющий отправлять сообщения азбукой Морзе, записывать их на бумажную ленту и
-                            взаимодействовать
-                            с редстоуном.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://modrinth.com/mod/morsecraft" class="project-link">Modrinth ↗</a>
-                        <a href="https://github.com/mrf0rtuna4/morsecraft" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">05</div>
-                </article>
-
-                <article class="project-card reveal delay-3" data-index="06">
-                    <div class="project-meta">
-                        <span class="project-num">06</span>
-
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">JS</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="project-body">
-                        <h3 class="project-title">PythonicNightmares</h3>
-
-                        <p class="project-desc">
-                            PythonicNightmares — это ужасный CLI-инструмент,
-                            который объединяет в себе самые безумные и странные возможности,
-                            доступные только в мире Python. Проект предназначен для развлечения,
-                            демонстрации плохих практик программирования и добавления абсурдных команд,
-                            которые не должны существовать.
-                        </p>
-
-                        <div class="project-highlights">
-                            <span>→ scripts that just work</span>
-                            <span>→ cursed engineering</span>
-                        </div>
-                    </div>
-
-                    <div class="project-links">
-                        <a href="https://github.com/mrf0rtuna4/PythonicNightmares" class="project-link">GitHub ↗</a>
-                    </div>
-
-                    <div class="project-bg-num">06</div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-num">04</span>
-                <h2 class="section-title">contact</h2>
-            </div>
-            <div class="contact-inner reveal">
-                <div class="contact-text">
-                    <h3>
-                        Давай соберём<br />
-                        <span class="accent">что-нибудь умное</span>
-                    </h3>
-
-                    <p>
-                        Открыт для интересных проектов:
-                        backend, automation, Discord systems,
-                        Minecraft stuff и нестандартных сервисов.
-                    </p>
-
-                    <div class="contact-socials">
-
-                        <a href="mailto:contact.mrf0rtuna4@gmail.com" class="social-link">
-                            <span class="social-icon">✉</span>
-                            contact.mrf0rtuna4@gmail.com
-                        </a>
-
-                        <a href="https://github.com/mrf0rtuna4" class="social-link">
-                            <span class="social-icon"><i class="ri-github-fill ri-xl"></i></span>
-                            github.com/mrf0rtuna4
-                        </a>
-
-                        <a href="https://t.me/mr_fortuna" class="social-link">
-                            <span class="social-icon"><i class="ri-telegram-fill ri-xl"></i></span>
-                            @mr_fortuna
-                        </a>
-
-                    </div>
-                </div>
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Имя</label>
-                        <input type="text" id="name" placeholder="Ваше имя" autocomplete="off" />
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="email@example.com" autocomplete="off" />
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Сообщение</label>
-                        <textarea id="message" placeholder="Расскажите о вашем проекте..." rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary full-width">
-                        <span>отправить сообщение</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                    <div class="form-success" id="formSuccess">✓ Сообщение отправлено!</div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <span class="footer-logo">
-                    <span class="logo-bracket">[</span>MrF<span class="logo-bracket">]</span>
-                </span>
-
-                <span class="footer-copy">
-                    © 2026 MrFortuna. Built with 🧠.
-                </span>
-
-                <span class="footer-time" id="footerTime"></span>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const cursor = document.getElementById('cursor');
-        const cursorDot = document.getElementById('cursorDot');
-        let mouseX = 0, mouseY = 0;
-        let curX = 0, curY = 0;
-
-        document.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        });
-
-        function animateCursor() {
-            curX += (mouseX - curX) * 0.12;
-            curY += (mouseY - curY) * 0.12;
-            cursor.style.transform = `translate(${curX}px, ${curY}px)`;
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        document.querySelectorAll('a, button, input, textarea, .skill-card, .project-card').forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-        });
-
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 60);
-        });
-
-        const revealEls = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('revealed');
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-        revealEls.forEach(el => observer.observe(el));
-
-        document.querySelectorAll('.fade-up').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-        });
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.fade-up').forEach(el => {
-                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            });
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                const target = document.querySelector(a.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        function updateTime() {
-            const now = new Date();
-            document.getElementById('footerTime').textContent =
-                now.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' MSK';
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const success = document.getElementById('formSuccess');
-            success.classList.add('visible');
-            e.target.reset();
-            setTimeout(() => success.classList.remove('visible'), 4000);
-        }
-    </script>
+                </dl>
+
+                <nav class="contacts" aria-label="Контакты">
+                    <a href="https://github.com/mrf0rtuna4" target="_blank" rel="me noopener noreferrer">
+                        GitHub
+                    </a>
+
+                    <span>·</span>
+
+                    <a href="mailto:contact.mrf0rtuna4@gmail.com">
+                        contact.mrf0rtuna4@gmail.com
+                    </a>
+
+                    <span>·</span>
+
+                    <a href="https://t.me/mr_fortuna" target="_blank" rel="noopener noreferrer">
+                        Telegram
+                    </a>
+                </nav>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
